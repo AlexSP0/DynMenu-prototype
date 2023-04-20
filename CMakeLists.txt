@@ -27,4 +27,4 @@ add_executable(DynMenu-prototype
     )
 # Define target properties for Android with Qt 6 as:
 
-target_link_libraries(DynMenu-prototype PRIVATE Qt5::Widgets Qt5::Core)
+target_link_libraries(DynMenu-prototype PRIVATE Qt5::Widgets Qt5::Core mcore)
