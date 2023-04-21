@@ -2,54 +2,163 @@
 
 MenuActionsManager::MenuActionsManager(QMainWindow *mainWindow)
     : m_mainWindow(mainWindow)
+    , m_menuBar(mainWindow->menuBar())
 {}
+/*
+ *
+ */
 
 Command *MenuActionsManager::registerAction(QString actionName, Command *menu)
 {
-    auto currentCommand = std::make_unique<Command>(std::make_unique<QAction>(actionName));
+    auto currentCommand = std::make_shared<Command>(std::make_shared<QAction>(actionName));
 
-    emit addAction(currentCommand->m_action.get(), menu);
+    if (!insertAction(currentCommand.get(), menu))
+    {
+        return nullptr;
+    }
 
-    Command *currentCommandPtr = currentCommand.get();
+    m_actions.insert(currentCommand->id, currentCommand);
 
-    m_actions.push_back(std::move(currentCommand));
-
-    return currentCommandPtr;
+    return currentCommand.get();
 }
 
 Command *MenuActionsManager::registerMenu(QString menuName, Command *menu)
 {
-    auto currentCommand = std::make_unique<Command>(std::make_unique<QMenu>(menuName));
+    auto currentCommand = std::make_shared<Command>(std::make_shared<QMenu>(menuName));
 
-    emit addMenu(currentCommand->m_menu.get()->menuAction(), menu);
+    if (!insertAction(currentCommand.get(), menu))
+    {
+        return nullptr;
+    }
 
-    Command *currentCommandPtr = currentCommand.get();
+    m_actions.insert(currentCommand->id, currentCommand);
 
-    m_menus.push_back(std::move(currentCommand));
+    return currentCommand.get();
+}
 
-    return currentCommandPtr;
+bool MenuActionsManager::unregisterAction(Command *action)
+{
+    auto it = m_actions.find(action->id);
+
+    if (it == m_actions.end())
+    {
+        return false;
+    }
+
+    if (removeAction(action))
+    {
+        m_actions.remove(action->id);
+
+        return true;
+    }
+    return false;
 }
 
 bool MenuActionsManager::unregisterMenu(Command *command)
 {
-    //TO DO - do it recursive, find all children and remove from storage
+    return unregisterAction(command);
+}
 
-    for (auto it = m_menus.begin(); it != m_menus.end(); it++)
+bool MenuActionsManager::insertAction(Command *action, Command *destination)
+{
+    if (!destination)
     {
-        if (*it->get() == *command)
+        m_menuBar->addAction(action->getAction());
+
+        return true;
+    }
+    for (QAction *currentAction : m_menuBar->actions())
+    {
+        QMenu *currentMenu = currentAction->menu();
+
+        if (currentMenu)
         {
-            emit removeMenu(it->get()->m_menu.get()->menuAction());
-            m_menus.erase(it);
-            return true;
+            if (currentAction == destination->m_menu->menuAction())
+            {
+                currentMenu->addAction(action->getAction());
+
+                return true;
+            }
+            else
+            {
+                return insertActionInMenu(action, destination->m_menu.get(), currentMenu);
+            }
         }
     }
     return false;
 }
 
-bool MenuActionsManager::unregisterAction(Command *command)
+bool MenuActionsManager::insertActionInMenu(Command *action, QMenu *destination, QMenu *currentSearchMenu)
 {
-    //TO DO remove from storage and delete empty menu
+    for (QAction *currentAction : currentSearchMenu->actions())
+    {
+        QMenu *currentMenu = currentAction->menu();
 
-    emit removeAction(command->m_action.get());
-    return true;
+        if (currentMenu)
+        {
+            if (destination == currentMenu)
+            {
+                currentMenu->addAction(action->getAction());
+                return true;
+            }
+            else
+            {
+                return insertActionInMenu(action, destination, currentMenu);
+                ;
+            }
+        }
+    }
+    return false;
+}
+
+bool MenuActionsManager::removeAction(Command *action)
+{
+    for (QAction *currentAction : m_menuBar->actions())
+    {
+        QMenu *currentMenu = currentAction->menu();
+
+        if (!currentMenu)
+        {
+            if (action->getAction() == currentAction)
+            {
+                m_menuBar->removeAction(currentAction);
+                return true;
+            }
+        }
+        else
+        {
+            return removeActionInMenu(action, currentMenu);
+        }
+    }
+
+    return false;
+}
+
+bool MenuActionsManager::removeActionInMenu(Command *action, QMenu *currentSearchMenu)
+{
+    for (QAction *currentAction : currentSearchMenu->actions())
+    {
+        QMenu *currentMenu = currentAction->menu();
+
+        if (!currentMenu)
+        {
+            if (currentAction == action->getAction())
+            {
+                currentSearchMenu->removeAction(currentAction);
+                m_mainWindow->repaint();
+                return true;
+            }
+        }
+        else
+        {
+            if (currentAction == action->getAction())
+            {
+                currentSearchMenu->removeAction(currentAction);
+            }
+
+            removeActionInMenu(action, currentMenu);
+        }
+    }
+
+    return false;
 }

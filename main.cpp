@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 
     auto subsubsubsubAction1 = m->registerAction("subsubsubsubAction1", subSubSubSubMenu0Ptr);
 
-    //bool action3Result = m->unregisterAction(actionPtr3);
+    bool action3Result = m->unregisterAction(actionPtr3);
 
     bool menuResult = m->unregisterMenu(subSubSubSubMenu1Ptr);
 
