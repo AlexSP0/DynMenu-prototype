@@ -1,15 +1,27 @@
 find_package(Qt5 REQUIRED COMPONENTS Core Widgets)
 
 set(SOURCES
-    menucontainer.h
-    menuactionsmanager.h
     command.h
+
+    iactionscontainer.h
+    baseactionscontainer.h
+    menuactionscontainer.h
+    contextmenuactionscontainer.h
+    toolbaractionscontainer.h
+
+    imenumanager.h
+    basemenumanager.h
 )
 
 set(HEADERS
-    menucontainer.cpp
-    menuactionsmanager.cpp
     command.cpp
+
+    baseactionscontainer.cpp
+    menuactionscontainer.cpp
+    contextmenuactionscontainer.cpp
+    toolbaractionscontainer.cpp
+
+    basemenumanager.cpp
 )
 
 ADD_LIBRARY(mcore STATIC ${HEADERS} ${SOURCES})

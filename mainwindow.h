@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 
-#include "../mcore/menuactionsmanager.h"
+//#include "../mcore/menuactionsmanager.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui
@@ -20,13 +20,10 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    MenuActionsManager *getMenuManager();
-
 private slots:
     void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
-    std::unique_ptr<MenuActionsManager> m_menuManager;
 };
 #endif // MAINWINDOW_H

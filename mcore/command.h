@@ -10,25 +10,31 @@
 class Command
 {
 public:
-    Command();
+    Command(QAction *action);
 
-    Command(std::shared_ptr<QAction> currentAction);
+    Command(QMenu *menu);
 
-    Command(std::shared_ptr<QMenu> currentAction);
+    QUuid getId();
 
     bool operator==(const Command &other);
 
     QAction *getAction();
 
+    QMenu *getMenu();
+
+    QString &getText();
+
+    void setText(QString &text);
+
     //TO DO hide all member and write getters
-public:
-    QUuid id;
+private:
+    QUuid m_id;
 
-    std::shared_ptr<QAction> m_action = nullptr;
+    QAction *m_action;
 
-    std::shared_ptr<QMenu> m_menu = nullptr;
+    QMenu *m_menu;
 
-    QString m_defaultText = "";
+    QString m_text = "";
 
     //TO DO add QKeySequence, QIcon and etc
 };
