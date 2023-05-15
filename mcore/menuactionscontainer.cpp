@@ -1,15 +1,15 @@
 #include "menuactionscontainer.h"
 
-MenuActionsContainer::MenuActionsContainer(QMenuBar *menuBar)
-    : BaseActionsContainer(menuBar)
+MenuActionsContainer::MenuActionsContainer(QString title)
+    : BaseActionsContainer(title)
 {}
 
-Command *MenuActionsContainer::addAction(QString actionName, QUuid group)
+Command *MenuActionsContainer::addAction(QAction *action, QUuid group)
 {
     return nullptr;
 }
 
-Command *MenuActionsContainer::addMenu(IActionsContainer *menu, QUuid group)
+IActionsContainer *MenuActionsContainer::addMenu(QString title, QUuid group)
 {
     return nullptr;
 }
@@ -19,6 +19,12 @@ Command *MenuActionsContainer::addSeparator(QUuid group)
     return nullptr;
 }
 
-void MenuActionsContainer::deleteMenu(Command *menu) {}
+bool MenuActionsContainer::deleteMenu(QUuid id)
+{
+    return false;
+}
 
-void MenuActionsContainer::deleteAction(Command *action) {}
+bool MenuActionsContainer::deleteAction(QUuid id)
+{
+    return false;
+}

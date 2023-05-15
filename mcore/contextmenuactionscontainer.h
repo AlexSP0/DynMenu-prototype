@@ -6,13 +6,13 @@
 class ContextMenuActionsContainer : public BaseActionsContainer
 {
 public:
-    ContextMenuActionsContainer(QMenuBar *menuBar);
+    ContextMenuActionsContainer(QString title);
 
-    virtual Command *addAction(QString actionName, QUuid group) override;
-    virtual Command *addMenu(IActionsContainer *menu, QUuid group) override;
+    virtual Command *addAction(QAction *action, QUuid group) override;
+    virtual IActionsContainer *addMenu(QString title, QUuid group) override;
     virtual Command *addSeparator(QUuid group) override;
-    virtual void deleteMenu(Command *menu) override;
-    virtual void deleteAction(Command *action) override;
+    virtual bool deleteMenu(QUuid id) override;
+    virtual bool deleteAction(QUuid id) override;
 };
 
 #endif // CONTEXTMENUACTIONSCONTAINER_H

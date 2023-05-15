@@ -1,15 +1,15 @@
 #include "toolbaractionscontainer.h"
 
-ToolBarActionsContainer::ToolBarActionsContainer(QMenuBar *menuBar)
-    : BaseActionsContainer(menuBar)
+ToolBarActionsContainer::ToolBarActionsContainer(QString title)
+    : BaseActionsContainer(title)
 {}
 
-Command *ToolBarActionsContainer::addAction(QString actionName, QUuid group)
+Command *ToolBarActionsContainer::addAction(QAction *action, QUuid group)
 {
     return nullptr;
 }
 
-Command *ToolBarActionsContainer::addMenu(IActionsContainer *menu, QUuid group)
+IActionsContainer *ToolBarActionsContainer::addMenu(QString title, QUuid group)
 {
     return nullptr;
 }
@@ -19,6 +19,12 @@ Command *ToolBarActionsContainer::addSeparator(QUuid group)
     return nullptr;
 }
 
-void ToolBarActionsContainer::deleteMenu(Command *menu) {}
+bool ToolBarActionsContainer::deleteMenu(QUuid id)
+{
+    return false;
+}
 
-void ToolBarActionsContainer::deleteAction(Command *action) {}
+bool ToolBarActionsContainer::deleteAction(QUuid id)
+{
+    return false;
+}

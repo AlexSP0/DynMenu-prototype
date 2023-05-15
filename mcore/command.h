@@ -3,16 +3,17 @@
 
 #include <QAction>
 #include <QMenu>
+#include <QObject>
 #include <QUuid>
 
 #include <memory>
 
-class Command
+class Command : public QObject
 {
 public:
+    Q_OBJECT
+public:
     Command(QAction *action);
-
-    Command(QMenu *menu);
 
     QUuid getId();
 
@@ -20,19 +21,15 @@ public:
 
     QAction *getAction();
 
-    QMenu *getMenu();
-
     QString &getText();
 
-    void setText(QString &text);
+    void setText(QString text);
 
     //TO DO hide all member and write getters
 private:
     QUuid m_id;
 
     QAction *m_action;
-
-    QMenu *m_menu;
 
     QString m_text = "";
 

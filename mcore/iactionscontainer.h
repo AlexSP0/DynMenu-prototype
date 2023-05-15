@@ -26,14 +26,15 @@ public:
 
     virtual void setDefaultBehavior() = 0;
 
-    virtual Command *addAction(QString actionName, QUuid group)    = 0;
-    virtual Command *addMenu(IActionsContainer *menu, QUuid group) = 0;
+    virtual Command *addAction(QAction *action, QUuid group)       = 0;
+    virtual IActionsContainer *addMenu(QString title, QUuid group) = 0;
     virtual Command *addSeparator(QUuid group)                     = 0;
 
-    virtual QMenuBar *getMenu() = 0;
+    virtual QMenu *getMenu() = 0;
+    virtual QUuid getId()    = 0;
 
-    virtual void deleteMenu(Command *menu)     = 0;
-    virtual void deleteAction(Command *action) = 0;
+    virtual bool deleteMenu(QUuid id)   = 0;
+    virtual bool deleteAction(QUuid id) = 0;
 };
 
 #endif // IACTIONSCONTAINER_H
