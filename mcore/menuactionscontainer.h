@@ -6,6 +6,7 @@
 #include <memory>
 
 #include "iactionscontainer.h"
+#include "ibasemenuactionscontainer.h"
 
 class MenuActionsContainer : public IActionsContainer
 {
@@ -13,27 +14,16 @@ public:
     MenuActionsContainer(QString title);
     virtual ~MenuActionsContainer();
 
-    OnAllDisabledBehavior getAllDisableBehavior();
-
-    virtual void setDefaultBehavior() override;
-
     virtual Command *addAction(QAction *action, QUuid group) override;
     virtual IActionsContainer *addMenu(QString title, QUuid group) override;
     virtual Command *addSeparator(QUuid group) override;
 
     virtual QUuid getId() override;
 
-    QMenu *getMenu();
+    QMenu *getMenu() override;
 
     virtual bool deleteMenu(QUuid id) override;
     virtual bool deleteAction(QUuid id) override;
-
-protected:
-    bool appendAction(std::shared_ptr<Command> command, QUuid group);
-    bool removeAction(QUuid id);
-
-    bool appendMenu(std::shared_ptr<IActionsContainer> menu, QUuid group);
-    bool removeMenu(QUuid id);
 
 private slots:
     void destroyCommand(QObject *command);
@@ -41,11 +31,10 @@ private slots:
 
 private:
     QUuid m_id;
-    std::unique_ptr<QMenu> m_menu;
-    std::map<QUuid, std::shared_ptr<Command>> m_actions;
-    std::map<QUuid, std::shared_ptr<IActionsContainer>> m_menus;
 
-    OnAllDisabledBehavior m_disableBehavior;
+    IBaseMenuActionsContainer *m_container;
+
+    std::unique_ptr<QMenu> m_menu;
 };
 
 #endif // BASEACTIONSCONTAINER_H

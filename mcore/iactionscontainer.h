@@ -13,18 +13,8 @@ public:
     Q_OBJECT
 
 public:
-    enum OnAllDisabledBehavior
-    {
-        Disable,
-        Hide,
-        Show
-    };
-
-public:
     IActionsContainer()          = default;
     virtual ~IActionsContainer() = default;
-
-    virtual void setDefaultBehavior() = 0;
 
     virtual Command *addAction(QAction *action, QUuid group)       = 0;
     virtual IActionsContainer *addMenu(QString title, QUuid group) = 0;

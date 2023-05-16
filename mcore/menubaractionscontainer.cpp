@@ -3,10 +3,16 @@
 
 MenuBarActionsContainer::MenuBarActionsContainer(QString title)
     : IActionsContainer()
+    , m_container(new BaseMenuActionsContainer())
     , m_id(QUuid::createUuid())
-    , m_menuBar(std::make_unique<QMenuBar>())
-    , m_disableBehavior(OnAllDisabledBehavior::Hide)
+    , m_menuBar(new QMenuBar())
 {}
+
+MenuBarActionsContainer::~MenuBarActionsContainer()
+{
+    delete m_container;
+    delete m_menuBar;
+}
 
 Command *MenuBarActionsContainer::addAction(QAction *action, QUuid group)
 {
@@ -19,10 +25,12 @@ Command *MenuBarActionsContainer::addAction(QAction *action, QUuid group)
 
     newCommand->setText(action->text());
 
-    if (!appendAction(newCommand, group))
+    if (!m_container->appendAction(newCommand, group))
     {
         return nullptr;
     }
+
+    connect(action, &QObject::destroyed, this, &MenuBarActionsContainer::destroyCommand);
 
     m_menuBar->addAction(newCommand->getAction());
 
@@ -38,12 +46,12 @@ IActionsContainer *MenuBarActionsContainer::addMenu(QString title, QUuid group)
 
     std::shared_ptr<IActionsContainer> newMenu = std::make_shared<MenuActionsContainer>(title);
 
-    if (!appendMenu(newMenu, group))
+    if (!m_container->appendMenu(newMenu, group))
     {
         return nullptr;
     }
 
-    //TO DO connect signal DESTROYED
+    connect(newMenu->getMenu(), &QObject::destroyed, this, &MenuBarActionsContainer::destroyMenu);
 
     m_menuBar->addMenu(newMenu->getMenu());
 
@@ -57,32 +65,34 @@ Command *MenuBarActionsContainer::addSeparator(QUuid group)
 
 bool MenuBarActionsContainer::deleteMenu(QUuid id)
 {
-    auto it = m_menus.find(id);
-
-    if (it != m_menus.end())
+    std::shared_ptr<IActionsContainer> menu = m_container->getMenuContainer(id);
+    if (!menu)
     {
-        m_menuBar->removeAction(it->second.get()->getMenu()->menuAction());
-
-        return removeMenu(id);
+        return false;
     }
 
-    return false;
+    m_menuBar->removeAction(menu->getMenu()->menuAction());
+
+    m_container->removeMenu(id);
+
+    return true;
 }
 
 bool MenuBarActionsContainer::deleteAction(QUuid id)
 {
-    auto it = m_actions.find(id);
-    if (it != m_actions.end())
-    {
-        m_menuBar->removeAction(it->second.get()->getAction());
+    std::shared_ptr<Command> command = m_container->getActionContainer(id);
 
-        return removeAction(id);
+    if (!command)
+    {
+        return false;
     }
 
-    return false;
-}
+    m_menuBar->removeAction(command->getAction());
 
-void MenuBarActionsContainer::setDefaultBehavior() {}
+    m_container->removeAction(id);
+
+    return true;
+}
 
 QMenu *MenuBarActionsContainer::getMenu()
 {
@@ -96,96 +106,32 @@ QUuid MenuBarActionsContainer::getId()
 
 QMenuBar *MenuBarActionsContainer::getMenuBar()
 {
-    return m_menuBar.get();
-}
-
-bool MenuBarActionsContainer::appendAction(std::shared_ptr<Command> command, QUuid group)
-{
-    Q_UNUSED(group)
-
-    if (!command)
-    {
-        return false;
-    }
-
-    connect(command->getAction(), &QObject::destroyed, this, &MenuBarActionsContainer::destroyCommand);
-
-    m_actions.insert(std::pair{command->getId(), command});
-
-    return true;
-}
-
-bool MenuBarActionsContainer::removeAction(QUuid id)
-{
-    auto it = m_actions.find(id);
-
-    if (it != m_actions.end())
-    {
-        m_actions.erase(it);
-
-        return true;
-    }
-
-    return false;
-}
-
-bool MenuBarActionsContainer::appendMenu(std::shared_ptr<IActionsContainer> menu, QUuid group)
-{
-    Q_UNUSED(group)
-
-    if (!menu)
-    {
-        return false;
-    }
-
-    connect(menu->getMenu(), &QObject::destroyed, this, &MenuBarActionsContainer::destroyMenu);
-
-    m_menus.insert(std::pair{menu->getId(), menu});
-
-    return true;
-}
-
-bool MenuBarActionsContainer::removeMenu(QUuid id)
-{
-    auto it = m_menus.find(id);
-
-    if (it != m_menus.end())
-    {
-        m_menus.erase(it);
-
-        return true;
-    }
-
-    return false;
+    return m_menuBar;
 }
 
 void MenuBarActionsContainer::destroyCommand(QObject *command)
 {
-    QAction *currentAction = static_cast<QAction *>(command);
+    auto commandContainer = m_container->getActionContainerByPtr(command);
 
-    for (auto &element : m_actions)
+    if (commandContainer)
     {
-        Command *currentCommand = element.second.get();
-
-        if (currentCommand->getAction() == currentAction)
-        {
-            removeAction(currentCommand->getId());
-            break;
-        }
+        m_menuBar->removeAction(commandContainer->getAction());
+        m_container->removeAction(commandContainer->getId());
     }
+
+    return;
 }
 
 void MenuBarActionsContainer::destroyMenu(QObject *menu)
 {
-    IActionsContainer *currentContainer = static_cast<IActionsContainer *>(menu);
+    auto menuContainer = m_container->getMenuContainerByPtr(menu);
 
-    for (auto &element : m_menus)
+    if (menuContainer)
     {
-        IActionsContainer *currentMenu = element.second.get();
+        m_menuBar->removeAction(menuContainer->getMenu()->menuAction());
 
-        if (currentMenu->getId() == currentContainer->getId())
-        {
-            removeMenu(currentMenu->getId());
-        }
+        m_container->removeMenu(menuContainer->getId());
     }
+
+    return;
 }

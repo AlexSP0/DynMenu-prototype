@@ -1,26 +1,25 @@
 #include "mainwindow.h"
 
-#include "mcore/baseactionscontainer.h"
+#include "mcore/menubaractionscontainer.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
     MainWindow w;
 
-    QMenuBar menuBar;
+    MenuBarActionsContainer menuBar("MenuBar");
 
-    BaseActionsContainer menu1("menu1");
+    auto subMenu1Ptr = menuBar.addMenu("SubMenu1", QUuid());
 
-    auto subMenu1Ptr = menu1.addMenu("subMenu1", QUuid());
+    auto sub1subMenu1 = subMenu1Ptr->addMenu("Sub1SubMenu1", QUuid());
 
     QAction subMenu1Action1("subMenu1Action1");
 
     subMenu1Ptr->addAction(&subMenu1Action1, QUuid());
 
-    menuBar.addMenu(menu1.getMenu());
-
-    w.setMenuBar(&menuBar);
+    w.setMenuBar(menuBar.getMenuBar());
 
     w.show();
 
