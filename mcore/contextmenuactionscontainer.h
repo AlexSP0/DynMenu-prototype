@@ -1,9 +1,9 @@
 #ifndef CONTEXTMENUACTIONSCONTAINER_H
 #define CONTEXTMENUACTIONSCONTAINER_H
 
-#include "baseactionscontainer.h"
+#include "iactionscontainer.h"
 
-class ContextMenuActionsContainer : public BaseActionsContainer
+class ContextMenuActionsContainer : public IActionsContainer
 {
 public:
     ContextMenuActionsContainer(QString title);

@@ -1,7 +1,7 @@
 #include "contextmenuactionscontainer.h"
 
 ContextMenuActionsContainer::ContextMenuActionsContainer(QString title)
-    : BaseActionsContainer(title)
+    : IActionsContainer()
 {}
 
 Command *ContextMenuActionsContainer::addAction(QAction *action, QUuid group)

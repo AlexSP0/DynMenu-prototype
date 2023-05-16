@@ -1,7 +1,7 @@
 #include "toolbaractionscontainer.h"
 
 ToolBarActionsContainer::ToolBarActionsContainer(QString title)
-    : BaseActionsContainer(title)
+    : MenuActionsContainer(title)
 {}
 
 Command *ToolBarActionsContainer::addAction(QAction *action, QUuid group)

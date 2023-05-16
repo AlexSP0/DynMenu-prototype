@@ -1,9 +1,9 @@
 #ifndef TOOLBARACTIONSCONTAINER_H
 #define TOOLBARACTIONSCONTAINER_H
 
-#include "baseactionscontainer.h"
+#include "menuactionscontainer.h"
 
-class ToolBarActionsContainer : public BaseActionsContainer
+class ToolBarActionsContainer : public MenuActionsContainer
 {
 public:
     ToolBarActionsContainer(QString title);

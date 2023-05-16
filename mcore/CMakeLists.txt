@@ -4,8 +4,8 @@ set(SOURCES
     command.h
 
     iactionscontainer.h
-    baseactionscontainer.h
     menuactionscontainer.h
+    menubaractionscontainer.h
     contextmenuactionscontainer.h
     toolbaractionscontainer.h
 
@@ -16,8 +16,8 @@ set(SOURCES
 set(HEADERS
     command.cpp
 
-    baseactionscontainer.cpp
     menuactionscontainer.cpp
+    menubaractionscontainer.cpp
     contextmenuactionscontainer.cpp
     toolbaractionscontainer.cpp
 
