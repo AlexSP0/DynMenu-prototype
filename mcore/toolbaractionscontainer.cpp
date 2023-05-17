@@ -1,15 +1,15 @@
 #include "toolbaractionscontainer.h"
 
-ToolBarActionsContainer::ToolBarActionsContainer(QString title)
-    : MenuActionsContainer(title)
+ToolBarActionsContainer::ToolBarActionsContainer(QMenu *menu)
+    : MenuActionsContainer(menu)
 {}
 
-Command *ToolBarActionsContainer::addAction(QAction *action, QUuid group)
+std::shared_ptr<Command> ToolBarActionsContainer::addAction(QAction *action, QUuid group)
 {
     return nullptr;
 }
 
-IActionsContainer *ToolBarActionsContainer::addMenu(QString title, QUuid group)
+std::shared_ptr<IActionsContainer> ToolBarActionsContainer::addMenu(QMenu *menu, QUuid group)
 {
     return nullptr;
 }

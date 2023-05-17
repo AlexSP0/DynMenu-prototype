@@ -4,12 +4,12 @@ ContextMenuActionsContainer::ContextMenuActionsContainer(QString title)
     : IActionsContainer()
 {}
 
-Command *ContextMenuActionsContainer::addAction(QAction *action, QUuid group)
+std::shared_ptr<Command> ContextMenuActionsContainer::addAction(QAction *action, QUuid group)
 {
     return nullptr;
 }
 
-IActionsContainer *ContextMenuActionsContainer::addMenu(QString title, QUuid group)
+std::shared_ptr<IActionsContainer> ContextMenuActionsContainer::addMenu(QMenu *menu, QUuid group)
 {
     return nullptr;
 }

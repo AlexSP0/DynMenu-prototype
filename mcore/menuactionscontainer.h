@@ -11,11 +11,11 @@
 class MenuActionsContainer : public IActionsContainer
 {
 public:
-    MenuActionsContainer(QString title);
+    MenuActionsContainer(QMenu *menu);
     virtual ~MenuActionsContainer();
 
-    virtual Command *addAction(QAction *action, QUuid group) override;
-    virtual IActionsContainer *addMenu(QString title, QUuid group) override;
+    virtual std::shared_ptr<Command> addAction(QAction *action, QUuid group) override;
+    virtual std::shared_ptr<IActionsContainer> addMenu(QMenu *menu, QUuid group) override;
     virtual Command *addSeparator(QUuid group) override;
 
     virtual QUuid getId() override;
@@ -34,7 +34,7 @@ private:
 
     IBaseMenuActionsContainer *m_container;
 
-    std::unique_ptr<QMenu> m_menu;
+    QMenu *m_menu;
 };
 
 #endif // BASEACTIONSCONTAINER_H

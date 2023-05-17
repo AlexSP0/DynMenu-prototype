@@ -3,13 +3,11 @@
 
 #include <QDebug>
 
-MenuActionsContainer::MenuActionsContainer(QString title)
+MenuActionsContainer::MenuActionsContainer(QMenu *menu)
     : m_id(QUuid::createUuid())
     , m_container(new BaseMenuActionsContainer())
-    , m_menu(std::make_unique<QMenu>())
-{
-    m_menu->setTitle(title);
-}
+    , m_menu(menu)
+{}
 
 MenuActionsContainer::~MenuActionsContainer()
 {
@@ -23,10 +21,10 @@ QUuid MenuActionsContainer::getId()
 
 QMenu *MenuActionsContainer::getMenu()
 {
-    return m_menu.get();
+    return m_menu;
 }
 
-Command *MenuActionsContainer::addAction(QAction *action, QUuid group)
+std::shared_ptr<Command> MenuActionsContainer::addAction(QAction *action, QUuid group)
 {
     if (!action)
     {
@@ -46,17 +44,17 @@ Command *MenuActionsContainer::addAction(QAction *action, QUuid group)
 
     m_menu->addAction(newCommand->getAction());
 
-    return newCommand.get();
+    return newCommand;
 }
 
-IActionsContainer *MenuActionsContainer::addMenu(QString title, QUuid group)
+std::shared_ptr<IActionsContainer> MenuActionsContainer::addMenu(QMenu *menu, QUuid group)
 {
-    if (title.isEmpty())
+    if (!menu)
     {
         return nullptr;
     }
 
-    std::shared_ptr<IActionsContainer> newMenu = std::make_shared<MenuActionsContainer>(title);
+    std::shared_ptr<IActionsContainer> newMenu = std::make_shared<MenuActionsContainer>(menu);
 
     if (!m_container->appendMenu(newMenu, group))
     {
@@ -67,7 +65,7 @@ IActionsContainer *MenuActionsContainer::addMenu(QString title, QUuid group)
 
     m_menu->addMenu(newMenu->getMenu());
 
-    return newMenu.get();
+    return newMenu;
 }
 
 Command *MenuActionsContainer::addSeparator(QUuid group)

@@ -16,9 +16,9 @@ public:
     IActionsContainer()          = default;
     virtual ~IActionsContainer() = default;
 
-    virtual Command *addAction(QAction *action, QUuid group)       = 0;
-    virtual IActionsContainer *addMenu(QString title, QUuid group) = 0;
-    virtual Command *addSeparator(QUuid group)                     = 0;
+    virtual std::shared_ptr<Command> addAction(QAction *action, QUuid group)     = 0;
+    virtual std::shared_ptr<IActionsContainer> addMenu(QMenu *menu, QUuid group) = 0;
+    virtual Command *addSeparator(QUuid group)                                   = 0;
 
     virtual QMenu *getMenu() = 0;
     virtual QUuid getId()    = 0;

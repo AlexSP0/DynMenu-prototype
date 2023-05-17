@@ -1,5 +1,7 @@
 #include "basemenuactionscontainer.h"
 
+#include <QDebug>
+
 BaseMenuActionsContainer::~BaseMenuActionsContainer() {}
 
 bool BaseMenuActionsContainer::appendAction(std::shared_ptr<Command> command, QUuid group)
@@ -50,7 +52,7 @@ bool BaseMenuActionsContainer::removeMenu(QUuid id)
 
     if (it != m_menus.end())
     {
-        //!!!!!!!m_menus.erase(it);
+        m_menus.erase(it);
 
         return true;
     }

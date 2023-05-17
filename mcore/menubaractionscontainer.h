@@ -4,14 +4,16 @@
 #include "basemenuactionscontainer.h"
 #include "iactionscontainer.h"
 
+#include <QMainWindow>
+
 class MenuBarActionsContainer : public IActionsContainer
 {
 public:
-    MenuBarActionsContainer(QString title);
+    MenuBarActionsContainer(QMainWindow *window);
     ~MenuBarActionsContainer();
 
-    virtual Command *addAction(QAction *action, QUuid group) override;
-    virtual IActionsContainer *addMenu(QString title, QUuid group) override;
+    virtual std::shared_ptr<Command> addAction(QAction *action, QUuid group) override;
+    virtual std::shared_ptr<IActionsContainer> addMenu(QMenu *menu, QUuid group) override;
     virtual Command *addSeparator(QUuid group) override;
     virtual bool deleteMenu(QUuid idu) override;
     virtual bool deleteAction(QUuid id) override;
@@ -32,6 +34,8 @@ private:
     IBaseMenuActionsContainer *m_container;
 
     QMenuBar *m_menuBar;
+
+    QWidget *m_window;
 };
 
 #endif // MENUACTIONSCONTAINER_H
