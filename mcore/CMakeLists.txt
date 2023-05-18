@@ -5,29 +5,29 @@ set(SOURCES
 
     basemenuactionscontainer.cpp
 
-    menuactionscontainer.cpp
-    menubaractionscontainer.cpp
-    contextmenuactionscontainer.cpp
-    toolbaractionscontainer.cpp
-
     basemenumanager.cpp
+
+    uielements/uicontainer.cpp
+    uielements/baseuielement.cpp
+    uielements/uiqmenuelement.cpp
+    uielements/uiqmenubarelement.cpp
 )
 
 set(HEADERS
     command.h
 
-    iactionscontainer.h
-
     ibasemenuactionscontainer.h
     basemenuactionscontainer.h
 
-    menuactionscontainer.h
-    menubaractionscontainer.h
-    contextmenuactionscontainer.h
-    toolbaractionscontainer.h
-
     imenumanager.h
     basemenumanager.h
+
+    uielements/iactionscontainer.h
+    uielements/iuielement.h
+    uielements/uicontainer.h
+    uielements/baseuielement.h
+    uielements/uiqmenuelement.h
+    uielements/uiqmenubarelement.h
 )
 
 ADD_LIBRARY(mcore STATIC ${HEADERS} ${SOURCES})

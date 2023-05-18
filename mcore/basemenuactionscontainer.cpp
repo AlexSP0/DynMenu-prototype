@@ -1,7 +1,8 @@
 #include "basemenuactionscontainer.h"
-#include "menuactionscontainer.h"
 
 #include <QDebug>
+
+#include <uielements/uicontainer.h>
 
 BaseMenuActionsContainer::~BaseMenuActionsContainer() {}
 
@@ -32,7 +33,7 @@ std::shared_ptr<IActionsContainer> BaseMenuActionsContainer::appendMenu(QMenu *m
         return nullptr;
     }
 
-    std::shared_ptr<IActionsContainer> newMenu = std::make_shared<MenuActionsContainer>(menu);
+    std::shared_ptr<IActionsContainer> newMenu = std::make_shared<UiContainer>(menu);
 
     m_menus[newMenu->getId()] = newMenu;
 

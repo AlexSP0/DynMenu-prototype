@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 
-#include "mcore/menubaractionscontainer.h"
+#include <mcore/uielements/uicontainer.h>
 #include <memory>
 #include <QApplication>
 
@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
     MainWindow w;
 
-    MenuBarActionsContainer menuBar(&w);
+    UiContainer menuBar(w.menuBar());
 
     QMenu subMenu1("Title1");
 
