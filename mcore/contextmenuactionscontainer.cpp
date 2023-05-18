@@ -4,14 +4,14 @@ ContextMenuActionsContainer::ContextMenuActionsContainer(QString title)
     : IActionsContainer()
 {}
 
-std::shared_ptr<Command> ContextMenuActionsContainer::addAction(QAction *action, QUuid group)
+std::weak_ptr<Command> ContextMenuActionsContainer::addAction(QAction *action, QUuid group)
 {
-    return nullptr;
+    return std::weak_ptr<Command>();
 }
 
-std::shared_ptr<IActionsContainer> ContextMenuActionsContainer::addMenu(QMenu *menu, QUuid group)
+std::weak_ptr<IActionsContainer> ContextMenuActionsContainer::addMenu(QMenu *menu, QUuid group)
 {
-    return nullptr;
+    return std::weak_ptr<IActionsContainer>();
 }
 
 Command *ContextMenuActionsContainer::addSeparator(QUuid group)

@@ -4,14 +4,14 @@ ToolBarActionsContainer::ToolBarActionsContainer(QMenu *menu)
     : MenuActionsContainer(menu)
 {}
 
-std::shared_ptr<Command> ToolBarActionsContainer::addAction(QAction *action, QUuid group)
+std::weak_ptr<Command> ToolBarActionsContainer::addAction(QAction *action, QUuid group)
 {
-    return nullptr;
+    return std::weak_ptr<Command>();
 }
 
-std::shared_ptr<IActionsContainer> ToolBarActionsContainer::addMenu(QMenu *menu, QUuid group)
+std::weak_ptr<IActionsContainer> ToolBarActionsContainer::addMenu(QMenu *menu, QUuid group)
 {
-    return nullptr;
+    return std::weak_ptr<IActionsContainer>();
 }
 
 Command *ToolBarActionsContainer::addSeparator(QUuid group)

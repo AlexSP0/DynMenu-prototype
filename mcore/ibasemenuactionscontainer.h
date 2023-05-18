@@ -14,9 +14,9 @@ public:
     using MenusMap    = std::map<QUuid, std::shared_ptr<IActionsContainer>>;
 
 public:
-    virtual ~IBaseMenuActionsContainer()                                          = default;
-    virtual bool appendAction(std::shared_ptr<Command> command, QUuid group)      = 0;
-    virtual bool appendMenu(std::shared_ptr<IActionsContainer> menu, QUuid group) = 0;
+    virtual ~IBaseMenuActionsContainer()                                            = default;
+    virtual std::shared_ptr<Command> appendAction(QAction *action, QUuid group)     = 0;
+    virtual std::shared_ptr<IActionsContainer> appendMenu(QMenu *menu, QUuid group) = 0;
 
     virtual bool removeAction(QUuid id) = 0;
     virtual bool removeMenu(QUuid id)   = 0;

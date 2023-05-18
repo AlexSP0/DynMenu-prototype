@@ -13,8 +13,8 @@ public:
     virtual ~BaseMenuActionsContainer();
 
 public:
-    bool appendAction(std::shared_ptr<Command> command, QUuid group) override;
-    bool appendMenu(std::shared_ptr<IActionsContainer> menu, QUuid group) override;
+    std::shared_ptr<Command> appendAction(QAction *action, QUuid group) override;
+    std::shared_ptr<IActionsContainer> appendMenu(QMenu *menu, QUuid group) override;
     bool removeAction(QUuid id) override;
     bool removeMenu(QUuid id) override;
 

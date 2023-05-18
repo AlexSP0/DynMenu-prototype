@@ -24,20 +24,13 @@ QMenu *MenuActionsContainer::getMenu()
     return m_menu;
 }
 
-std::shared_ptr<Command> MenuActionsContainer::addAction(QAction *action, QUuid group)
+std::weak_ptr<Command> MenuActionsContainer::addAction(QAction *action, QUuid group)
 {
-    if (!action)
+    std::shared_ptr<Command> newCommand = m_container->appendAction(action, group);
+
+    if (!newCommand)
     {
-        return nullptr;
-    }
-
-    std::shared_ptr<Command> newCommand = std::make_shared<Command>(action);
-
-    newCommand->setText(action->text());
-
-    if (!m_container->appendAction(newCommand, group))
-    {
-        return nullptr;
+        return std::weak_ptr<Command>();
     }
 
     connect(action, &QObject::destroyed, this, &MenuActionsContainer::destroyCommand);
@@ -47,18 +40,13 @@ std::shared_ptr<Command> MenuActionsContainer::addAction(QAction *action, QUuid 
     return newCommand;
 }
 
-std::shared_ptr<IActionsContainer> MenuActionsContainer::addMenu(QMenu *menu, QUuid group)
+std::weak_ptr<IActionsContainer> MenuActionsContainer::addMenu(QMenu *menu, QUuid group)
 {
-    if (!menu)
-    {
-        return nullptr;
-    }
+    std::shared_ptr<IActionsContainer> newMenu = m_container->appendMenu(menu, group);
 
-    std::shared_ptr<IActionsContainer> newMenu = std::make_shared<MenuActionsContainer>(menu);
-
-    if (!m_container->appendMenu(newMenu, group))
+    if (!newMenu)
     {
-        return nullptr;
+        return std::weak_ptr<IActionsContainer>();
     }
 
     connect(newMenu->getMenu(), &QObject::destroyed, this, &MenuActionsContainer::destroyMenu);

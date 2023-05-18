@@ -1,35 +1,42 @@
 #include "basemenuactionscontainer.h"
+#include "menuactionscontainer.h"
 
 #include <QDebug>
 
 BaseMenuActionsContainer::~BaseMenuActionsContainer() {}
 
-bool BaseMenuActionsContainer::appendAction(std::shared_ptr<Command> command, QUuid group)
+std::shared_ptr<Command> BaseMenuActionsContainer::appendAction(QAction *action, QUuid group)
 {
     Q_UNUSED(group)
 
-    if (!command)
+    if (!action)
     {
-        return false;
+        return nullptr;
     }
 
-    m_actions.insert(std::pair{command->getId(), command});
+    std::shared_ptr<Command> newCommand = std::make_shared<Command>(action);
 
-    return true;
+    newCommand->setText(action->text());
+
+    m_actions[newCommand->getId()] = newCommand;
+
+    return newCommand;
 }
 
-bool BaseMenuActionsContainer::appendMenu(std::shared_ptr<IActionsContainer> menu, QUuid group)
+std::shared_ptr<IActionsContainer> BaseMenuActionsContainer::appendMenu(QMenu *menu, QUuid group)
 {
     Q_UNUSED(group)
 
     if (!menu)
     {
-        return false;
+        return nullptr;
     }
 
-    m_menus[menu->getId()] = menu;
+    std::shared_ptr<IActionsContainer> newMenu = std::make_shared<MenuActionsContainer>(menu);
 
-    return true;
+    m_menus[newMenu->getId()] = newMenu;
+
+    return newMenu;
 }
 
 bool BaseMenuActionsContainer::removeAction(QUuid id)

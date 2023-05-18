@@ -14,8 +14,8 @@ public:
     MenuActionsContainer(QMenu *menu);
     virtual ~MenuActionsContainer();
 
-    virtual std::shared_ptr<Command> addAction(QAction *action, QUuid group) override;
-    virtual std::shared_ptr<IActionsContainer> addMenu(QMenu *menu, QUuid group) override;
+    virtual std::weak_ptr<Command> addAction(QAction *action, QUuid group) override;
+    virtual std::weak_ptr<IActionsContainer> addMenu(QMenu *menu, QUuid group) override;
     virtual Command *addSeparator(QUuid group) override;
 
     virtual QUuid getId() override;
@@ -26,8 +26,8 @@ public:
     virtual bool deleteAction(QUuid id) override;
 
 private slots:
-    void destroyCommand(QObject *command);
-    void destroyMenu(QObject *command);
+    virtual void destroyCommand(QObject *command) override;
+    virtual void destroyMenu(QObject *command) override;
 
 private:
     QUuid m_id;
