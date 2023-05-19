@@ -21,7 +21,11 @@ UiContainer::UiContainer(QMenu *menu)
     m_element = new UiQMenuElement(menu);
 }
 
-UiContainer::~UiContainer() {}
+UiContainer::~UiContainer()
+{
+    delete m_element;
+    delete m_container;
+}
 
 std::weak_ptr<Command> UiContainer::addAction(QAction *action, QUuid group)
 {
