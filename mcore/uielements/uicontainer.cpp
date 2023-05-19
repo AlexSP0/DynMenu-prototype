@@ -7,6 +7,8 @@
 #include "uielements/uiqmenubarelement.h"
 #include "uielements/uiqmenuelement.h"
 
+UiContainer::UiContainer() {}
+
 UiContainer::UiContainer(QMenuBar *menuBar)
     : m_id(QUuid::createUuid())
     , m_container(new BaseMenuActionsContainer())

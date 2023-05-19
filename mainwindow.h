@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include <mcore/imenumanageablewindow.h>
+
 //#include "../mcore/menuactionsmanager.h"
 
 QT_BEGIN_NAMESPACE
@@ -12,13 +14,15 @@ class MainWindow;
 }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
+class MainWindow : public QMainWindow, public IMenuManageableWindow
 {
     Q_OBJECT
 
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+    virtual QMenuBar *getMenuBar();
 
 private slots:
     void on_pushButton_clicked();
