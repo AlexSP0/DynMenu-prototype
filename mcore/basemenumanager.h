@@ -13,7 +13,7 @@ public:
 
     virtual std::weak_ptr<IActionsContainer> addMenu(QMenu *menu, IActionsContainer *container) override;
     virtual bool deleteMenu(IActionsContainer *container) override;
-    virtual std::weak_ptr<IActionsContainer> addAction(QAction *action, IActionsContainer *container) override;
+    virtual std::weak_ptr<Command> addAction(QAction *action, IActionsContainer *container) override;
     virtual bool deleteAction(QAction *action, IActionsContainer *container) override;
 
     virtual std::weak_ptr<IActionsContainer> registerMenuBar(QMenuBar *menuBar) override;
