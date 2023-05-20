@@ -44,7 +44,18 @@ std::weak_ptr<IActionsContainer> BaseMenuManager::registerMenuBar(QMenuBar *menu
 
 std::weak_ptr<IActionsContainer> BaseMenuManager::registerMenu(QMenu *menu)
 {
-    return std::weak_ptr<IActionsContainer>();
+    if (!menu)
+    {
+        return std::weak_ptr<IActionsContainer>();
+    }
+
+    std::shared_ptr<IActionsContainer> newMenu = std::make_unique<UiContainer>(menu);
+
+    connect(menu, &QObject::destroyed, this, &BaseMenuManager::menuDestroyed);
+
+    m_menus[newMenu->getId()] = newMenu;
+
+    return newMenu;
 }
 
 std::weak_ptr<IActionsContainer> BaseMenuManager::registerToolBar(QToolBar toolbar)
@@ -68,6 +79,15 @@ bool BaseMenuManager::unRegisterMenuBar(IActionsContainer *menuBar)
 
 bool BaseMenuManager::unRegisterMenu(IActionsContainer *menu)
 {
+    auto it = m_menus.find(menu->getId());
+
+    if (it != m_menus.end())
+    {
+        m_menus.erase(it);
+
+        return true;
+    }
+
     return false;
 }
 
@@ -97,9 +117,31 @@ void BaseMenuManager::menuBarDestroyed(QObject *menuBar)
         }
     }
 
-    qWarning() << "Can't find QMenuBar for delete!";
+    qWarning() << "Can't find QMenuBar for deletion!";
 }
 
-void BaseMenuManager::menuDestroyed(QObject *menu) {}
+void BaseMenuManager::menuDestroyed(QObject *menu)
+{
+    QMenu *deletedMenu = static_cast<QMenu *>(menu);
+
+    if (!deletedMenu)
+    {
+        return;
+    }
+
+    for (auto currentElement : m_menus)
+    {
+        auto currentUuid              = currentElement.first;
+        auto currentIActionsContainer = currentElement.second;
+
+        if (currentIActionsContainer->getMenu() == deletedMenu)
+        {
+            m_menus.erase(it);
+            return;
+        }
+    }
+
+    qWarning() << "Can't find QMenu for deletion!";
+}
 
 void BaseMenuManager::toolBarDestroyed(QObject *toolBar) {}
