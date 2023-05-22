@@ -5,7 +5,7 @@
 #include <vector>
 
 #include "command.h"
-#include "iactionscontainer.h"
+#include "uielements/iactionscontainer.h"
 
 class IBaseMenuActionsContainer
 {
@@ -22,8 +22,7 @@ public:
     virtual bool removeMenu(QUuid id)   = 0;
 
     virtual CommandsMap &getActions() = 0;
-
-    virtual MenusMap &getMenus() = 0;
+    virtual MenusMap &getMenus()      = 0;
 
     virtual std::shared_ptr<Command> getActionContainer(QUuid id)         = 0;
     virtual std::shared_ptr<IActionsContainer> getMenuContainer(QUuid id) = 0;

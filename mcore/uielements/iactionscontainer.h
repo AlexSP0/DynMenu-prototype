@@ -1,7 +1,7 @@
 #ifndef IACTIONSCONTAINER_H
 #define IACTIONSCONTAINER_H
 
-#include "command.h"
+#include "../command.h"
 
 #include <QString>
 #include <QUuid>
@@ -20,9 +20,13 @@ public:
     virtual std::weak_ptr<IActionsContainer> addMenu(QMenu *menu, QUuid group) = 0;
     virtual Command *addSeparator(QUuid group)                                 = 0;
 
-    virtual QMenu *getMenu()       = 0;
-    virtual QMenuBar *getMenuBar() = 0;
-    virtual QUuid getId()          = 0;
+    virtual QMenu *getMenu()                                       = 0;
+    virtual QMenuBar *getMenuBar()                                 = 0;
+    virtual QUuid getId()                                          = 0;
+    virtual std::weak_ptr<Command> getActionById(QUuid id)         = 0;
+    virtual std::weak_ptr<IActionsContainer> getMenuById(QUuid id) = 0;
+
+    virtual void setId(QUuid id) = 0;
 
     virtual bool deleteMenu(QUuid id)   = 0;
     virtual bool deleteAction(QUuid id) = 0;

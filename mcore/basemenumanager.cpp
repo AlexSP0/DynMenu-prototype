@@ -23,6 +23,23 @@ bool BaseMenuManager::deleteMenu(IActionsContainer *menu, IActionsContainer *con
     return m_containersMap[container->getId()]->deleteMenu(menu->getId());
 }
 
+std::weak_ptr<IActionsContainer> BaseMenuManager::getMenu(QUuid id)
+{
+    for (auto currentContainer : m_containersMap)
+    {
+        std::weak_ptr<IActionsContainer> result = currentContainer.second;
+        if (auto tmp = result.lock())
+        {
+            if (tmp->getId() == id)
+            {
+                return result;
+            }
+        }
+    }
+
+    return std::weak_ptr<IActionsContainer>();
+}
+
 std::weak_ptr<Command> BaseMenuManager::addAction(QAction *action, IActionsContainer *container)
 {
     auto it = m_containersMap.find(container->getId());
@@ -38,6 +55,23 @@ std::weak_ptr<Command> BaseMenuManager::addAction(QAction *action, IActionsConta
 bool BaseMenuManager::deleteAction(IActionsContainer *action, IActionsContainer *container)
 {
     return m_containersMap[container->getId()]->deleteAction(action->getId());
+}
+
+std::weak_ptr<Command> BaseMenuManager::getAction(QUuid id, IActionsContainer *container)
+{
+    for (auto currentContainer : m_containersMap)
+    {
+        std::weak_ptr<IActionsContainer> result = currentContainer.second;
+        if (auto tmp = result.lock())
+        {
+            if (tmp->getId() == container->getId())
+            {
+                return tmp->getActionById(id);
+            }
+        }
+    }
+
+    return std::weak_ptr<Command>();
 }
 
 std::weak_ptr<IActionsContainer> BaseMenuManager::registerMenuBar(QMenuBar *menuBar)
@@ -99,6 +133,35 @@ bool BaseMenuManager::unRegisterMenu(IActionsContainer *menu)
 bool BaseMenuManager::unRegisterToolBar(IActionsContainer *toolbar)
 {
     return false;
+}
+
+std::weak_ptr<IActionsContainer> BaseMenuManager::getMenuById(QUuid id)
+{
+    auto it = m_containersMap.find(id);
+
+    if (it != m_containersMap.end())
+    {
+        return it->second;
+    }
+
+    return std::weak_ptr<IActionsContainer>();
+}
+
+std::weak_ptr<Command> BaseMenuManager::getActionById(QUuid id, IActionsContainer *containerId)
+{
+    if (!containerId)
+    {
+        return std::weak_ptr<Command>();
+    }
+
+    auto it = m_containersMap.find(containerId->getId());
+
+    if (it != m_containersMap.end())
+    {
+        return it->second->getActionById(id);
+    }
+
+    return std::weak_ptr<Command>();
 }
 
 void BaseMenuManager::menuBarDestroyed(QObject *menuBar)

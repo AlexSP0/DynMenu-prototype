@@ -1,8 +1,8 @@
 #ifndef UICONTAINER_H
 #define UICONTAINER_H
 
-#include "../iactionscontainer.h"
 #include "../ibasemenuactionscontainer.h"
+#include "iactionscontainer.h"
 
 #include "iuielement.h"
 
@@ -24,8 +24,11 @@ public:
 
     virtual QMenu *getMenu() override;
     virtual QMenuBar *getMenuBar() override;
+    virtual std::weak_ptr<Command> getActionById(QUuid id) override;
+    std::weak_ptr<IActionsContainer> getMenuById(QUuid id) override;
 
     virtual QUuid getId();
+    void setId(QUuid id);
 
     virtual bool deleteMenu(QUuid id);
     virtual bool deleteAction(QUuid id);

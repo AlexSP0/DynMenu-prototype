@@ -1,8 +1,8 @@
 #ifndef IMENUMANAGER_H
 #define IMENUMANAGER_H
 
-#include "iactionscontainer.h"
 #include "imenumanageablewindow.h"
+#include "uielements/iactionscontainer.h"
 
 #include <QString>
 #include <QToolBar>
@@ -20,9 +20,11 @@ public:
 
     virtual std::weak_ptr<IActionsContainer> addMenu(QMenu *menu, IActionsContainer *container) = 0;
     virtual bool deleteMenu(IActionsContainer *menu, IActionsContainer *container)              = 0;
+    virtual std::weak_ptr<IActionsContainer> getMenu(QUuid id)                                  = 0;
 
     virtual std::weak_ptr<Command> addAction(QAction *action, IActionsContainer *container) = 0;
     virtual bool deleteAction(IActionsContainer *action, IActionsContainer *container)      = 0;
+    virtual std::weak_ptr<Command> getAction(QUuid id, IActionsContainer *container)        = 0;
 
     virtual std::weak_ptr<IActionsContainer> registerMenuBar(QMenuBar *menuBar) = 0;
     virtual std::weak_ptr<IActionsContainer> registerMenu(QMenu *menu)          = 0;

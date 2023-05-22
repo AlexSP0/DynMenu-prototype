@@ -103,6 +103,11 @@ QUuid UiContainer::getId()
     return m_id;
 }
 
+void UiContainer::setId(QUuid id)
+{
+    m_id = id;
+}
+
 QMenu *UiContainer::getMenu()
 {
     return m_element->getMenu();
@@ -111,6 +116,16 @@ QMenu *UiContainer::getMenu()
 QMenuBar *UiContainer::getMenuBar()
 {
     return m_element->getMenuBar();
+}
+
+std::weak_ptr<Command> UiContainer::getActionById(QUuid id)
+{
+    return m_container->getActionContainer(id);
+}
+
+std::weak_ptr<IActionsContainer> UiContainer::getMenuById(QUuid id)
+{
+    return m_container->getMenuContainer(id);
 }
 
 void UiContainer::destroyCommand(QObject *command)
