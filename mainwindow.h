@@ -4,6 +4,7 @@
 #include <QMainWindow>
 
 #include <mcore/imenumanageablewindow.h>
+#include <mcore/imenumanager.h>
 
 //#include "../mcore/menuactionsmanager.h"
 
@@ -19,15 +20,21 @@ class MainWindow : public QMainWindow, public IMenuManageableWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(IMenuManager *menuManager, QWidget *parent = nullptr);
     ~MainWindow();
 
     virtual QMenuBar *getMenuBar();
 
+    void setMenuId(QUuid id);
+
 private slots:
     void on_pushButton_clicked();
 
+    void onCustomContextMenuRequested(QPoint);
+
 private:
     Ui::MainWindow *ui;
+
+    IMenuManager *m_menuManager;
 };
 #endif // MAINWINDOW_H
