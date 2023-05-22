@@ -12,9 +12,10 @@ public:
     virtual ~BaseMenuManager();
 
     virtual std::weak_ptr<IActionsContainer> addMenu(QMenu *menu, IActionsContainer *container) override;
-    virtual bool deleteMenu(IActionsContainer *container) override;
+    bool deleteMenu(IActionsContainer *menu, IActionsContainer *container) override;
+
     virtual std::weak_ptr<Command> addAction(QAction *action, IActionsContainer *container) override;
-    virtual bool deleteAction(QAction *action, IActionsContainer *container) override;
+    virtual bool deleteAction(IActionsContainer *action, IActionsContainer *container) override;
 
     virtual std::weak_ptr<IActionsContainer> registerMenuBar(QMenuBar *menuBar) override;
     virtual std::weak_ptr<IActionsContainer> registerMenu(QMenu *menu) override;
@@ -30,9 +31,7 @@ public slots:
     virtual void toolBarDestroyed(QObject *toolBar) override;
 
 private:
-    std::map<QUuid, std::shared_ptr<IActionsContainer>> m_menuBars;
-    std::map<QUuid, std::shared_ptr<IActionsContainer>> m_menus;
-    std::map<QUuid, std::shared_ptr<IActionsContainer>> m_contecMenus;
+    ContainerMap m_containersMap;
 };
 
 #endif // BASEMENUMANAGER_H

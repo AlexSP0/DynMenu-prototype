@@ -1,20 +1,24 @@
 #include "mainwindow.h"
 
+#include <mcore/basemenumanager.h>
+#include <mcore/imenumanager.h>
 #include <mcore/uielements/uicontainer.h>
 #include <memory>
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
-    using WPMenu = std::weak_ptr<IActionsContainer>;
+    using WPContainer = std::weak_ptr<IActionsContainer>;
 
-    using WPCommand = std::weak_ptr<Command>;
+    using WPCommandContainer = std::weak_ptr<Command>;
 
     QApplication a(argc, argv);
 
+    std::shared_ptr<IMenuManager> menuManager = std::make_shared<BaseMenuManager>();
+
     MainWindow w;
 
-    UiContainer menuBar(w.menuBar());
+    auto menuBarContainerWP = menuManager->registerMenuBar(w.menuBar());
 
     QMenu subMenu1("Title1");
 
@@ -24,24 +28,6 @@ int main(int argc, char *argv[])
 
     QMenu subMenu4("Title4");
 
-    auto subMenu1Ptr = menuBar.addMenu(&subMenu1, QUuid());
-
-    auto subMenu2Ptr = menuBar.addMenu(&subMenu2, QUuid());
-
-    WPMenu subMenu3Ptr;
-
-    if (auto tmpPtr = subMenu1Ptr.lock())
-    {
-        subMenu3Ptr = tmpPtr->addMenu(&subMenu3, QUuid());
-    }
-
-    WPMenu subMenu4Ptr;
-
-    if (auto tmpPtr = subMenu2Ptr.lock())
-    {
-        subMenu4Ptr = tmpPtr->addMenu(&subMenu4, QUuid());
-    }
-
     QAction subAction1("subAction1");
 
     QAction subAction2("subAction2");
@@ -50,27 +36,60 @@ int main(int argc, char *argv[])
 
     QAction subAction4("subAction4");
 
-    auto subAction1Ptr = menuBar.addAction(&subAction1, QUuid());
+    WPCommandContainer subActionWPContainer;
 
-    WPCommand subAction2Ptr;
-
-    if (auto tmpPtr = subMenu2Ptr.lock())
+    if (auto tmp = menuBarContainerWP.lock())
     {
-        subAction2Ptr = tmpPtr->addAction(&subAction2, QUuid());
+        subActionWPContainer = tmp->addAction(&subAction1, QUuid());
     }
 
-    WPCommand subAction3Ptr;
+    WPContainer title1Container;
 
-    if (auto tmpPtr = subMenu2Ptr.lock())
+    if (auto tmp = menuBarContainerWP.lock())
     {
-        subAction3Ptr = tmpPtr->addAction(&subAction3, QUuid());
+        title1Container = tmp->addMenu(&subMenu1, QUuid());
     }
 
-    WPCommand subAction4Ptr;
+    WPContainer title2Container;
 
-    if (auto tmpPtr = subMenu4Ptr.lock())
+    if (auto tmp = menuBarContainerWP.lock())
     {
-        subAction4Ptr = tmpPtr->addAction(&subAction4, QUuid());
+        title2Container = tmp->addMenu(&subMenu2, QUuid());
+    }
+
+    WPContainer title3Container;
+
+    if (auto tmp = title1Container.lock())
+    {
+        title3Container = tmp->addMenu(&subMenu3, QUuid());
+    }
+
+    WPContainer title4Container;
+
+    if (auto tmp = title3Container.lock())
+    {
+        title4Container = tmp->addMenu(&subMenu4, QUuid());
+    }
+
+    WPCommandContainer subAction2WPContainer;
+
+    if (auto tmp = title1Container.lock())
+    {
+        tmp->addAction(&subAction2, QUuid());
+    }
+
+    WPCommandContainer subAction3WPContainer;
+
+    if (auto tmp = title4Container.lock())
+    {
+        tmp->addAction(&subAction3, QUuid());
+    }
+
+    WPCommandContainer subAction4WPContainer;
+
+    if (auto tmp = title4Container.lock())
+    {
+        tmp->addAction(&subAction4, QUuid());
     }
 
     w.show();

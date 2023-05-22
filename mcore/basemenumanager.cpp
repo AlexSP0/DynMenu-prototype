@@ -8,22 +8,36 @@ BaseMenuManager::~BaseMenuManager() {}
 
 std::weak_ptr<IActionsContainer> BaseMenuManager::addMenu(QMenu *menu, IActionsContainer *container)
 {
-    return std::weak_ptr<IActionsContainer>();
+    auto it = m_containersMap.find(container->getId());
+
+    if (it == m_containersMap.end())
+    {
+        return std::weak_ptr<IActionsContainer>();
+    }
+
+    return it->second->addMenu(menu, QUuid());
 }
 
-bool BaseMenuManager::deleteMenu(IActionsContainer *container)
+bool BaseMenuManager::deleteMenu(IActionsContainer *menu, IActionsContainer *container)
 {
-    return false;
+    return m_containersMap[container->getId()]->deleteMenu(menu->getId());
 }
 
 std::weak_ptr<Command> BaseMenuManager::addAction(QAction *action, IActionsContainer *container)
 {
-    return std::weak_ptr<Command>();
+    auto it = m_containersMap.find(container->getId());
+
+    if (it == m_containersMap.end())
+    {
+        return std::weak_ptr<Command>();
+    }
+
+    return it->second->addAction(action, QUuid());
 }
 
-bool BaseMenuManager::deleteAction(QAction *action, IActionsContainer *container)
+bool BaseMenuManager::deleteAction(IActionsContainer *action, IActionsContainer *container)
 {
-    return false;
+    return m_containersMap[container->getId()]->deleteAction(action->getId());
 }
 
 std::weak_ptr<IActionsContainer> BaseMenuManager::registerMenuBar(QMenuBar *menuBar)
@@ -37,7 +51,7 @@ std::weak_ptr<IActionsContainer> BaseMenuManager::registerMenuBar(QMenuBar *menu
 
     connect(menuBar, &QObject::destroyed, this, &BaseMenuManager::menuBarDestroyed);
 
-    m_menuBars[newMenuBar->getId()] = newMenuBar;
+    m_containersMap[newMenuBar->getId()] = newMenuBar;
 
     return newMenuBar;
 }
@@ -53,7 +67,7 @@ std::weak_ptr<IActionsContainer> BaseMenuManager::registerMenu(QMenu *menu)
 
     connect(menu, &QObject::destroyed, this, &BaseMenuManager::menuDestroyed);
 
-    m_menus[newMenu->getId()] = newMenu;
+    m_containersMap[newMenu->getId()] = newMenu;
 
     return newMenu;
 }
@@ -65,25 +79,16 @@ std::weak_ptr<IActionsContainer> BaseMenuManager::registerToolBar(QToolBar toolb
 
 bool BaseMenuManager::unRegisterMenuBar(IActionsContainer *menuBar)
 {
-    auto it = m_menuBars.find(menuBar->getId());
-
-    if (it != m_menuBars.end())
-    {
-        m_menuBars.erase(it);
-
-        return true;
-    }
-
-    return false;
+    return unRegisterMenu(menuBar);
 }
 
 bool BaseMenuManager::unRegisterMenu(IActionsContainer *menu)
 {
-    auto it = m_menus.find(menu->getId());
+    auto it = m_containersMap.find(menu->getId());
 
-    if (it != m_menus.end())
+    if (it != m_containersMap.end())
     {
-        m_menus.erase(it);
+        m_containersMap.erase(it);
 
         return true;
     }
@@ -105,14 +110,14 @@ void BaseMenuManager::menuBarDestroyed(QObject *menuBar)
         return;
     }
 
-    for (auto currentElement : m_menuBars)
+    for (auto currentElement : m_containersMap)
     {
         auto currentUuid              = currentElement.first;
         auto currentIActionsContainer = currentElement.second;
 
         if (currentIActionsContainer->getMenuBar() == deletedMenuBar)
         {
-            m_menuBars.erase(currentUuid);
+            m_containersMap.erase(currentUuid);
             return;
         }
     }
@@ -129,14 +134,14 @@ void BaseMenuManager::menuDestroyed(QObject *menu)
         return;
     }
 
-    for (auto currentElement : m_menus)
+    for (auto currentElement : m_containersMap)
     {
         auto currentUuid              = currentElement.first;
         auto currentIActionsContainer = currentElement.second;
 
         if (currentIActionsContainer->getMenu() == deletedMenu)
         {
-            m_menus.erase(it);
+            m_containersMap.erase(currentUuid);
             return;
         }
     }

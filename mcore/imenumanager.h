@@ -8,23 +8,21 @@
 #include <QToolBar>
 #include <QUuid>
 
-#include <uielements/uicontainer.h>
-
-class WindowContext;
-
 class IMenuManager : public QObject
 {
 public:
     Q_OBJECT
-
 public:
+    using ContainerMap = std::map<QUuid, std::shared_ptr<IActionsContainer>>;
+
     IMenuManager()          = default;
     virtual ~IMenuManager() = default;
 
     virtual std::weak_ptr<IActionsContainer> addMenu(QMenu *menu, IActionsContainer *container) = 0;
-    virtual bool deleteMenu(IActionsContainer *container)                                       = 0;
-    virtual std::weak_ptr<Command> addAction(QAction *action, IActionsContainer *container)     = 0;
-    virtual bool deleteAction(QAction *action, IActionsContainer *container)                    = 0;
+    virtual bool deleteMenu(IActionsContainer *menu, IActionsContainer *container)              = 0;
+
+    virtual std::weak_ptr<Command> addAction(QAction *action, IActionsContainer *container) = 0;
+    virtual bool deleteAction(IActionsContainer *action, IActionsContainer *container)      = 0;
 
     virtual std::weak_ptr<IActionsContainer> registerMenuBar(QMenuBar *menuBar) = 0;
     virtual std::weak_ptr<IActionsContainer> registerMenu(QMenu *menu)          = 0;
