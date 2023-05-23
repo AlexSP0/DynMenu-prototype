@@ -69,12 +69,14 @@ public:
 
     /*!
     Returns a QAction container with the specified ID. If there is no object with this ID, it returns empty std::weak_ptr<>
+    \param[in] id id of action container
     \return pointer to container or empty std::weak_ptr
     */
     virtual std::weak_ptr<Command> getActionById(QUuid id) = 0;
 
     /*!
     Returns a QMenu container with the specified ID. If there is no object with this ID, it returns empty std::weak_ptr<>
+    \param[in] id id of menu container
     \return pointer to container or empty std::weak_ptr
     */
     virtual std::weak_ptr<IActionsContainer> getMenuById(QUuid id) = 0;
