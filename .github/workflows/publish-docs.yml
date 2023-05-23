@@ -14,13 +14,13 @@ jobs:
       run:  git checkout -b documentation
 
     - name: Install
-      run:  sudo apt=get install doxygen
+      run:  sudo apt-get install doxygen
 
     - name: Install LaTeX extensions
       run:  sudo apt-get install texlive-base texlive-latex-extra texlive-fonts-extra texlive-fonts-recommended
 
     - name: Install Python modules
-      run: sudo apt-get install pip3 install jinja2 Pygments
+      run: sudo pip3 install jinja2 Pygments
 
     - name: Install m.css
       uses: actions/checkout@v3
@@ -30,6 +30,11 @@ jobs:
 
     - name: Generate autodocs for dynmenu
       run:  |
+        ls -la
+        cd m.css
+        ls -la
+        cd documentation
+        ls -la
         cd m.css/documetation
         ./doxygen.py ../../Doxyfile
 
@@ -39,6 +44,15 @@ jobs:
         git config --global user.name  "$GITHUB_WORKFLOW GitHub action"
         git add -f docs
         git commit -am "docs: add auto-generated developer documentation"
+
+    - name: Publish autodocs as GitHub pages
+      id:   push_documentation
+      run: |
+          git push -f origin documentation:documentation || :
+
+    - name: Always pass
+      run: |
+          if [[ ${{ steps.push_documentation.outcome }} != 'success' ]]; then exit 0; fi
 
     - name: Result URLs
       run:  |
