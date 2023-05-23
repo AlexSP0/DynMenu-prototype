@@ -1,8 +1,8 @@
 #ifndef UICONTAINER_H
 #define UICONTAINER_H
 
-#include "../ibasemenuactionscontainer.h"
 #include "iactionscontainer.h"
+#include "ibasemenuactionscontainer.h"
 
 #include "iuielement.h"
 

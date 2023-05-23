@@ -1,7 +1,7 @@
 #ifndef IUIELEMENT_H
 #define IUIELEMENT_H
 
-#include "../ibasemenuactionscontainer.h"
+#include "ibasemenuactionscontainer.h"
 #include <QAction>
 #include <QMenu>
 

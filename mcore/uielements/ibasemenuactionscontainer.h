@@ -4,8 +4,8 @@
 #include <memory>
 #include <vector>
 
-#include "command.h"
-#include "uielements/iactionscontainer.h"
+#include "../command.h"
+#include "iactionscontainer.h"
 
 class IBaseMenuActionsContainer
 {

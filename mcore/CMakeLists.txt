@@ -3,7 +3,7 @@ find_package(Qt5 REQUIRED COMPONENTS Core Widgets)
 set(SOURCES
     command.cpp
 
-    basemenuactionscontainer.cpp
+    uielements/basemenuactionscontainer.cpp
 
     basemenumanager.cpp
 
@@ -18,8 +18,8 @@ set(HEADERS
 
     imenumanageablewindow.h
 
-    ibasemenuactionscontainer.h
-    basemenuactionscontainer.h
+    uielements/ibasemenuactionscontainer.h
+    uielements/basemenuactionscontainer.h
 
     imenumanager.h
     basemenumanager.h
