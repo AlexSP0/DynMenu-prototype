@@ -3,6 +3,14 @@
 
 #include "iuielement.h"
 
+/*!
+ * \brief a base class for all uielements (for IActionsContainer).
+ *
+ * A base class for all classes to implement the IActionContainer interface.
+ * The getMenu() and getMenuBar methods return nullptr.
+ *
+ */
+
 class BaseUiElement : public IUiElement
 {
 public:
@@ -17,7 +25,16 @@ public:
 
     virtual void setContainer(IBaseMenuActionsContainer *container) override;
 
+    /*!
+    * Returns pointer to QMenu object
+    * In this implementation return nullptr
+    */
     virtual QMenu *getMenu() override;
+
+    /*!
+    * Returns pointer to QMenuBar object
+    * In this implementation return nullptr
+    */
     virtual QMenuBar *getMenuBar() override;
 
 protected:
