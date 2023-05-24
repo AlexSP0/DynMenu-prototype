@@ -1,6 +1,6 @@
 name: Publish docs
 
-on: [ workflow_dispatch, workflow_call ]
+on: [ push, pull_request, workflow_dispatch, workflow_call ]
 
 jobs:
   pub-docs:
@@ -35,7 +35,6 @@ jobs:
         ls -la
         cd documentation
         ls -la
-        cd m.css/documetation
         ./doxygen.py ../../Doxyfile
 
     - name: Add generated autodocs to Git repo in the documentation branch
