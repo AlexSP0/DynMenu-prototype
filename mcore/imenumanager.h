@@ -1,7 +1,6 @@
 #ifndef IMENUMANAGER_H
 #define IMENUMANAGER_H
 
-#include "imenumanageablewindow.h"
 #include "uielements/iactionscontainer.h"
 
 #include <QString>

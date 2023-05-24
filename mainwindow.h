@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 
-#include <mcore/imenumanageablewindow.h>
 #include <mcore/imenumanager.h>
 
 //#include "../mcore/menuactionsmanager.h"
@@ -15,15 +14,13 @@ class MainWindow;
 }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow, public IMenuManageableWindow
+class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
     MainWindow(IMenuManager *menuManager, QWidget *parent = nullptr);
     ~MainWindow();
-
-    virtual QMenuBar *getMenuBar();
 
     void setMenuId(QUuid id);
 

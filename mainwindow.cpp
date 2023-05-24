@@ -24,11 +24,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-QMenuBar *MainWindow::getMenuBar()
-{
-    return menuBar();
-}
-
 void MainWindow::on_pushButton_clicked() {}
 
 void MainWindow::onCustomContextMenuRequested(QPoint pos) {}
