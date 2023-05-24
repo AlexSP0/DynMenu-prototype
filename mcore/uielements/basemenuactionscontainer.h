@@ -5,6 +5,12 @@
 
 #include <QObject>
 
+/*!
+ * \brief Implementation of IBaseMenuActionsContainer - internal object that implements operations with stored containers of menus (IActionsContainer) and commands (Commands). Used by classes that implement the IActionsContainer interface.
+ *
+ * Base for classes that implements the IActionsContainer interface.
+ *
+ */
 class BaseMenuActionsContainer : public QObject, public IBaseMenuActionsContainer
 {
     Q_OBJECT

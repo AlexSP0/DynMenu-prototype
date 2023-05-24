@@ -16,8 +16,6 @@ set(SOURCES
 set(HEADERS
     command.h
 
-    imenumanageablewindow.h
-
     uielements/ibasemenuactionscontainer.h
     uielements/basemenuactionscontainer.h
 
