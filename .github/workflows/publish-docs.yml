@@ -1,6 +1,6 @@
 name: Publish docs
 
-on: [ workflow_dispatch, workflow_call ]
+on: [ push, pull_request, workflow_dispatch, workflow_call ]
 
 jobs:
   pub-docs:

@@ -1,0 +1,33 @@
+/** @mainpage Dyn-menu
+
+* *A dynamic menu library*
+
+This is a documentation for the Dyn-menu Project.
+[Project homepage](https://alexsp0.github.io/DynMenu-prototype/index.html).
+
+@section whats-this What's this?
+
+The mcore library is designed to create, delete, divide menus and menu commands in various objects such as QMenuBar, QMenu and QToolBar.
+It consists of a menu manager, containers for GUI items, and containers for submenus and commands.
+
+@section how-to-use How to use?
+
+First you need to register the menu in the menu manager (the default manager with the usual features - BaseMenuManager). You must use the registerMenuBar, registerMenu¸registerToolBar methods. These methods return a reference to a container for these objects of type ActionsContainer. The returned value must be used to create menus and commands (QMenu and QAction) in these objects. Important: The container does not own registered objects! If a registered object is destroyed, the container is automatically deleted as well. For this reason, std::weak_ptr is returned.
+
+To create a menu in a container, call the addMenu method, in the parameters of which, specify the pointer to the menu and the container where the menu is added.
+
+To add a command, a command is added in a similar way, using the addAction method.
+Note: a newly created container does not own the added menu(command); if the menu object is destroyed, the container is deleted. For this reason, it is of type std::weak_ptr.
+
+To remove a menu(command) from a container, you must use the deleteMenu(deleteAction) methods.
+
+To unregister containers in the menu manager, use the methods unregisterMenu, unregisterMenuBar, unregisterToolBar.
+
+You can get the id of a container by calling its getId() method.
+
+@section see_also See also?
+
+@ref containers "Containers"
+
+*/
+
