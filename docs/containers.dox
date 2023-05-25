@@ -1,0 +1,14 @@
+/** @page containers Containers
+
+* *A dynamic menu library*
+
+@section containers Containers
+
+There are two kinds of containers in the library:
+
+- containers for GUI elements, which are responsible for operations with adding, removing commands and menus to these elements. These containers must implement the IUiElement interface. The two types of containers are QMenuBarElement (QMenuBar) and QMenuElement (QMenu). The implementation of QToolBarElement (QToolbar) is planned.
+- containers for menus (IActionsContainer) and commands (QActions). These containers implement the IActionsContainer interface. The only container implemented is the UiContainer. These containers use an object of type IBaseMenuActionsContainer, which provides typical operations with them.
+
+Note: it is the container which is responsible for removing destroyed objects from the menu by subscribing to the QObject::destroyed signal.
+
+*/
