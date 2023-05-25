@@ -30,7 +30,7 @@ jobs:
 
     - name: Generate autodocs for dynmenu
       run:  |
-        cd m.css/documetation
+        cd m.css/documentation
         ./doxygen.py ../../Doxyfile
 
     - name: Add generated autodocs to Git repo in the documentation branch
