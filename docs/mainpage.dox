@@ -3,12 +3,12 @@
 * *A dynamic menu library*
 
 This is a documentation for the Dyn-menu Project.
-[project homepage](https://alexsp0.github.io/DynMenu-prototype/index.html).
+[Project homepage](https://alexsp0.github.io/DynMenu-prototype/index.html).
 
 @section whats-this What's this?
 
 The mcore library is designed to create, delete, divide menus and menu commands in various objects such as QMenuBar, QMenu and QToolBar.
-It consists of a menu manager, containers for GUI items, and containers for submenus and commands.a 
+It consists of a menu manager, containers for GUI items, and containers for submenus and commands.
 
 @section how-to-use How to use?
 
@@ -24,6 +24,10 @@ To remove a menu(command) from a container, you must use the deleteMenu(deleteAc
 To unregister containers in the menu manager, use the methods unregisterMenu, unregisterMenuBar, unregisterToolBar.
 
 You can get the id of a container by calling its getId() method.
+
+@section see_also See also?
+
+@ref containers "Containers"
 
 */
 
