@@ -1,6 +1,6 @@
 name: Publish docs
 
-on: [ workflow_dispatch, workflow_call ]
+on: [ push, pull_request, workflow_dispatch, workflow_call ]
 
 jobs:
   pub-docs:
@@ -30,7 +30,11 @@ jobs:
 
     - name: Generate autodocs for dynmenu
       run:  |
-        cd m.css/documetation
+        ls -la
+        cd m.css
+        ls -la
+        cd documentation
+        ls -la
         ./doxygen.py ../../Doxyfile
 
     - name: Add generated autodocs to Git repo in the documentation branch
