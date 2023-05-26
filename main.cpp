@@ -53,14 +53,14 @@ int main(int argc, char *argv[])
 
     if (auto tmp = toolBarContainerWP.lock())
     {
-        toolBarSubMenu1Container = tmp->addMenu(&toolBarSubMenu1, QUuid());
+        toolBarSubMenu1Container = tmp->addMenu(&toolBarSubMenu1);
     }
 
     WPContainer toolBarSubMenu2Container;
 
     if (auto tmp = toolBarContainerWP.lock())
     {
-        toolBarSubMenu2Container = tmp->addMenu(&toolBarSubMenu2, QUuid());
+        toolBarSubMenu2Container = tmp->addMenu(&toolBarSubMenu2);
     }
 
     WPCommandContainer toolBarSubAction1Container;
@@ -69,61 +69,61 @@ int main(int argc, char *argv[])
 
     if (auto tmp = toolBarContainerWP.lock())
     {
-        subActionWPContainer = tmp->addAction(&toolBarSubAction1, QUuid());
+        subActionWPContainer = tmp->addAction(&toolBarSubAction1);
     }
 
     if (auto tmp = menuBarContainerWP.lock())
     {
-        subActionWPContainer = tmp->addAction(&subAction1, QUuid());
+        subActionWPContainer = tmp->addAction(&subAction1);
     }
 
     WPContainer title1Container;
 
     if (auto tmp = menuBarContainerWP.lock())
     {
-        title1Container = tmp->addMenu(&subMenu1, QUuid());
+        title1Container = tmp->addMenu(&subMenu1);
     }
 
     WPContainer title2Container;
 
     if (auto tmp = menuBarContainerWP.lock())
     {
-        title2Container = tmp->addMenu(&subMenu2, QUuid());
+        title2Container = tmp->addMenu(&subMenu2);
     }
 
     WPContainer title3Container;
 
     if (auto tmp = title1Container.lock())
     {
-        title3Container = tmp->addMenu(&subMenu3, QUuid());
+        title3Container = tmp->addMenu(&subMenu3);
     }
 
     WPContainer title4Container;
 
     if (auto tmp = title3Container.lock())
     {
-        title4Container = tmp->addMenu(&subMenu4, QUuid());
+        title4Container = tmp->addMenu(&subMenu4);
     }
 
     WPCommandContainer subAction2WPContainer;
 
     if (auto tmp = title1Container.lock())
     {
-        subAction2WPContainer = tmp->addAction(&subAction2, QUuid());
+        subAction2WPContainer = tmp->addAction(&subAction2);
     }
 
     WPCommandContainer subAction3WPContainer;
 
     if (auto tmp = title4Container.lock())
     {
-        subAction3WPContainer = tmp->addAction(&subAction3, QUuid());
+        subAction3WPContainer = tmp->addAction(&subAction3);
     }
 
     WPCommandContainer subAction4WPContainer;
 
     if (auto tmp = title4Container.lock())
     {
-        subAction4WPContainer = tmp->addAction(&subAction4, QUuid());
+        subAction4WPContainer = tmp->addAction(&subAction4);
     }
 
     QMenu contextMenu;
@@ -150,56 +150,56 @@ int main(int argc, char *argv[])
 
     if (auto tmp = contextMenuContainer.lock())
     {
-        contextSubMenu1Container = tmp->addMenu(&contextSubMenu1, QUuid());
+        contextSubMenu1Container = tmp->addMenu(&contextSubMenu1);
     }
 
     WPContainer contextSubMenu2Container;
 
     if (auto tmp = contextMenuContainer.lock())
     {
-        contextSubMenu2Container = tmp->addMenu(&contextSubMenu2, QUuid());
+        contextSubMenu2Container = tmp->addMenu(&contextSubMenu2);
     }
 
     WPContainer contextSubMenu3Container;
 
     if (auto tmp = contextSubMenu2Container.lock())
     {
-        contextSubMenu3Container = tmp->addMenu(&contextSubMenu3, QUuid());
+        contextSubMenu3Container = tmp->addMenu(&contextSubMenu3);
     }
 
     WPContainer contextSubMenu4Container;
 
     if (auto tmp = contextSubMenu3Container.lock())
     {
-        contextSubMenu4Container = tmp->addMenu(&contextSubMenu4, QUuid());
+        contextSubMenu4Container = tmp->addMenu(&contextSubMenu4);
     }
 
     WPCommandContainer contextAction1Container;
 
     if (auto tmp = contextSubMenu2Container.lock())
     {
-        contextAction1Container = tmp->addAction(&contextAction1, QUuid());
+        contextAction1Container = tmp->addAction(&contextAction1);
     }
 
     WPCommandContainer contextAction2Container;
 
     if (auto tmp = contextSubMenu4Container.lock())
     {
-        contextAction2Container = tmp->addAction(&contextAction2, QUuid());
+        contextAction2Container = tmp->addAction(&contextAction2);
     }
 
     WPCommandContainer contextAction3Container;
 
     if (auto tmp = contextSubMenu4Container.lock())
     {
-        contextAction3Container = tmp->addAction(&contextAction3, QUuid());
+        contextAction3Container = tmp->addAction(&contextAction3);
     }
 
     WPCommandContainer contextAction4Container;
 
     if (auto tmp = contextSubMenu4Container.lock())
     {
-        contextAction4Container = tmp->addAction(&contextAction4, QUuid());
+        contextAction4Container = tmp->addAction(&contextAction4);
     }
 
     w.show();

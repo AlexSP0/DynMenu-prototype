@@ -29,7 +29,7 @@ public:
     \param[in] group group to which the object is added.
     \return Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr<>.
     */
-    virtual std::shared_ptr<Command> appendAction(QAction *action, QUuid group) = 0;
+    virtual std::shared_ptr<Command> appendAction(QAction *action) = 0;
 
     /*!
     Adds a QMenu object to the storage.
@@ -37,7 +37,7 @@ public:
     \param[in] group group to which the object is added.
     \return Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr<>.
     */
-    virtual std::shared_ptr<IActionsContainer> appendMenu(QMenu *menu, QUuid group) = 0;
+    virtual std::shared_ptr<IActionsContainer> appendMenu(QMenu *menu) = 0;
 
     /*!
     Removes a QMenu container from the storage with the specified ID.

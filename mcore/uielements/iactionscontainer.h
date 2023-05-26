@@ -33,7 +33,7 @@ public:
     * \param[in] group group to which the object is added.
     * \return Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr<>.
     */
-    virtual std::weak_ptr<Command> addAction(QAction *action, QUuid group) = 0;
+    virtual std::weak_ptr<Command> addAction(QAction *action) = 0;
 
     /*!
     Adds a QMenu object to the container. Returns the container for the added object.
@@ -41,14 +41,14 @@ public:
     * \param[in] group group to which the object is added.
     * \return Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr<>.
     */
-    virtual std::weak_ptr<IActionsContainer> addMenu(QMenu *menu, QUuid group) = 0;
+    virtual std::weak_ptr<IActionsContainer> addMenu(QMenu *menu) = 0;
 
     /*!
     * Adds a separator object to the container. Returns the container for the added object.
     * \param[in] group group to which the object is added.
     * \return Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr<>.
     */
-    virtual Command *addSeparator(QUuid group) = 0;
+    virtual Command *addSeparator() = 0;
 
     /*!
     * Returns a pointer to the QMenu object placed in the container. If the pointer is of a different type, it returns nullptr

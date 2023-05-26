@@ -30,7 +30,7 @@ public:
     * \param[in] group group to which the object is added.
     * \return Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr<>.
     */
-    virtual std::weak_ptr<Command> addAction(QAction *action, QUuid group);
+    virtual std::weak_ptr<Command> addAction(QAction *action) override;
 
     /*!
     Adds a QMenu object to the container. Returns the container for the added object. Groups are NOT implemented.
@@ -38,14 +38,14 @@ public:
     * \param[in] group group to which the object is added.
     * \return Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr<>.
     */
-    virtual std::weak_ptr<IActionsContainer> addMenu(QMenu *menu, QUuid group);
+    virtual std::weak_ptr<IActionsContainer> addMenu(QMenu *menup) override;
 
     /*!
     * Adds a separator object to the container. Returns the container for the added object. NOT Implemented
     * \param[in] group group to which the object is added.
     * \return Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr<>.
     */
-    virtual Command *addSeparator(QUuid group);
+    virtual Command *addSeparator() override;
 
     /*!
     * Returns a pointer to the QMenu object placed in the container. If the pointer is of a different type, it returns nullptr
@@ -63,7 +63,7 @@ public:
     * Returns a pointer to the QToolBar object placed in the container. If the pointer is of a different type, it returns nullptr
     * \return pointer to QToolBar object or nullptr
     */
-    QToolBar *getToolBar();
+    QToolBar *getToolBar() override;
 
     /*!
     * Returns a QAction container with the specified ID. If there is no object with this ID, it returns empty std::weak_ptr<>
@@ -83,27 +83,27 @@ public:
     * Returns id of container
     * \return id of container
     */
-    virtual QUuid getId();
+    virtual QUuid getId() override;
 
     /*!
     * Sets the ID to the one specified in the parameter. Needed to set commonly used IDs for shared resources.
     * \param[in] id ID to set up
     */
-    void setId(QUuid id);
+    void setId(QUuid id) override;
 
     /*!
     * Removes a QMenu object from the container with the specified ID.
     * \param[in] id The ID of the object to be deleted
     * \return returns true if successful and false if the object is not found.
     */
-    virtual bool deleteMenu(QUuid id);
+    virtual bool deleteMenu(QUuid id) override;
 
     /*!
     * Removes a QAction object from the container with the specified ID.
     * \param[in] id The ID of the object to be deleted
     * \return returns true if successful and false if the object is not found.
     */
-    virtual bool deleteAction(QUuid id);
+    virtual bool deleteAction(QUuid id) override;
 
 private slots:
     virtual void destroyCommand(QObject *command);

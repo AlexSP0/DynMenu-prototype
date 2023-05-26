@@ -15,7 +15,7 @@ std::weak_ptr<IActionsContainer> BaseMenuManager::addMenu(QMenu *menu, IActionsC
         return std::weak_ptr<IActionsContainer>();
     }
 
-    return it->second->addMenu(menu, QUuid());
+    return it->second->addMenu(menu);
 }
 
 bool BaseMenuManager::deleteMenu(IActionsContainer *menu, IActionsContainer *container)
@@ -49,7 +49,7 @@ std::weak_ptr<Command> BaseMenuManager::addAction(QAction *action, IActionsConta
         return std::weak_ptr<Command>();
     }
 
-    return it->second->addAction(action, QUuid());
+    return it->second->addAction(action);
 }
 
 bool BaseMenuManager::deleteAction(IActionsContainer *action, IActionsContainer *container)

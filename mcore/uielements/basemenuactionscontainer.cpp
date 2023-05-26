@@ -6,10 +6,8 @@
 
 BaseMenuActionsContainer::~BaseMenuActionsContainer() {}
 
-std::shared_ptr<Command> BaseMenuActionsContainer::appendAction(QAction *action, QUuid group)
+std::shared_ptr<Command> BaseMenuActionsContainer::appendAction(QAction *action)
 {
-    Q_UNUSED(group)
-
     if (!action)
     {
         return nullptr;
@@ -24,10 +22,8 @@ std::shared_ptr<Command> BaseMenuActionsContainer::appendAction(QAction *action,
     return newCommand;
 }
 
-std::shared_ptr<IActionsContainer> BaseMenuActionsContainer::appendMenu(QMenu *menu, QUuid group)
+std::shared_ptr<IActionsContainer> BaseMenuActionsContainer::appendMenu(QMenu *menu)
 {
-    Q_UNUSED(group)
-
     if (!menu)
     {
         return nullptr;

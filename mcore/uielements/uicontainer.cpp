@@ -37,9 +37,9 @@ UiContainer::~UiContainer()
     delete m_container;
 }
 
-std::weak_ptr<Command> UiContainer::addAction(QAction *action, QUuid group)
+std::weak_ptr<Command> UiContainer::addAction(QAction *action)
 {
-    std::shared_ptr<Command> newCommand = m_container->appendAction(action, group);
+    std::shared_ptr<Command> newCommand = m_container->appendAction(action);
 
     if (!newCommand)
     {
@@ -53,9 +53,9 @@ std::weak_ptr<Command> UiContainer::addAction(QAction *action, QUuid group)
     return newCommand;
 }
 
-std::weak_ptr<IActionsContainer> UiContainer::addMenu(QMenu *menu, QUuid group)
+std::weak_ptr<IActionsContainer> UiContainer::addMenu(QMenu *menu)
 {
-    std::shared_ptr<IActionsContainer> newMenu = m_container->appendMenu(menu, group);
+    std::shared_ptr<IActionsContainer> newMenu = m_container->appendMenu(menu);
 
     if (!newMenu)
     {
@@ -69,7 +69,7 @@ std::weak_ptr<IActionsContainer> UiContainer::addMenu(QMenu *menu, QUuid group)
     return newMenu;
 }
 
-Command *UiContainer::addSeparator(QUuid group)
+Command *UiContainer::addSeparator()
 {
     return nullptr;
 }
