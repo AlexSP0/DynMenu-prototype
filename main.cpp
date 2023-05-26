@@ -20,6 +20,8 @@ int main(int argc, char *argv[])
 
     auto menuBarContainerWP = menuManager->registerMenuBar(w.menuBar());
 
+    auto toolBarContainerWP = menuManager->registerToolBar(w.findChildren<QToolBar *>().at(0));
+
     QMenu subMenu1("Title1");
 
     QMenu subMenu2("Title2");
@@ -36,7 +38,39 @@ int main(int argc, char *argv[])
 
     QAction subAction4("subAction4");
 
+    QMenu toolBarSubMenu1("toolBarSubMenu1");
+    toolBarSubMenu1.setIcon(QIcon::fromTheme(("document-new")));
+
+    QMenu toolBarSubMenu2("toolBarSubMenu2");
+
+    QAction toolBarSubAction1("toolBarSubAction1");
+
+    toolBarSubAction1.setIcon(QIcon::fromTheme(("document-new")));
+
+    QAction toolBarSubAction2("toolBarSubAction2");
+
+    WPContainer toolBarSubMenu1Container;
+
+    if (auto tmp = toolBarContainerWP.lock())
+    {
+        toolBarSubMenu1Container = tmp->addMenu(&toolBarSubMenu1, QUuid());
+    }
+
+    WPContainer toolBarSubMenu2Container;
+
+    if (auto tmp = toolBarContainerWP.lock())
+    {
+        toolBarSubMenu2Container = tmp->addMenu(&toolBarSubMenu2, QUuid());
+    }
+
+    WPCommandContainer toolBarSubAction1Container;
+
     WPCommandContainer subActionWPContainer;
+
+    if (auto tmp = toolBarContainerWP.lock())
+    {
+        subActionWPContainer = tmp->addAction(&toolBarSubAction1, QUuid());
+    }
 
     if (auto tmp = menuBarContainerWP.lock())
     {

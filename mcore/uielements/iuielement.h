@@ -4,6 +4,7 @@
 #include "ibasemenuactionscontainer.h"
 #include <QAction>
 #include <QMenu>
+#include <QToolBar>
 
 /*!
  * \brief A container for GUI elements (QMenu, QMenuBar, QToolBar).
@@ -51,6 +52,12 @@ public:
      * \return If the container contains an object of a different type, it returns nullptr.
      */
     virtual QMenuBar *getMenuBar() = 0;
+
+    /*!
+     * \brief Returns a pointer to the QToolBar object.
+     * \return If the container contains an object of a different type, it returns nullptr.
+     */
+    virtual QToolBar *getToolBar() = 0;
 
     /*!
      * \brief Sets a container to store objects of type IActionsContainer and Command.

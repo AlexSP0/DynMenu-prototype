@@ -11,6 +11,7 @@ set(SOURCES
     uielements/baseuielement.cpp
     uielements/uiqmenuelement.cpp
     uielements/uiqmenubarelement.cpp
+    uielements/uiqtoolbarelement.cpp
 )
 
 set(HEADERS
@@ -28,6 +29,7 @@ set(HEADERS
     uielements/baseuielement.h
     uielements/uiqmenuelement.h
     uielements/uiqmenubarelement.h
+    uielements/uiqtoolbarelement.h
 )
 
 ADD_LIBRARY(mcore STATIC ${HEADERS} ${SOURCES})

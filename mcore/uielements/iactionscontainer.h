@@ -4,6 +4,7 @@
 #include "../command.h"
 
 #include <QString>
+#include <QToolBar>
 #include <QUuid>
 #include <qmenubar.h>
 
@@ -60,6 +61,12 @@ public:
     * \return pointer to QMenuBar object or nullptr
     */
     virtual QMenuBar *getMenuBar() = 0;
+
+    /*!
+    * Returns a pointer to the QToolBar object placed in the container. If the pointer is of a different type, it returns nullptr
+    * \return pointer to QToolBar object or nullptr
+    */
+    virtual QToolBar *getToolBar() = 0;
 
     /*!
     * Returns id of container

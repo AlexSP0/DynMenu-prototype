@@ -3,6 +3,7 @@
 #include "basemenuactionscontainer.h"
 #include "command.h"
 #include "uicontainer.h"
+#include "uiqtoolbarelement.h"
 
 #include "uielements/uiqmenubarelement.h"
 #include "uielements/uiqmenuelement.h"
@@ -14,6 +15,13 @@ UiContainer::UiContainer(QMenuBar *menuBar)
     , m_container(new BaseMenuActionsContainer())
 {
     m_element = new UiQMenuBarElement(menuBar);
+}
+
+UiContainer::UiContainer(QToolBar *toolbar)
+    : m_id(QUuid::createUuid())
+    , m_container(new BaseMenuActionsContainer())
+{
+    m_element = new UiQToolBarElement(toolbar);
 }
 
 UiContainer::UiContainer(QMenu *menu)
@@ -116,6 +124,11 @@ QMenu *UiContainer::getMenu()
 QMenuBar *UiContainer::getMenuBar()
 {
     return m_element->getMenuBar();
+}
+
+QToolBar *UiContainer::getToolBar()
+{
+    return m_element->getToolBar();
 }
 
 std::weak_ptr<Command> UiContainer::getActionById(QUuid id)

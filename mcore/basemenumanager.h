@@ -83,7 +83,7 @@ public:
     \param[in] toolbar a pointer to the QToolBar object to be added. The container does not own the object.
     \return Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr<>.
     */
-    virtual std::weak_ptr<IActionsContainer> registerToolBar(QToolBar toolbar) override;
+    virtual std::weak_ptr<IActionsContainer> registerToolBar(QToolBar *toolbar) override;
 
     /*!
     Unregisters an object of type QMenuBar.

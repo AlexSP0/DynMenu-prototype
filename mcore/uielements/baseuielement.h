@@ -59,6 +59,12 @@ public:
     */
     virtual QMenuBar *getMenuBar() override;
 
+    /*!
+    * Returns pointer to QToolBar object
+    * In this implementation return nullptr
+    */
+    virtual QToolBar *getToolBar() override;
+
 protected:
     IBaseMenuActionsContainer *m_container;
 };

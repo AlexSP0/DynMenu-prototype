@@ -21,6 +21,7 @@ class UiContainer : public IActionsContainer
 public:
     UiContainer(QMenu *menu);
     UiContainer(QMenuBar *menuBar);
+    UiContainer(QToolBar *toolbar);
 
     virtual ~UiContainer();
     /*!
@@ -57,6 +58,12 @@ public:
     * \return pointer to QMenuBar object or nullptr
     */
     virtual QMenuBar *getMenuBar() override;
+
+    /*!
+    * Returns a pointer to the QToolBar object placed in the container. If the pointer is of a different type, it returns nullptr
+    * \return pointer to QToolBar object or nullptr
+    */
+    QToolBar *getToolBar();
 
     /*!
     * Returns a QAction container with the specified ID. If there is no object with this ID, it returns empty std::weak_ptr<>

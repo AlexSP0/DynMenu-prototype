@@ -24,3 +24,8 @@ QMenuBar *BaseUiElement::getMenuBar()
 {
     return nullptr;
 }
+
+QToolBar *BaseUiElement::getToolBar()
+{
+    return nullptr;
+}
