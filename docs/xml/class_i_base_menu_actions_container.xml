@@ -1,0 +1,375 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_i_base_menu_actions_container" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>IBaseMenuActionsContainer</compoundname>
+    <derivedcompoundref refid="class_base_menu_actions_container" prot="public" virt="non-virtual">BaseMenuActionsContainer</derivedcompoundref>
+    <includes refid="ibasemenuactionscontainer_8h" local="no">ibasemenuactionscontainer.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="class_i_base_menu_actions_container_1ac7a8f0447289444726678f00e9faae89" prot="public" static="no">
+        <type>std::map&lt; QUuid, std::shared_ptr&lt; <ref refid="class_command" kindref="compound">Command</ref> &gt; &gt;</type>
+        <definition>using IBaseMenuActionsContainer::CommandsMap =  std::map&lt;QUuid, std::shared_ptr&lt;Command&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>CommandsMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/ibasemenuactionscontainer.h" line="20" column="5" bodyfile="mcore/uielements/ibasemenuactionscontainer.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="class_i_base_menu_actions_container_1a7701a2c14462ca01dd78c5ee9c47089f" prot="public" static="no">
+        <type>std::map&lt; QUuid, std::shared_ptr&lt; <ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> &gt; &gt;</type>
+        <definition>using IBaseMenuActionsContainer::MenusMap =  std::map&lt;QUuid, std::shared_ptr&lt;IActionsContainer&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>MenusMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/ibasemenuactionscontainer.h" line="21" column="5" bodyfile="mcore/uielements/ibasemenuactionscontainer.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_i_base_menu_actions_container_1aaa788262ef5811fd2f35083183a15ea3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual IBaseMenuActionsContainer::~IBaseMenuActionsContainer</definition>
+        <argsstring>()=default</argsstring>
+        <name>~IBaseMenuActionsContainer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/ibasemenuactionscontainer.h" line="24" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_base_menu_actions_container_1a12773d469b19e095b7e502e2dfd520e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_command" kindref="compound">Command</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt;Command&gt; IBaseMenuActionsContainer::appendAction</definition>
+        <argsstring>(QAction *action)=0</argsstring>
+        <name>appendAction</name>
+        <reimplementedby refid="class_base_menu_actions_container_1a8d639fb3dabc898935e2b523ea382d0d">appendAction</reimplementedby>
+        <param>
+          <type>QAction *</type>
+          <declname>action</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds a QAction object to the storage. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to the object to be added. The storage does not own the object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">group</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>group to which the object is added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr&lt;&gt;. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/ibasemenuactionscontainer.h" line="32" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_base_menu_actions_container_1a464aee04ae727b29140a51e2712ceb8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt;IActionsContainer&gt; IBaseMenuActionsContainer::appendMenu</definition>
+        <argsstring>(QMenu *menu)=0</argsstring>
+        <name>appendMenu</name>
+        <reimplementedby refid="class_base_menu_actions_container_1a3034be82b9053264b40420dfb2a9e73c">appendMenu</reimplementedby>
+        <param>
+          <type>QMenu *</type>
+          <declname>menu</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds a QMenu object to the storage. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">QMenu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to the object to be added. The storage does not own the object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">group</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>group to which the object is added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr&lt;&gt;. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/ibasemenuactionscontainer.h" line="40" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_base_menu_actions_container_1a4ca5d3f217ef77c139395755b6e8ccb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool IBaseMenuActionsContainer::removeAction</definition>
+        <argsstring>(QUuid id)=0</argsstring>
+        <name>removeAction</name>
+        <reimplementedby refid="class_base_menu_actions_container_1a5156a72583677b5dd4518bfd9d327619">removeAction</reimplementedby>
+        <param>
+          <type>QUuid</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes a QMenu container from the storage with the specified ID. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID of the container to be deleted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>returns true if successful and false if the object is not found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/ibasemenuactionscontainer.h" line="47" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_base_menu_actions_container_1af7c213b7b85f59ebf5eda87039ac0c88" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool IBaseMenuActionsContainer::removeMenu</definition>
+        <argsstring>(QUuid id)=0</argsstring>
+        <name>removeMenu</name>
+        <reimplementedby refid="class_base_menu_actions_container_1a77b8b66f2104cbfc3e6d60af52896b44">removeMenu</reimplementedby>
+        <param>
+          <type>QUuid</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes a QAction container from the storage with the specified ID. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID of the container to be deleted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>returns true if successful and false if the object is not found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/ibasemenuactionscontainer.h" line="54" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_base_menu_actions_container_1a194a41e91b557ed60d7a140b623c0bb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="class_i_base_menu_actions_container_1ac7a8f0447289444726678f00e9faae89" kindref="member">CommandsMap</ref> &amp;</type>
+        <definition>virtual CommandsMap&amp; IBaseMenuActionsContainer::getActions</definition>
+        <argsstring>()=0</argsstring>
+        <name>getActions</name>
+        <reimplementedby refid="class_base_menu_actions_container_1a9216bccd6c2421fedb6d440867fa95cf">getActions</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return std::map with commands containers(QActions). <simplesect kind="return"><para>std::map with QActions containers </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/ibasemenuactionscontainer.h" line="60" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_base_menu_actions_container_1a9ca6c212e4df9b227c21fcc86640ba29" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="class_i_base_menu_actions_container_1a7701a2c14462ca01dd78c5ee9c47089f" kindref="member">MenusMap</ref> &amp;</type>
+        <definition>virtual MenusMap&amp; IBaseMenuActionsContainer::getMenus</definition>
+        <argsstring>()=0</argsstring>
+        <name>getMenus</name>
+        <reimplementedby refid="class_base_menu_actions_container_1af05f862a3e96164b4fd3c229388e2825">getMenus</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return std::map with IACtionsContainer containers(QMenu). <simplesect kind="return"><para>std::map with QMenu containers </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/ibasemenuactionscontainer.h" line="66" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_base_menu_actions_container_1a42379b7dc700fe0b4a0631da39a14073" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_command" kindref="compound">Command</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt;Command&gt; IBaseMenuActionsContainer::getActionContainer</definition>
+        <argsstring>(QUuid id)=0</argsstring>
+        <name>getActionContainer</name>
+        <reimplementedby refid="class_base_menu_actions_container_1a3100420ce651d89af01b51fb05904d89">getActionContainer</reimplementedby>
+        <param>
+          <type>QUuid</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a QAction container with the specified ID. If there is no object with this ID, it returns empty std::weak_ptr&lt;&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id of action container </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>pointer to container or empty std::weak_ptr </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/ibasemenuactionscontainer.h" line="73" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_base_menu_actions_container_1aa7bdecbdd95e4037a08eb388e521c590" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt;IActionsContainer&gt; IBaseMenuActionsContainer::getMenuContainer</definition>
+        <argsstring>(QUuid id)=0</argsstring>
+        <name>getMenuContainer</name>
+        <reimplementedby refid="class_base_menu_actions_container_1af1aeff43b9f414bc9735c7f8f26ab5a5">getMenuContainer</reimplementedby>
+        <param>
+          <type>QUuid</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a QMenu container with the specified ID. If there is no object with this ID, it returns empty std::weak_ptr&lt;&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id of menu container </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>pointer to container or empty std::weak_ptr </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/ibasemenuactionscontainer.h" line="80" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_base_menu_actions_container_1a5478e2a5e56b0a45b70e8b6a7bd86c8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="class_command" kindref="compound">Command</ref> *</type>
+        <definition>virtual Command* IBaseMenuActionsContainer::getActionContainerByPtr</definition>
+        <argsstring>(QObject *action)=0</argsstring>
+        <name>getActionContainerByPtr</name>
+        <reimplementedby refid="class_base_menu_actions_container_1ac2393c6c6ad58d9a5718f8ba446ffe90">getActionContainerByPtr</reimplementedby>
+        <param>
+          <type>QObject *</type>
+          <declname>action</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a pointer to QActions container with the specified pointer. If there is no object with this ID, it returns nullptr <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to QAction </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>pointer to container or nullptr </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/ibasemenuactionscontainer.h" line="87" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_base_menu_actions_container_1a7b0ad87b267abb79db6b3f11a5ece00f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> *</type>
+        <definition>virtual IActionsContainer* IBaseMenuActionsContainer::getMenuContainerByPtr</definition>
+        <argsstring>(QObject *menu)=0</argsstring>
+        <name>getMenuContainerByPtr</name>
+        <reimplementedby refid="class_base_menu_actions_container_1a7468cbd39158c932fe29970c5b99b231">getMenuContainerByPtr</reimplementedby>
+        <param>
+          <type>QObject *</type>
+          <declname>menu</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a pointer to QMenu container with the specified pointer. If there is no object with this ID, it returns nullptr <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">menu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to QMenu </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>pointer to container or nullptr </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/ibasemenuactionscontainer.h" line="94" column="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Internal object that implements operations with stored containers of menus (<ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref>) and commands (Commands), Used by classes that implement the <ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> interface. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Interface for the class repository that implements the <ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> interface. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>IBaseMenuActionsContainer</label>
+        <link refid="class_i_base_menu_actions_container"/>
+      </node>
+      <node id="2">
+        <label>BaseMenuActionsContainer</label>
+        <link refid="class_base_menu_actions_container"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="mcore/uielements/ibasemenuactionscontainer.h" line="17" column="1" bodyfile="mcore/uielements/ibasemenuactionscontainer.h" bodystart="18" bodyend="95"/>
+    <listofallmembers>
+      <member refid="class_i_base_menu_actions_container_1a12773d469b19e095b7e502e2dfd520e1" prot="public" virt="pure-virtual"><scope>IBaseMenuActionsContainer</scope><name>appendAction</name></member>
+      <member refid="class_i_base_menu_actions_container_1a464aee04ae727b29140a51e2712ceb8d" prot="public" virt="pure-virtual"><scope>IBaseMenuActionsContainer</scope><name>appendMenu</name></member>
+      <member refid="class_i_base_menu_actions_container_1ac7a8f0447289444726678f00e9faae89" prot="public" virt="non-virtual"><scope>IBaseMenuActionsContainer</scope><name>CommandsMap</name></member>
+      <member refid="class_i_base_menu_actions_container_1a42379b7dc700fe0b4a0631da39a14073" prot="public" virt="pure-virtual"><scope>IBaseMenuActionsContainer</scope><name>getActionContainer</name></member>
+      <member refid="class_i_base_menu_actions_container_1a5478e2a5e56b0a45b70e8b6a7bd86c8d" prot="public" virt="pure-virtual"><scope>IBaseMenuActionsContainer</scope><name>getActionContainerByPtr</name></member>
+      <member refid="class_i_base_menu_actions_container_1a194a41e91b557ed60d7a140b623c0bb4" prot="public" virt="pure-virtual"><scope>IBaseMenuActionsContainer</scope><name>getActions</name></member>
+      <member refid="class_i_base_menu_actions_container_1aa7bdecbdd95e4037a08eb388e521c590" prot="public" virt="pure-virtual"><scope>IBaseMenuActionsContainer</scope><name>getMenuContainer</name></member>
+      <member refid="class_i_base_menu_actions_container_1a7b0ad87b267abb79db6b3f11a5ece00f" prot="public" virt="pure-virtual"><scope>IBaseMenuActionsContainer</scope><name>getMenuContainerByPtr</name></member>
+      <member refid="class_i_base_menu_actions_container_1a9ca6c212e4df9b227c21fcc86640ba29" prot="public" virt="pure-virtual"><scope>IBaseMenuActionsContainer</scope><name>getMenus</name></member>
+      <member refid="class_i_base_menu_actions_container_1a7701a2c14462ca01dd78c5ee9c47089f" prot="public" virt="non-virtual"><scope>IBaseMenuActionsContainer</scope><name>MenusMap</name></member>
+      <member refid="class_i_base_menu_actions_container_1a4ca5d3f217ef77c139395755b6e8ccb8" prot="public" virt="pure-virtual"><scope>IBaseMenuActionsContainer</scope><name>removeAction</name></member>
+      <member refid="class_i_base_menu_actions_container_1af7c213b7b85f59ebf5eda87039ac0c88" prot="public" virt="pure-virtual"><scope>IBaseMenuActionsContainer</scope><name>removeMenu</name></member>
+      <member refid="class_i_base_menu_actions_container_1aaa788262ef5811fd2f35083183a15ea3" prot="public" virt="virtual"><scope>IBaseMenuActionsContainer</scope><name>~IBaseMenuActionsContainer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

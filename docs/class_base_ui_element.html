@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BaseUiElement class | dyn-menu</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">dyn-menu</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Pages</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          BaseUiElement <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="baseuielement_8h.html">&lt;mcore/uielements/baseuielement.h&gt;</a></div>
+        </h1>
+        <p>a base class for all uielements (for <a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>).</p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pro-attribs">Protected variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+<p>A base class for all classes to implement the IActionContainer interface. The <a href="class_base_ui_element.html#ab5f3dc2d5a9e8f65c1a41f15101d54e7" class="m-doc">getMenu()</a> and getMenuBar methods return nullptr.</p>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_i_ui_element.html" class="m-doc">IUiElement</a>
+            </dt>
+            <dd>A container for GUI elements (QMenu, QMenuBar, QToolBar).</dd>
+          </dl>
+        </section>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_ui_q_menu_bar_element.html" class="m-doc">UiQMenuBarElement</a>
+            </dt>
+            <dd>The <a href="class_ui_q_menu_bar_element.html" class="m-doc">UiQMenuBarElement</a> class container for QMenu object.</dd>
+            <dt>
+              class <a href="class_ui_q_menu_element.html" class="m-doc">UiQMenuElement</a>
+            </dt>
+            <dd>The <a href="class_ui_q_menu_element.html" class="m-doc">UiQMenuElement</a> class container for QMenu object.</dd>
+            <dt>
+              class <a href="class_ui_q_tool_bar_element.html" class="m-doc">UiQToolBarElement</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a211204dbfbb4d905b7f209bedd89a922">
+              <span class="m-doc-wrap-bumper"><a href="#a211204dbfbb4d905b7f209bedd89a922" class="m-doc-self">BaseUiElement</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a588929e010d722753244745bdb4e5cff">
+              <span class="m-doc-wrap-bumper"><a href="#a588929e010d722753244745bdb4e5cff" class="m-doc-self">~BaseUiElement</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a9e2dd81abe913b8fe7a3147f2af00a84" class="m-doc">addAction</a>(</span><span class="m-doc-wrap">QAction* action) <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Adds action to ui element.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a8ff0d379033af4640ceb839ed79da3a4" class="m-doc">addMenu</a>(</span><span class="m-doc-wrap">QMenu* menu) <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Adds menu to ui element.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ac0d4fd27283098a3e82710dc069f870b" class="m-doc">removeAction</a>(</span><span class="m-doc-wrap">QAction* action) <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Removes action from ui element.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#af84124798b04c70228cde9b8af35d193" class="m-doc">removeMenu</a>(</span><span class="m-doc-wrap">QMenu* menu) <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Removes menu from ui element.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ad90101452a4172f5deb5334491c1442b" class="m-doc">setContainer</a>(</span><span class="m-doc-wrap"><a href="class_i_base_menu_actions_container.html" class="m-doc">IBaseMenuActionsContainer</a>* container) <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Returns a pointer to the QMenu object.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab5f3dc2d5a9e8f65c1a41f15101d54e7" class="m-doc">getMenu</a>(</span><span class="m-doc-wrap">) -&gt; QMenu* <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a85a04203ea3077d9bc3dfee3968f6c19" class="m-doc">getMenuBar</a>(</span><span class="m-doc-wrap">) -&gt; QMenuBar* <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a932f71ee775c4ecba4c5087734ba862e" class="m-doc">getToolBar</a>(</span><span class="m-doc-wrap">) -&gt; QToolBar* <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pro-attribs">
+          <h2><a href="#pro-attribs">Protected variables</a></h2>
+          <dl class="m-doc">
+            <dt id="ad0d0dbc66c413271b94f907c4ef566ca">
+              <a href="class_i_base_menu_actions_container.html" class="m-doc">IBaseMenuActionsContainer</a>* <a href="#ad0d0dbc66c413271b94f907c4ef566ca" class="m-doc-self">m_container</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a9e2dd81abe913b8fe7a3147f2af00a84"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void BaseUiElement::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9e2dd81abe913b8fe7a3147f2af00a84" class="m-doc-self">addAction</a>(</span><span class="m-doc-wrap">QAction* action) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Adds action to ui element.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">action</td>
+                  <td>- pointer to QAction object</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a8ff0d379033af4640ceb839ed79da3a4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void BaseUiElement::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8ff0d379033af4640ceb839ed79da3a4" class="m-doc-self">addMenu</a>(</span><span class="m-doc-wrap">QMenu* menu) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Adds menu to ui element.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">menu</td>
+                  <td>- pointer to QMenu object</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ac0d4fd27283098a3e82710dc069f870b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void BaseUiElement::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac0d4fd27283098a3e82710dc069f870b" class="m-doc-self">removeAction</a>(</span><span class="m-doc-wrap">QAction* action) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Removes action from ui element.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">action</td>
+                  <td>- pointer to QAction object</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="af84124798b04c70228cde9b8af35d193"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void BaseUiElement::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af84124798b04c70228cde9b8af35d193" class="m-doc-self">removeMenu</a>(</span><span class="m-doc-wrap">QMenu* menu) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Removes menu from ui element.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">menu</td>
+                  <td>- pointer to QMenu object</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ad90101452a4172f5deb5334491c1442b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void BaseUiElement::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad90101452a4172f5deb5334491c1442b" class="m-doc-self">setContainer</a>(</span><span class="m-doc-wrap"><a href="class_i_base_menu_actions_container.html" class="m-doc">IBaseMenuActionsContainer</a>* container) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Returns a pointer to the QMenu object.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>If the container contains an object of a different type, it returns nullptr.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ab5f3dc2d5a9e8f65c1a41f15101d54e7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">QMenu* BaseUiElement::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab5f3dc2d5a9e8f65c1a41f15101d54e7" class="m-doc-self">getMenu</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+<p>Returns pointer to QMenu object In this implementation return nullptr</p>
+          </div></section>
+          <section class="m-doc-details" id="a85a04203ea3077d9bc3dfee3968f6c19"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">QMenuBar* BaseUiElement::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a85a04203ea3077d9bc3dfee3968f6c19" class="m-doc-self">getMenuBar</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+<p>Returns pointer to QMenuBar object In this implementation return nullptr</p>
+          </div></section>
+          <section class="m-doc-details" id="a932f71ee775c4ecba4c5087734ba862e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">QToolBar* BaseUiElement::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a932f71ee775c4ecba4c5087734ba862e" class="m-doc-self">getToolBar</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+<p>Returns pointer to QToolBar object In this implementation return nullptr</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>dyn-menu. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

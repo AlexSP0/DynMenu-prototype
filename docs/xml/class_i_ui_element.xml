@@ -1,0 +1,285 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_i_ui_element" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>IUiElement</compoundname>
+    <derivedcompoundref refid="class_base_ui_element" prot="public" virt="non-virtual">BaseUiElement</derivedcompoundref>
+    <includes refid="iuielement_8h" local="no">iuielement.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_i_ui_element_1a7aa07229bf14458158c64f7640ce4ed5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual IUiElement::~IUiElement</definition>
+        <argsstring>()=default</argsstring>
+        <name>~IUiElement</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/iuielement.h" line="18" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_ui_element_1a1edde8825b5a88fef90c2f5844409d94" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void IUiElement::addAction</definition>
+        <argsstring>(QAction *action)=0</argsstring>
+        <name>addAction</name>
+        <reimplementedby refid="class_base_ui_element_1a9e2dd81abe913b8fe7a3147f2af00a84">addAction</reimplementedby>
+        <reimplementedby refid="class_ui_q_menu_bar_element_1a5e32eaf2a0e58fa037fa9caef249f433">addAction</reimplementedby>
+        <reimplementedby refid="class_ui_q_menu_element_1a0dbae35688aa72f172450a33c45035db">addAction</reimplementedby>
+        <reimplementedby refid="class_ui_q_tool_bar_element_1a12a13fee01a68825621ab79abbbafd60">addAction</reimplementedby>
+        <param>
+          <type>QAction *</type>
+          <declname>action</declname>
+        </param>
+        <briefdescription>
+<para>Adds action to ui element. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to QAction object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/iuielement.h" line="24" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_ui_element_1afd4aaca72142e814b6d802f307926ffc" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void IUiElement::addMenu</definition>
+        <argsstring>(QMenu *menu)=0</argsstring>
+        <name>addMenu</name>
+        <reimplementedby refid="class_base_ui_element_1a8ff0d379033af4640ceb839ed79da3a4">addMenu</reimplementedby>
+        <reimplementedby refid="class_ui_q_menu_bar_element_1a22e656cdf28aa17aae28501a63708238">addMenu</reimplementedby>
+        <reimplementedby refid="class_ui_q_menu_element_1ab027760a161a421add95a5381c530f28">addMenu</reimplementedby>
+        <reimplementedby refid="class_ui_q_tool_bar_element_1a7bf18fe97714ddff1918720db3e91e64">addMenu</reimplementedby>
+        <param>
+          <type>QMenu *</type>
+          <declname>menu</declname>
+        </param>
+        <briefdescription>
+<para>Adds menu to ui element. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>menu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to QMenu object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/iuielement.h" line="30" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_ui_element_1aff7f4e3b9450789a628b2dce005085ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void IUiElement::removeAction</definition>
+        <argsstring>(QAction *action)=0</argsstring>
+        <name>removeAction</name>
+        <reimplementedby refid="class_base_ui_element_1ac0d4fd27283098a3e82710dc069f870b">removeAction</reimplementedby>
+        <reimplementedby refid="class_ui_q_menu_bar_element_1a0f5c82a5ba64e2aa2b24a6fc9871b8a5">removeAction</reimplementedby>
+        <reimplementedby refid="class_ui_q_menu_element_1a7c61a2020c4a48c91907f8727a0c6f2e">removeAction</reimplementedby>
+        <reimplementedby refid="class_ui_q_tool_bar_element_1adb9c4ea0866610b512665f7fa4edefc0">removeAction</reimplementedby>
+        <param>
+          <type>QAction *</type>
+          <declname>action</declname>
+        </param>
+        <briefdescription>
+<para>Removes action from ui element. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to QAction object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/iuielement.h" line="36" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_ui_element_1a697c4373c26076174c955e669059900a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void IUiElement::removeMenu</definition>
+        <argsstring>(QMenu *menu)=0</argsstring>
+        <name>removeMenu</name>
+        <reimplementedby refid="class_base_ui_element_1af84124798b04c70228cde9b8af35d193">removeMenu</reimplementedby>
+        <reimplementedby refid="class_ui_q_menu_bar_element_1a02e9bdbb54375cf5e2b12004e46d0993">removeMenu</reimplementedby>
+        <reimplementedby refid="class_ui_q_menu_element_1af5be52f1c9275c261f9b057037375c3b">removeMenu</reimplementedby>
+        <reimplementedby refid="class_ui_q_tool_bar_element_1add5559883f4f9874da1aaf1f523aa5bf">removeMenu</reimplementedby>
+        <param>
+          <type>QMenu *</type>
+          <declname>menu</declname>
+        </param>
+        <briefdescription>
+<para>Removes menu from ui element. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>menu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to QMenu object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/iuielement.h" line="42" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_ui_element_1a46d0046e5f8c634ffdaff1a57b1db7ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>QMenu *</type>
+        <definition>virtual QMenu* IUiElement::getMenu</definition>
+        <argsstring>()=0</argsstring>
+        <name>getMenu</name>
+        <reimplementedby refid="class_base_ui_element_1ab5f3dc2d5a9e8f65c1a41f15101d54e7">getMenu</reimplementedby>
+        <reimplementedby refid="class_ui_q_menu_element_1aa2c26afdc1a30f198b43dd5982a7ef6b">getMenu</reimplementedby>
+        <briefdescription>
+<para>Returns a pointer to the QMenu object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>If the container contains an object of a different type, it returns nullptr. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/iuielement.h" line="48" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_ui_element_1a8e79e1065cd4c9f81bb0620d38f1c59b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>QMenuBar *</type>
+        <definition>virtual QMenuBar* IUiElement::getMenuBar</definition>
+        <argsstring>()=0</argsstring>
+        <name>getMenuBar</name>
+        <reimplementedby refid="class_base_ui_element_1a85a04203ea3077d9bc3dfee3968f6c19">getMenuBar</reimplementedby>
+        <reimplementedby refid="class_ui_q_menu_bar_element_1ad60c8fec53e3651e60f7cb1a32287c3a">getMenuBar</reimplementedby>
+        <briefdescription>
+<para>Returns a pointer to the QMenuBar object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>If the container contains an object of a different type, it returns nullptr. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/iuielement.h" line="54" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_ui_element_1aa8f3a2881ee967ac94e539f3507abdf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>QToolBar *</type>
+        <definition>virtual QToolBar* IUiElement::getToolBar</definition>
+        <argsstring>()=0</argsstring>
+        <name>getToolBar</name>
+        <reimplementedby refid="class_base_ui_element_1a932f71ee775c4ecba4c5087734ba862e">getToolBar</reimplementedby>
+        <reimplementedby refid="class_ui_q_tool_bar_element_1a722daf84a5c27e34b8bcf46c2ba5e45d">getToolBar</reimplementedby>
+        <briefdescription>
+<para>Returns a pointer to the QToolBar object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>If the container contains an object of a different type, it returns nullptr. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/iuielement.h" line="60" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_ui_element_1afb8a8f197939242fbf8cdb71fac413ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void IUiElement::setContainer</definition>
+        <argsstring>(IBaseMenuActionsContainer *container)=0</argsstring>
+        <name>setContainer</name>
+        <reimplementedby refid="class_base_ui_element_1ad90101452a4172f5deb5334491c1442b">setContainer</reimplementedby>
+        <param>
+          <type><ref refid="class_i_base_menu_actions_container" kindref="compound">IBaseMenuActionsContainer</ref> *</type>
+          <declname>container</declname>
+        </param>
+        <briefdescription>
+<para>Sets a container to store objects of type <ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> and <ref refid="class_command" kindref="compound">Command</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Pointer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to the container object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/iuielement.h" line="66" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A container for GUI elements (QMenu, QMenuBar, QToolBar). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>All container types for GUI items (QMenu, QMenuBar, QToolBar) must implement this interface. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>UiQMenuBarElement</label>
+        <link refid="class_ui_q_menu_bar_element"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>BaseUiElement</label>
+        <link refid="class_base_ui_element"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>UiQToolBarElement</label>
+        <link refid="class_ui_q_tool_bar_element"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>IUiElement</label>
+        <link refid="class_i_ui_element"/>
+      </node>
+      <node id="4">
+        <label>UiQMenuElement</label>
+        <link refid="class_ui_q_menu_element"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="mcore/uielements/iuielement.h" line="15" column="1" bodyfile="mcore/uielements/iuielement.h" bodystart="16" bodyend="67"/>
+    <listofallmembers>
+      <member refid="class_i_ui_element_1a1edde8825b5a88fef90c2f5844409d94" prot="public" virt="pure-virtual"><scope>IUiElement</scope><name>addAction</name></member>
+      <member refid="class_i_ui_element_1afd4aaca72142e814b6d802f307926ffc" prot="public" virt="pure-virtual"><scope>IUiElement</scope><name>addMenu</name></member>
+      <member refid="class_i_ui_element_1a46d0046e5f8c634ffdaff1a57b1db7ba" prot="public" virt="pure-virtual"><scope>IUiElement</scope><name>getMenu</name></member>
+      <member refid="class_i_ui_element_1a8e79e1065cd4c9f81bb0620d38f1c59b" prot="public" virt="pure-virtual"><scope>IUiElement</scope><name>getMenuBar</name></member>
+      <member refid="class_i_ui_element_1aa8f3a2881ee967ac94e539f3507abdf4" prot="public" virt="pure-virtual"><scope>IUiElement</scope><name>getToolBar</name></member>
+      <member refid="class_i_ui_element_1aff7f4e3b9450789a628b2dce005085ae" prot="public" virt="pure-virtual"><scope>IUiElement</scope><name>removeAction</name></member>
+      <member refid="class_i_ui_element_1a697c4373c26076174c955e669059900a" prot="public" virt="pure-virtual"><scope>IUiElement</scope><name>removeMenu</name></member>
+      <member refid="class_i_ui_element_1afb8a8f197939242fbf8cdb71fac413ea" prot="public" virt="pure-virtual"><scope>IUiElement</scope><name>setContainer</name></member>
+      <member refid="class_i_ui_element_1a7aa07229bf14458158c64f7640ce4ed5" prot="public" virt="virtual"><scope>IUiElement</scope><name>~IUiElement</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

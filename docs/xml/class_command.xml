@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_command" kind="class" language="C++" prot="public">
+    <compoundname>Command</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="command_8h" local="no">command.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_command_1a343a0d5ccbb7dee8efd15750e54678c7" prot="private" static="no" mutable="no">
+        <type>QUuid</type>
+        <definition>QUuid Command::m_id</definition>
+        <argsstring></argsstring>
+        <name>m_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/command.h" line="62" column="11" bodyfile="mcore/command.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_command_1a6b1721456d02b6c86323ba0204a9433f" prot="private" static="no" mutable="no">
+        <type>QAction *</type>
+        <definition>QAction* Command::m_action</definition>
+        <argsstring></argsstring>
+        <name>m_action</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/command.h" line="64" column="13" bodyfile="mcore/command.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_command_1a305d6d0fc0c3917837caeb5148923df1" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString Command::m_text</definition>
+        <argsstring></argsstring>
+        <name>m_text</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/command.h" line="66" column="13" bodyfile="mcore/command.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_command_1a2bf45ec312d893850dd5f106924da55f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Command::Command</definition>
+        <argsstring>(QAction *action)</argsstring>
+        <name>Command</name>
+        <param>
+          <type>QAction *</type>
+          <declname>action</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates container with specified QAction <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to QAction object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/command.h" line="28" column="5" bodyfile="mcore/command.cpp" bodystart="3" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_command_1ae1ef785ebec86f4dbce301793cd61b91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QUuid</type>
+        <definition>QUuid Command::getId</definition>
+        <argsstring>()</argsstring>
+        <name>getId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the ID of container <simplesect kind="return"><para>ID of container </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/command.h" line="34" column="11" bodyfile="mcore/command.cpp" bodystart="9" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_command_1ae7ebcdd297cdf60319a61abc4852f094" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Command::operator==</definition>
+        <argsstring>(const Command &amp;other)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="class_command" kindref="compound">Command</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compares two containers by ID <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to the container with which the comparison is made </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>returns true if the id of the containers is the same, false if they are different </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/command.h" line="41" column="10" bodyfile="mcore/command.cpp" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_command_1a859a13357500e8c9d5d0afd750b01d2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QAction *</type>
+        <definition>QAction * Command::getAction</definition>
+        <argsstring>()</argsstring>
+        <name>getAction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns pointer to QAction object in this container <simplesect kind="return"><para>pointer to QAction object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/command.h" line="47" column="13" bodyfile="mcore/command.cpp" bodystart="19" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_command_1a0fab79c06134962fe4004aff9804c8b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString &amp;</type>
+        <definition>QString &amp; Command::getText</definition>
+        <argsstring>()</argsstring>
+        <name>getText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns text in this container <simplesect kind="return"><para>Returns text </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/command.h" line="53" column="13" bodyfile="mcore/command.cpp" bodystart="24" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_command_1ac0f0b62e912d48a18e8e7529e9453f38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Command::setText</definition>
+        <argsstring>(QString text)</argsstring>
+        <name>setText</name>
+        <param>
+          <type>QString</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the string for the container <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string to be set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/command.h" line="59" column="10" bodyfile="mcore/command.cpp" bodystart="29" bodyend="32"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Container for QAction object. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The container contains additional information about the QAction type object, such as ID and text. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Command</label>
+        <link refid="class_command"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Command</label>
+        <link refid="class_command"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="mcore/command.h" line="19" column="1" bodyfile="mcore/command.h" bodystart="20" bodyend="69"/>
+    <listofallmembers>
+      <member refid="class_command_1a2bf45ec312d893850dd5f106924da55f" prot="public" virt="non-virtual"><scope>Command</scope><name>Command</name></member>
+      <member refid="class_command_1a859a13357500e8c9d5d0afd750b01d2c" prot="public" virt="non-virtual"><scope>Command</scope><name>getAction</name></member>
+      <member refid="class_command_1ae1ef785ebec86f4dbce301793cd61b91" prot="public" virt="non-virtual"><scope>Command</scope><name>getId</name></member>
+      <member refid="class_command_1a0fab79c06134962fe4004aff9804c8b4" prot="public" virt="non-virtual"><scope>Command</scope><name>getText</name></member>
+      <member refid="class_command_1a6b1721456d02b6c86323ba0204a9433f" prot="private" virt="non-virtual"><scope>Command</scope><name>m_action</name></member>
+      <member refid="class_command_1a343a0d5ccbb7dee8efd15750e54678c7" prot="private" virt="non-virtual"><scope>Command</scope><name>m_id</name></member>
+      <member refid="class_command_1a305d6d0fc0c3917837caeb5148923df1" prot="private" virt="non-virtual"><scope>Command</scope><name>m_text</name></member>
+      <member refid="class_command_1ae7ebcdd297cdf60319a61abc4852f094" prot="public" virt="non-virtual"><scope>Command</scope><name>operator==</name></member>
+      <member refid="class_command_1ac0f0b62e912d48a18e8e7529e9453f38" prot="public" virt="non-virtual"><scope>Command</scope><name>setText</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

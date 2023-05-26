@@ -1,0 +1,415 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_base_menu_actions_container" kind="class" language="C++" prot="public">
+    <compoundname>BaseMenuActionsContainer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <basecompoundref refid="class_i_base_menu_actions_container" prot="public" virt="non-virtual">IBaseMenuActionsContainer</basecompoundref>
+    <includes refid="basemenuactionscontainer_8h" local="no">basemenuactionscontainer.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_base_menu_actions_container_1ad01473162d8fc6097307ce4d487988bf" prot="private" static="no" mutable="no">
+        <type><ref refid="class_i_base_menu_actions_container_1ac7a8f0447289444726678f00e9faae89" kindref="member">CommandsMap</ref></type>
+        <definition>CommandsMap BaseMenuActionsContainer::m_actions</definition>
+        <argsstring></argsstring>
+        <name>m_actions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/basemenuactionscontainer.h" line="37" column="17" bodyfile="mcore/uielements/basemenuactionscontainer.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_base_menu_actions_container_1aea1b946e252e791b876d31db2333930b" prot="private" static="no" mutable="no">
+        <type><ref refid="class_i_base_menu_actions_container_1a7701a2c14462ca01dd78c5ee9c47089f" kindref="member">MenusMap</ref></type>
+        <definition>MenusMap BaseMenuActionsContainer::m_menus</definition>
+        <argsstring></argsstring>
+        <name>m_menus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/basemenuactionscontainer.h" line="38" column="14" bodyfile="mcore/uielements/basemenuactionscontainer.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_base_menu_actions_container_1a7ac2b1b0cd4f53bc19cb43b99fdbe09b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BaseMenuActionsContainer::BaseMenuActionsContainer</definition>
+        <argsstring>()=default</argsstring>
+        <name>BaseMenuActionsContainer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/basemenuactionscontainer.h" line="18" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_menu_actions_container_1a9b8e3847dba4b38cabcec604d01afe96" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>BaseMenuActionsContainer::~BaseMenuActionsContainer</definition>
+        <argsstring>()</argsstring>
+        <name>~BaseMenuActionsContainer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/basemenuactionscontainer.h" line="19" column="13" bodyfile="mcore/uielements/basemenuactionscontainer.cpp" bodystart="7" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_menu_actions_container_1a8d639fb3dabc898935e2b523ea382d0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_command" kindref="compound">Command</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Command &gt; BaseMenuActionsContainer::appendAction</definition>
+        <argsstring>(QAction *action) override</argsstring>
+        <name>appendAction</name>
+        <reimplements refid="class_i_base_menu_actions_container_1a12773d469b19e095b7e502e2dfd520e1">appendAction</reimplements>
+        <param>
+          <type>QAction *</type>
+          <declname>action</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds a QAction object to the storage. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to the object to be added. The storage does not own the object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">group</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>group to which the object is added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr&lt;&gt;. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/basemenuactionscontainer.h" line="22" column="21" bodyfile="mcore/uielements/basemenuactionscontainer.cpp" bodystart="9" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_menu_actions_container_1a3034be82b9053264b40420dfb2a9e73c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; IActionsContainer &gt; BaseMenuActionsContainer::appendMenu</definition>
+        <argsstring>(QMenu *menu) override</argsstring>
+        <name>appendMenu</name>
+        <reimplements refid="class_i_base_menu_actions_container_1a464aee04ae727b29140a51e2712ceb8d">appendMenu</reimplements>
+        <param>
+          <type>QMenu *</type>
+          <declname>menu</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds a QMenu object to the storage. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">QMenu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to the object to be added. The storage does not own the object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">group</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>group to which the object is added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr&lt;&gt;. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/basemenuactionscontainer.h" line="23" column="21" bodyfile="mcore/uielements/basemenuactionscontainer.cpp" bodystart="25" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_menu_actions_container_1a5156a72583677b5dd4518bfd9d327619" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool BaseMenuActionsContainer::removeAction</definition>
+        <argsstring>(QUuid id) override</argsstring>
+        <name>removeAction</name>
+        <reimplements refid="class_i_base_menu_actions_container_1a4ca5d3f217ef77c139395755b6e8ccb8">removeAction</reimplements>
+        <param>
+          <type>QUuid</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes a QMenu container from the storage with the specified ID. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID of the container to be deleted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>returns true if successful and false if the object is not found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/basemenuactionscontainer.h" line="24" column="10" bodyfile="mcore/uielements/basemenuactionscontainer.cpp" bodystart="39" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_menu_actions_container_1a77b8b66f2104cbfc3e6d60af52896b44" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool BaseMenuActionsContainer::removeMenu</definition>
+        <argsstring>(QUuid id) override</argsstring>
+        <name>removeMenu</name>
+        <reimplements refid="class_i_base_menu_actions_container_1af7c213b7b85f59ebf5eda87039ac0c88">removeMenu</reimplements>
+        <param>
+          <type>QUuid</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes a QAction container from the storage with the specified ID. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID of the container to be deleted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>returns true if successful and false if the object is not found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/basemenuactionscontainer.h" line="25" column="10" bodyfile="mcore/uielements/basemenuactionscontainer.cpp" bodystart="53" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_menu_actions_container_1a9216bccd6c2421fedb6d440867fa95cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_i_base_menu_actions_container_1ac7a8f0447289444726678f00e9faae89" kindref="member">CommandsMap</ref> &amp;</type>
+        <definition>IBaseMenuActionsContainer::CommandsMap &amp; BaseMenuActionsContainer::getActions</definition>
+        <argsstring>() override</argsstring>
+        <name>getActions</name>
+        <reimplements refid="class_i_base_menu_actions_container_1a194a41e91b557ed60d7a140b623c0bb4">getActions</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return std::map with commands containers(QActions). <simplesect kind="return"><para>std::map with QActions containers </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/basemenuactionscontainer.h" line="27" column="17" bodyfile="mcore/uielements/basemenuactionscontainer.cpp" bodystart="67" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_menu_actions_container_1af05f862a3e96164b4fd3c229388e2825" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_i_base_menu_actions_container_1a7701a2c14462ca01dd78c5ee9c47089f" kindref="member">MenusMap</ref> &amp;</type>
+        <definition>IBaseMenuActionsContainer::MenusMap &amp; BaseMenuActionsContainer::getMenus</definition>
+        <argsstring>() override</argsstring>
+        <name>getMenus</name>
+        <reimplements refid="class_i_base_menu_actions_container_1a9ca6c212e4df9b227c21fcc86640ba29">getMenus</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return std::map with IACtionsContainer containers(QMenu). <simplesect kind="return"><para>std::map with QMenu containers </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/basemenuactionscontainer.h" line="28" column="14" bodyfile="mcore/uielements/basemenuactionscontainer.cpp" bodystart="72" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_menu_actions_container_1a3100420ce651d89af01b51fb05904d89" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_command" kindref="compound">Command</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Command &gt; BaseMenuActionsContainer::getActionContainer</definition>
+        <argsstring>(QUuid id) override</argsstring>
+        <name>getActionContainer</name>
+        <reimplements refid="class_i_base_menu_actions_container_1a42379b7dc700fe0b4a0631da39a14073">getActionContainer</reimplements>
+        <param>
+          <type>QUuid</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a QAction container with the specified ID. If there is no object with this ID, it returns empty std::weak_ptr&lt;&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id of action container </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>pointer to container or empty std::weak_ptr </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/basemenuactionscontainer.h" line="30" column="21" bodyfile="mcore/uielements/basemenuactionscontainer.cpp" bodystart="77" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_menu_actions_container_1af1aeff43b9f414bc9735c7f8f26ab5a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; IActionsContainer &gt; BaseMenuActionsContainer::getMenuContainer</definition>
+        <argsstring>(QUuid id) override</argsstring>
+        <name>getMenuContainer</name>
+        <reimplements refid="class_i_base_menu_actions_container_1aa7bdecbdd95e4037a08eb388e521c590">getMenuContainer</reimplements>
+        <param>
+          <type>QUuid</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a QMenu container with the specified ID. If there is no object with this ID, it returns empty std::weak_ptr&lt;&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id of menu container </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>pointer to container or empty std::weak_ptr </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/basemenuactionscontainer.h" line="31" column="21" bodyfile="mcore/uielements/basemenuactionscontainer.cpp" bodystart="88" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_menu_actions_container_1ac2393c6c6ad58d9a5718f8ba446ffe90" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_command" kindref="compound">Command</ref> *</type>
+        <definition>Command * BaseMenuActionsContainer::getActionContainerByPtr</definition>
+        <argsstring>(QObject *action) override</argsstring>
+        <name>getActionContainerByPtr</name>
+        <reimplements refid="class_i_base_menu_actions_container_1a5478e2a5e56b0a45b70e8b6a7bd86c8d">getActionContainerByPtr</reimplements>
+        <param>
+          <type>QObject *</type>
+          <declname>action</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a pointer to QActions container with the specified pointer. If there is no object with this ID, it returns nullptr <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to QAction </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>pointer to container or nullptr </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/basemenuactionscontainer.h" line="33" column="21" bodyfile="mcore/uielements/basemenuactionscontainer.cpp" bodystart="99" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_menu_actions_container_1a7468cbd39158c932fe29970c5b99b231" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> *</type>
+        <definition>IActionsContainer * BaseMenuActionsContainer::getMenuContainerByPtr</definition>
+        <argsstring>(QObject *menu) override</argsstring>
+        <name>getMenuContainerByPtr</name>
+        <reimplements refid="class_i_base_menu_actions_container_1a7b0ad87b267abb79db6b3f11a5ece00f">getMenuContainerByPtr</reimplements>
+        <param>
+          <type>QObject *</type>
+          <declname>menu</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a pointer to QMenu container with the specified pointer. If there is no object with this ID, it returns nullptr <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">menu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to QMenu </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>pointer to container or nullptr </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/basemenuactionscontainer.h" line="34" column="31" bodyfile="mcore/uielements/basemenuactionscontainer.cpp" bodystart="116" bodyend="131"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation of <ref refid="class_i_base_menu_actions_container" kindref="compound">IBaseMenuActionsContainer</ref> - internal object that implements operations with stored containers of menus (<ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref>) and commands (Commands). Used by classes that implement the <ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> interface. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Base for classes that implements the <ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> interface. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+      <node id="3">
+        <label>IBaseMenuActionsContainer</label>
+        <link refid="class_i_base_menu_actions_container"/>
+      </node>
+      <node id="1">
+        <label>BaseMenuActionsContainer</label>
+        <link refid="class_base_menu_actions_container"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+      <node id="3">
+        <label>IBaseMenuActionsContainer</label>
+        <link refid="class_i_base_menu_actions_container"/>
+      </node>
+      <node id="1">
+        <label>BaseMenuActionsContainer</label>
+        <link refid="class_base_menu_actions_container"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="mcore/uielements/basemenuactionscontainer.h" line="14" column="1" bodyfile="mcore/uielements/basemenuactionscontainer.h" bodystart="15" bodyend="39"/>
+    <listofallmembers>
+      <member refid="class_base_menu_actions_container_1a8d639fb3dabc898935e2b523ea382d0d" prot="public" virt="virtual"><scope>BaseMenuActionsContainer</scope><name>appendAction</name></member>
+      <member refid="class_base_menu_actions_container_1a3034be82b9053264b40420dfb2a9e73c" prot="public" virt="virtual"><scope>BaseMenuActionsContainer</scope><name>appendMenu</name></member>
+      <member refid="class_base_menu_actions_container_1a7ac2b1b0cd4f53bc19cb43b99fdbe09b" prot="public" virt="non-virtual"><scope>BaseMenuActionsContainer</scope><name>BaseMenuActionsContainer</name></member>
+      <member refid="class_i_base_menu_actions_container_1ac7a8f0447289444726678f00e9faae89" prot="public" virt="non-virtual"><scope>BaseMenuActionsContainer</scope><name>CommandsMap</name></member>
+      <member refid="class_base_menu_actions_container_1a3100420ce651d89af01b51fb05904d89" prot="public" virt="virtual"><scope>BaseMenuActionsContainer</scope><name>getActionContainer</name></member>
+      <member refid="class_base_menu_actions_container_1ac2393c6c6ad58d9a5718f8ba446ffe90" prot="public" virt="virtual"><scope>BaseMenuActionsContainer</scope><name>getActionContainerByPtr</name></member>
+      <member refid="class_base_menu_actions_container_1a9216bccd6c2421fedb6d440867fa95cf" prot="public" virt="virtual"><scope>BaseMenuActionsContainer</scope><name>getActions</name></member>
+      <member refid="class_base_menu_actions_container_1af1aeff43b9f414bc9735c7f8f26ab5a5" prot="public" virt="virtual"><scope>BaseMenuActionsContainer</scope><name>getMenuContainer</name></member>
+      <member refid="class_base_menu_actions_container_1a7468cbd39158c932fe29970c5b99b231" prot="public" virt="virtual"><scope>BaseMenuActionsContainer</scope><name>getMenuContainerByPtr</name></member>
+      <member refid="class_base_menu_actions_container_1af05f862a3e96164b4fd3c229388e2825" prot="public" virt="virtual"><scope>BaseMenuActionsContainer</scope><name>getMenus</name></member>
+      <member refid="class_base_menu_actions_container_1ad01473162d8fc6097307ce4d487988bf" prot="private" virt="non-virtual"><scope>BaseMenuActionsContainer</scope><name>m_actions</name></member>
+      <member refid="class_base_menu_actions_container_1aea1b946e252e791b876d31db2333930b" prot="private" virt="non-virtual"><scope>BaseMenuActionsContainer</scope><name>m_menus</name></member>
+      <member refid="class_i_base_menu_actions_container_1a7701a2c14462ca01dd78c5ee9c47089f" prot="public" virt="non-virtual"><scope>BaseMenuActionsContainer</scope><name>MenusMap</name></member>
+      <member refid="class_base_menu_actions_container_1a5156a72583677b5dd4518bfd9d327619" prot="public" virt="virtual"><scope>BaseMenuActionsContainer</scope><name>removeAction</name></member>
+      <member refid="class_base_menu_actions_container_1a77b8b66f2104cbfc3e6d60af52896b44" prot="public" virt="virtual"><scope>BaseMenuActionsContainer</scope><name>removeMenu</name></member>
+      <member refid="class_base_menu_actions_container_1a9b8e3847dba4b38cabcec604d01afe96" prot="public" virt="virtual"><scope>BaseMenuActionsContainer</scope><name>~BaseMenuActionsContainer</name></member>
+      <member refid="class_i_base_menu_actions_container_1aaa788262ef5811fd2f35083183a15ea3" prot="public" virt="virtual"><scope>BaseMenuActionsContainer</scope><name>~IBaseMenuActionsContainer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

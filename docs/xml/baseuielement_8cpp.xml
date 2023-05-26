@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="baseuielement_8cpp" kind="file" language="C++">
+    <compoundname>baseuielement.cpp</compoundname>
+    <includes refid="baseuielement_8h" local="yes">baseuielement.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>mcore/uielements/baseuielement.cpp</label>
+        <link refid="baseuielement_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>QObject</label>
+      </node>
+      <node id="9">
+        <label>QMenu</label>
+      </node>
+      <node id="3">
+        <label>iuielement.h</label>
+        <link refid="iuielement_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>QUuid</label>
+      </node>
+      <node id="7">
+        <label>../command.h</label>
+        <link refid="command_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>iactionscontainer.h</label>
+        <link refid="iactionscontainer_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>QAction</label>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+      <node id="13">
+        <label>QString</label>
+      </node>
+      <node id="15">
+        <label>qmenubar.h</label>
+      </node>
+      <node id="2">
+        <label>baseuielement.h</label>
+        <link refid="baseuielement_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>QToolBar</label>
+      </node>
+      <node id="4">
+        <label>ibasemenuactionscontainer.h</label>
+        <link refid="ibasemenuactionscontainer_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mcore/uielements/baseuielement.cpp"/>
+  </compounddef>
+</doxygen>

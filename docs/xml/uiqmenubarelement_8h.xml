@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="uiqmenubarelement_8h" kind="file" language="C++">
+    <compoundname>uiqmenubarelement.h</compoundname>
+    <includes refid="baseuielement_8h" local="yes">uielements/baseuielement.h</includes>
+    <includedby refid="uicontainer_8cpp" local="yes">mcore/uielements/uicontainer.cpp</includedby>
+    <includedby refid="uiqmenubarelement_8cpp" local="yes">mcore/uielements/uiqmenubarelement.cpp</includedby>
+    <incdepgraph>
+      <node id="10">
+        <label>QObject</label>
+      </node>
+      <node id="9">
+        <label>QMenu</label>
+      </node>
+      <node id="3">
+        <label>iuielement.h</label>
+        <link refid="iuielement_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>QUuid</label>
+      </node>
+      <node id="7">
+        <label>../command.h</label>
+        <link refid="command_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>iactionscontainer.h</label>
+        <link refid="iactionscontainer_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>QAction</label>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+      <node id="13">
+        <label>QString</label>
+      </node>
+      <node id="15">
+        <label>qmenubar.h</label>
+      </node>
+      <node id="2">
+        <label>uielements/baseuielement.h</label>
+        <link refid="baseuielement_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>QToolBar</label>
+      </node>
+      <node id="4">
+        <label>ibasemenuactionscontainer.h</label>
+        <link refid="ibasemenuactionscontainer_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>mcore/uielements/uiqmenubarelement.h</label>
+        <link refid="uiqmenubarelement_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>mcore/uielements/uiqmenubarelement.cpp</label>
+        <link refid="uiqmenubarelement_8cpp"/>
+      </node>
+      <node id="2">
+        <label>mcore/uielements/uicontainer.cpp</label>
+        <link refid="uicontainer_8cpp"/>
+      </node>
+      <node id="1">
+        <label>mcore/uielements/uiqmenubarelement.h</label>
+        <link refid="uiqmenubarelement_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_ui_q_menu_bar_element" prot="public">UiQMenuBarElement</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mcore/uielements/uiqmenubarelement.h"/>
+  </compounddef>
+</doxygen>

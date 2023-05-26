@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="command_8h" kind="file" language="C++">
+    <compoundname>command.h</compoundname>
+    <includes local="no">QAction</includes>
+    <includes local="no">QMenu</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">QUuid</includes>
+    <includes local="no">memory</includes>
+    <includedby refid="command_8cpp" local="yes">mcore/command.cpp</includedby>
+    <includedby refid="iactionscontainer_8h" local="yes">mcore/uielements/iactionscontainer.h</includedby>
+    <includedby refid="ibasemenuactionscontainer_8h" local="yes">mcore/uielements/ibasemenuactionscontainer.h</includedby>
+    <includedby refid="uicontainer_8cpp" local="yes">mcore/uielements/uicontainer.cpp</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>QObject</label>
+      </node>
+      <node id="3">
+        <label>QMenu</label>
+      </node>
+      <node id="5">
+        <label>QUuid</label>
+      </node>
+      <node id="1">
+        <label>mcore/command.h</label>
+        <link refid="command_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QAction</label>
+      </node>
+      <node id="6">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="19">
+        <label>mcore/uielements/uiqtoolbarelement.cpp</label>
+        <link refid="uiqtoolbarelement_8cpp"/>
+      </node>
+      <node id="13">
+        <label>mcore/uielements/baseuielement.cpp</label>
+        <link refid="baseuielement_8cpp"/>
+      </node>
+      <node id="11">
+        <label>mcore/uielements/iuielement.h</label>
+        <link refid="iuielement_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>mcore/basemenumanager.cpp</label>
+        <link refid="basemenumanager_8cpp"/>
+      </node>
+      <node id="18">
+        <label>mcore/uielements/uiqtoolbarelement.h</label>
+        <link refid="uiqtoolbarelement_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>mcore/uielements/uiqmenubarelement.cpp</label>
+        <link refid="uiqmenubarelement_8cpp"/>
+      </node>
+      <node id="2">
+        <label>mcore/command.cpp</label>
+        <link refid="command_8cpp"/>
+      </node>
+      <node id="20">
+        <label>mcore/uielements/uicontainer.h</label>
+        <link refid="uicontainer_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>mcore/uielements/uicontainer.cpp</label>
+        <link refid="uicontainer_8cpp"/>
+      </node>
+      <node id="1">
+        <label>mcore/command.h</label>
+        <link refid="command_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>mcore/uielements/iactionscontainer.h</label>
+        <link refid="iactionscontainer_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>mcore/basemenumanager.h</label>
+        <link refid="basemenumanager_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>mcore/uielements/uiqmenuelement.cpp</label>
+        <link refid="uiqmenuelement_8cpp"/>
+      </node>
+      <node id="9">
+        <label>mcore/uielements/basemenuactionscontainer.cpp</label>
+        <link refid="basemenuactionscontainer_8cpp"/>
+      </node>
+      <node id="4">
+        <label>mcore/imenumanager.h</label>
+        <link refid="imenumanager_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>mcore/uielements/baseuielement.h</label>
+        <link refid="baseuielement_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>mcore/uielements/ibasemenuactionscontainer.h</label>
+        <link refid="ibasemenuactionscontainer_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>mcore/uielements/uiqmenuelement.h</label>
+        <link refid="uiqmenuelement_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>mcore/uielements/basemenuactionscontainer.h</label>
+        <link refid="basemenuactionscontainer_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>mcore/uielements/uiqmenubarelement.h</label>
+        <link refid="uiqmenubarelement_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_command" prot="public">Command</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mcore/command.h"/>
+  </compounddef>
+</doxygen>

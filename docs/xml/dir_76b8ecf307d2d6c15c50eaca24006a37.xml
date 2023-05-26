@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_76b8ecf307d2d6c15c50eaca24006a37" kind="dir">
+    <compoundname>mcore</compoundname>
+    <innerdir refid="dir_acaadc77c9478a219a77e944bc32ebd2">mcore/uielements</innerdir>
+    <innerfile refid="basemenumanager_8cpp">basemenumanager.cpp</innerfile>
+    <innerfile refid="basemenumanager_8h">basemenumanager.h</innerfile>
+    <innerfile refid="command_8cpp">command.cpp</innerfile>
+    <innerfile refid="command_8h">command.h</innerfile>
+    <innerfile refid="imenumanager_8h">imenumanager.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mcore/"/>
+  </compounddef>
+</doxygen>

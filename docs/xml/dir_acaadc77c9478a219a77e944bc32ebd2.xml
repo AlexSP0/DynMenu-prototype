@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_acaadc77c9478a219a77e944bc32ebd2" kind="dir">
+    <compoundname>mcore/uielements</compoundname>
+    <innerfile refid="basemenuactionscontainer_8cpp">basemenuactionscontainer.cpp</innerfile>
+    <innerfile refid="basemenuactionscontainer_8h">basemenuactionscontainer.h</innerfile>
+    <innerfile refid="baseuielement_8cpp">baseuielement.cpp</innerfile>
+    <innerfile refid="baseuielement_8h">baseuielement.h</innerfile>
+    <innerfile refid="iactionscontainer_8h">iactionscontainer.h</innerfile>
+    <innerfile refid="ibasemenuactionscontainer_8h">ibasemenuactionscontainer.h</innerfile>
+    <innerfile refid="iuielement_8h">iuielement.h</innerfile>
+    <innerfile refid="uicontainer_8cpp">uicontainer.cpp</innerfile>
+    <innerfile refid="uicontainer_8h">uicontainer.h</innerfile>
+    <innerfile refid="uiqmenubarelement_8cpp">uiqmenubarelement.cpp</innerfile>
+    <innerfile refid="uiqmenubarelement_8h">uiqmenubarelement.h</innerfile>
+    <innerfile refid="uiqmenuelement_8cpp">uiqmenuelement.cpp</innerfile>
+    <innerfile refid="uiqmenuelement_8h">uiqmenuelement.h</innerfile>
+    <innerfile refid="uiqtoolbarelement_8cpp">uiqtoolbarelement.cpp</innerfile>
+    <innerfile refid="uiqtoolbarelement_8h">uiqtoolbarelement.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mcore/uielements/"/>
+  </compounddef>
+</doxygen>

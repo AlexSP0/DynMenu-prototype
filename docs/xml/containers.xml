@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="containers" kind="page">
+    <compoundname>containers</compoundname>
+    <title>Containers</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><emphasis>A dynamic menu library</emphasis></para>
+<sect1 id="containers_1containers">
+<title>Containers</title>
+<para>There are two kinds of containers in the library:</para>
+<para><itemizedlist>
+<listitem><para>containers for GUI elements, which are responsible for operations with adding, removing commands and menus to these elements. These containers must implement the <ref refid="class_i_ui_element" kindref="compound">IUiElement</ref> interface. The two types of containers are QMenuBarElement (QMenuBar) and QMenuElement (QMenu). The implementation of QToolBarElement (QToolbar) is planned.</para>
+</listitem><listitem><para>containers for menus (<ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref>) and commands (QActions). These containers implement the <ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> interface. The only container implemented is the <ref refid="class_ui_container" kindref="compound">UiContainer</ref>. These containers use an object of type <ref refid="class_i_base_menu_actions_container" kindref="compound">IBaseMenuActionsContainer</ref>, which provides typical operations with them.</para>
+</listitem></itemizedlist>
+</para>
+<para>Note: it is the container which is responsible for removing destroyed objects from the menu by subscribing to the QObject::destroyed signal. </para>
+</sect1>
+    </detaileddescription>
+    <location file="docs/containers.dox"/>
+  </compounddef>
+</doxygen>

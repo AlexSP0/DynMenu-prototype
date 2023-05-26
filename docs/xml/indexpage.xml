@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Dyn-menu</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><emphasis>A dynamic menu library</emphasis></para>
+<para>This is a documentation for the Dyn-menu Project. <ulink url="https://alexsp0.github.io/DynMenu-prototype/index.html">Project homepage</ulink>.</para>
+<sect1 id="index_1whats-this">
+<title>What&apos;s this?</title>
+<para>The mcore library is designed to create, delete, divide menus and menu commands in various objects such as QMenuBar, QMenu and QToolBar. It consists of a menu manager, containers for GUI items, and containers for submenus and commands.</para>
+</sect1>
+<sect1 id="index_1how-to-use">
+<title>How to use?</title>
+<para>First you need to register the menu in the menu manager (the default manager with the usual features - <ref refid="class_base_menu_manager" kindref="compound">BaseMenuManager</ref>). You must use the registerMenuBar, registerMenu¸registerToolBar methods. These methods return a reference to a container for these objects of type ActionsContainer. The returned value must be used to create menus and commands (QMenu and QAction) in these objects. Important: The container does not own registered objects! If a registered object is destroyed, the container is automatically deleted as well. For this reason, std::weak_ptr is returned.</para>
+<para>To create a menu in a container, call the addMenu method, in the parameters of which, specify the pointer to the menu and the container where the menu is added.</para>
+<para>To add a command, a command is added in a similar way, using the addAction method. Note: a newly created container does not own the added menu(command); if the menu object is destroyed, the container is deleted. For this reason, it is of type std::weak_ptr.</para>
+<para>To remove a menu(command) from a container, you must use the deleteMenu(deleteAction) methods.</para>
+<para>To unregister containers in the menu manager, use the methods unregisterMenu, unregisterMenuBar, unregisterToolBar.</para>
+<para>You can get the id of a container by calling its getId() method.</para>
+</sect1>
+<sect1 id="index_1see_also">
+<title>See also?</title>
+<para><ref refid="containers_1containers" kindref="member">Containers</ref> </para>
+</sect1>
+    </detaileddescription>
+    <location file="docs/mainpage.dox"/>
+  </compounddef>
+</doxygen>

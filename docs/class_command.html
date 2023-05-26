@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Command class | dyn-menu</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">dyn-menu</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Pages</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          Command <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="command_8h.html">&lt;mcore/command.h&gt;</a></div>
+        </h1>
+        <p>Container for QAction object.</p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+<p>The container contains additional information about the QAction type object, such as ID and text.</p>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a2bf45ec312d893850dd5f106924da55f" class="m-doc">Command</a>(</span><span class="m-doc-wrap">QAction* action)</span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae1ef785ebec86f4dbce301793cd61b91" class="m-doc">getId</a>(</span><span class="m-doc-wrap">) -&gt; QUuid</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae7ebcdd297cdf60319a61abc4852f094" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const <a href="class_command.html" class="m-doc">Command</a>&amp; other) -&gt; bool</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a859a13357500e8c9d5d0afd750b01d2c" class="m-doc">getAction</a>(</span><span class="m-doc-wrap">) -&gt; QAction*</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0fab79c06134962fe4004aff9804c8b4" class="m-doc">getText</a>(</span><span class="m-doc-wrap">) -&gt; QString&amp;</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ac0f0b62e912d48a18e8e7529e9453f38" class="m-doc">setText</a>(</span><span class="m-doc-wrap">QString text)</span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a2bf45ec312d893850dd5f106924da55f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Command::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2bf45ec312d893850dd5f106924da55f" class="m-doc-self">Command</a>(</span><span class="m-doc-wrap">QAction* action)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">action&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>pointer to QAction object</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Creates container with specified QAction</p>
+          </div></section>
+          <section class="m-doc-details" id="ae1ef785ebec86f4dbce301793cd61b91"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">QUuid Command::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae1ef785ebec86f4dbce301793cd61b91" class="m-doc-self">getId</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>ID of container</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Return the ID of container</p>
+          </div></section>
+          <section class="m-doc-details" id="ae7ebcdd297cdf60319a61abc4852f094"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Command::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae7ebcdd297cdf60319a61abc4852f094" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const <a href="class_command.html" class="m-doc">Command</a>&amp; other)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>reference to the container with which the comparison is made</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>returns true if the id of the containers is the same, false if they are different</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Compares two containers by ID</p>
+          </div></section>
+          <section class="m-doc-details" id="a859a13357500e8c9d5d0afd750b01d2c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">QAction* Command::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a859a13357500e8c9d5d0afd750b01d2c" class="m-doc-self">getAction</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>pointer to QAction object</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Returns pointer to QAction object in this container</p>
+          </div></section>
+          <section class="m-doc-details" id="a0fab79c06134962fe4004aff9804c8b4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">QString&amp; Command::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0fab79c06134962fe4004aff9804c8b4" class="m-doc-self">getText</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Returns text</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Returns text in this container</p>
+          </div></section>
+          <section class="m-doc-details" id="ac0f0b62e912d48a18e8e7529e9453f38"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Command::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac0f0b62e912d48a18e8e7529e9453f38" class="m-doc-self">setText</a>(</span><span class="m-doc-wrap">QString text)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">text&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>string to be set</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Sets the string for the container</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>dyn-menu. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

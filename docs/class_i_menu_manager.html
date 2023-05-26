@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>IMenuManager class | dyn-menu</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">dyn-menu</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Pages</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          IMenuManager <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="imenumanager_8h.html">&lt;mcore/imenumanager.h&gt;</a></div>
+        </h1>
+        <p>Interface for menu manager.</p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-slots">Public slots</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+<p>Interface for registering objects containing menus and creating menus and commands in them</p>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_base_menu_manager.html" class="m-doc">BaseMenuManager</a>
+            </dt>
+            <dd>Interface for menu manager.</dd>
+          </dl>
+        </section>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="aa2e71c80a37b8018453c2ff2c203e35a">
+              using <a href="#aa2e71c80a37b8018453c2ff2c203e35a" class="m-doc-self">ContainerMap</a> = std::map&lt;QUuid, std::shared_ptr&lt;<a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>&gt;&gt;
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a7ec241c1f168056bca50af08918474ed">
+              <span class="m-doc-wrap-bumper"><a href="#a7ec241c1f168056bca50af08918474ed" class="m-doc-self">IMenuManager</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-info">defaulted</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa9b774c33943aea545a350f21b547bff">
+              <span class="m-doc-wrap-bumper"><a href="#aa9b774c33943aea545a350f21b547bff" class="m-doc-self">~IMenuManager</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a42ab02d831fd685c71897e5dc4b3625b" class="m-doc">addMenu</a>(</span><span class="m-doc-wrap">QMenu* menu,
+              <a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* container) -&gt; std::weak_ptr&lt;<a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>&gt; <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a813f571c860a7bf1416f4e901f8397f9" class="m-doc">deleteMenu</a>(</span><span class="m-doc-wrap"><a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* menu,
+              <a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* container) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a615a92fe650e21a255485da99af599ed" class="m-doc">getMenu</a>(</span><span class="m-doc-wrap">QUuid id) -&gt; std::weak_ptr&lt;<a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>&gt; <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6258c26ba5b8cafb6527b51674fd47b6" class="m-doc">addAction</a>(</span><span class="m-doc-wrap">QAction* action,
+              <a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* container) -&gt; std::weak_ptr&lt;<a href="class_command.html" class="m-doc">Command</a>&gt; <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a755b871b4a3ad7eb2b86ce80f55450f8" class="m-doc">deleteAction</a>(</span><span class="m-doc-wrap"><a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* action,
+              <a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* container) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a252d219bccffd417db75fee0fd6a123c" class="m-doc">getAction</a>(</span><span class="m-doc-wrap">QUuid id,
+              <a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* container) -&gt; std::weak_ptr&lt;<a href="class_command.html" class="m-doc">Command</a>&gt; <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad7a06ca66db5855479ebb71e089d7b8e" class="m-doc">registerMenuBar</a>(</span><span class="m-doc-wrap">QMenuBar* menuBar) -&gt; std::weak_ptr&lt;<a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>&gt; <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9e1933efdff91a01262577c2983b6fae" class="m-doc">registerMenu</a>(</span><span class="m-doc-wrap">QMenu* menu) -&gt; std::weak_ptr&lt;<a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>&gt; <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac14b54656083eedb8e45478464756fbc" class="m-doc">registerToolBar</a>(</span><span class="m-doc-wrap">QToolBar* toolbar) -&gt; std::weak_ptr&lt;<a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>&gt; <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2697639106e8f171c989a1cea6ae0565" class="m-doc">unRegisterMenuBar</a>(</span><span class="m-doc-wrap"><a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* menuBar) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae2ba661ad231cee5157645d44bdca038" class="m-doc">unRegisterMenu</a>(</span><span class="m-doc-wrap"><a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* menu) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a56bf533bfda9740922f650b6c9f0eb6f" class="m-doc">unRegisterToolBar</a>(</span><span class="m-doc-wrap"><a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* toolbar) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pub-slots">
+          <h2><a href="#pub-slots">Public slots</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a5d2ec575aaa6d77c3ed257009c023c6f" class="m-doc">menuBarDestroyed</a>(</span><span class="m-doc-wrap">QObject* menuBar) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a4bb6df7bb6be0856e019f9f9726d5aa5" class="m-doc">menuDestroyed</a>(</span><span class="m-doc-wrap">QObject* menu) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a9548052109034bed5633e03831b17dc0" class="m-doc">toolBarDestroyed</a>(</span><span class="m-doc-wrap">QObject* toolBar) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a42ab02d831fd685c71897e5dc4b3625b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::weak_ptr&lt;<a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>&gt; IMenuManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a42ab02d831fd685c71897e5dc4b3625b" class="m-doc-self">addMenu</a>(</span><span class="m-doc-wrap">QMenu* menu,
+              <a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* container) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">menu&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>a pointer to the QMenu object to be added. The container does not own the object.</td>
+                </tr>
+                <tr>
+                  <td>container&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>a container? where QMenu will be added</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr&lt;&gt;.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Adds a QMenu object to container (QMenuBar, QMenu, QToolBar)</p>
+          </div></section>
+          <section class="m-doc-details" id="a813f571c860a7bf1416f4e901f8397f9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool IMenuManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a813f571c860a7bf1416f4e901f8397f9" class="m-doc-self">deleteMenu</a>(</span><span class="m-doc-wrap"><a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* menu,
+              <a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* container) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">menu&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>a container with specified menu</td>
+                </tr>
+                <tr>
+                  <td>container&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>a container? where QMenu will be added</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Returns true if successful and false if the object is not found.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Delete a QMenu object from container (QMenuBar, QMenu, QToolBar)</p>
+          </div></section>
+          <section class="m-doc-details" id="a615a92fe650e21a255485da99af599ed"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::weak_ptr&lt;<a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>&gt; IMenuManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a615a92fe650e21a255485da99af599ed" class="m-doc-self">getMenu</a>(</span><span class="m-doc-wrap">QUuid id) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">id&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>id of menu container</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>pointer to container or empty std::weak_ptr</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Returns a QMenu container with the specified ID. If there is no object with this ID, it returns empty std::weak_ptr&lt;&gt;</p>
+          </div></section>
+          <section class="m-doc-details" id="a6258c26ba5b8cafb6527b51674fd47b6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::weak_ptr&lt;<a href="class_command.html" class="m-doc">Command</a>&gt; IMenuManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6258c26ba5b8cafb6527b51674fd47b6" class="m-doc-self">addAction</a>(</span><span class="m-doc-wrap">QAction* action,
+              <a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* container) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">action&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>a pointer to the QAction object to be added. The container does not own the object.</td>
+                </tr>
+                <tr>
+                  <td>container&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>a container? where QAction will be added</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr&lt;&gt;.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Adds a QAction object to container (QMenuBar, QMenu, QToolBar)</p>
+          </div></section>
+          <section class="m-doc-details" id="a755b871b4a3ad7eb2b86ce80f55450f8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool IMenuManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a755b871b4a3ad7eb2b86ce80f55450f8" class="m-doc-self">deleteAction</a>(</span><span class="m-doc-wrap"><a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* action,
+              <a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* container) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">action&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>a container with specified action</td>
+                </tr>
+                <tr>
+                  <td>container&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>a container? where QAction will be added</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Returns true if successful and false if the object is not found.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Delete a QAction object from container (QMenuBar, QMenu, QToolBar)</p>
+          </div></section>
+          <section class="m-doc-details" id="a252d219bccffd417db75fee0fd6a123c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::weak_ptr&lt;<a href="class_command.html" class="m-doc">Command</a>&gt; IMenuManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a252d219bccffd417db75fee0fd6a123c" class="m-doc-self">getAction</a>(</span><span class="m-doc-wrap">QUuid id,
+              <a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* container) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">id&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>id of actions container</td>
+                </tr>
+                <tr>
+                  <td>container</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>pointer to container or empty std::weak_ptr</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Returns a QAction container with the specified ID. If there is no object with this ID, it returns empty std::weak_ptr&lt;&gt;</p>
+          </div></section>
+          <section class="m-doc-details" id="ad7a06ca66db5855479ebb71e089d7b8e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::weak_ptr&lt;<a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>&gt; IMenuManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad7a06ca66db5855479ebb71e089d7b8e" class="m-doc-self">registerMenuBar</a>(</span><span class="m-doc-wrap">QMenuBar* menuBar) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">menuBar&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>a pointer to the QMenuBar object to be added. The container does not own the object.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr&lt;&gt;.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Registers an object of type QMenuBar for later adding menus(QMenu) and action(QAction) to it</p>
+          </div></section>
+          <section class="m-doc-details" id="a9e1933efdff91a01262577c2983b6fae"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::weak_ptr&lt;<a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>&gt; IMenuManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9e1933efdff91a01262577c2983b6fae" class="m-doc-self">registerMenu</a>(</span><span class="m-doc-wrap">QMenu* menu) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">menu&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>a pointer to the QMenu object to be added. The container does not own the object.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr&lt;&gt;.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Registers an object of type QMenu for later adding menus(QMenu) and action(QAction) to it</p>
+          </div></section>
+          <section class="m-doc-details" id="ac14b54656083eedb8e45478464756fbc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::weak_ptr&lt;<a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>&gt; IMenuManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac14b54656083eedb8e45478464756fbc" class="m-doc-self">registerToolBar</a>(</span><span class="m-doc-wrap">QToolBar* toolbar) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">toolbar&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>a pointer to the QToolBar object to be added. The container does not own the object.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr&lt;&gt;.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Registers an object of type QToolBar for later adding menus(QMenu) and action(QAction) to it</p>
+          </div></section>
+          <section class="m-doc-details" id="a2697639106e8f171c989a1cea6ae0565"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool IMenuManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2697639106e8f171c989a1cea6ae0565" class="m-doc-self">unRegisterMenuBar</a>(</span><span class="m-doc-wrap"><a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* menuBar) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">menuBar&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>a pointer to the QMenuBar container object to be deleted</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>returns true if successful and false if the object is not found.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Unregisters an object of type QMenuBar.</p>
+          </div></section>
+          <section class="m-doc-details" id="ae2ba661ad231cee5157645d44bdca038"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool IMenuManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae2ba661ad231cee5157645d44bdca038" class="m-doc-self">unRegisterMenu</a>(</span><span class="m-doc-wrap"><a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* menu) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">menu&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>a pointer to the QMenu container object to be deleted</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>returns true if successful and false if the object is not found.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Unregisters an object of type QMenu.</p>
+          </div></section>
+          <section class="m-doc-details" id="a56bf533bfda9740922f650b6c9f0eb6f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool IMenuManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a56bf533bfda9740922f650b6c9f0eb6f" class="m-doc-self">unRegisterToolBar</a>(</span><span class="m-doc-wrap"><a href="class_i_actions_container.html" class="m-doc">IActionsContainer</a>* toolbar) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">toolbar&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>a pointer to the QToolBar container object to be deleted</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>returns true if successful and false if the object is not found.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Unregisters an object of type toolbar.</p>
+          </div></section>
+          <section class="m-doc-details" id="a5d2ec575aaa6d77c3ed257009c023c6f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void IMenuManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5d2ec575aaa6d77c3ed257009c023c6f" class="m-doc-self">menuBarDestroyed</a>(</span><span class="m-doc-wrap">QObject* menuBar) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-success">public slot</span></span></span>
+            </h3>
+<p>The slot removes a pointer to an object of type QMenuBar from the container if the object is destroyed.</p>
+          </div></section>
+          <section class="m-doc-details" id="a4bb6df7bb6be0856e019f9f9726d5aa5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void IMenuManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4bb6df7bb6be0856e019f9f9726d5aa5" class="m-doc-self">menuDestroyed</a>(</span><span class="m-doc-wrap">QObject* menu) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-success">public slot</span></span></span>
+            </h3>
+<p>The slot removes a pointer to an object of type QMenu from the container if the object is destroyed.</p>
+          </div></section>
+          <section class="m-doc-details" id="a9548052109034bed5633e03831b17dc0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void IMenuManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9548052109034bed5633e03831b17dc0" class="m-doc-self">toolBarDestroyed</a>(</span><span class="m-doc-wrap">QObject* toolBar) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-success">public slot</span></span></span>
+            </h3>
+<p>The slot removes a pointer to an object of type QToolBar from the container if the object is destroyed.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>dyn-menu. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

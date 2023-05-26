@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="imenumanager_8h" kind="file" language="C++">
+    <compoundname>imenumanager.h</compoundname>
+    <includes refid="iactionscontainer_8h" local="yes">uielements/iactionscontainer.h</includes>
+    <includes local="no">QString</includes>
+    <includes local="no">QToolBar</includes>
+    <includes local="no">QUuid</includes>
+    <includedby refid="basemenumanager_8h" local="yes">mcore/basemenumanager.h</includedby>
+    <incdepgraph>
+      <node id="6">
+        <label>QObject</label>
+      </node>
+      <node id="5">
+        <label>QMenu</label>
+      </node>
+      <node id="7">
+        <label>QUuid</label>
+      </node>
+      <node id="3">
+        <label>../command.h</label>
+        <link refid="command_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>uielements/iactionscontainer.h</label>
+        <link refid="iactionscontainer_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QAction</label>
+      </node>
+      <node id="9">
+        <label>QString</label>
+      </node>
+      <node id="11">
+        <label>qmenubar.h</label>
+      </node>
+      <node id="1">
+        <label>mcore/imenumanager.h</label>
+        <link refid="imenumanager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>QToolBar</label>
+      </node>
+      <node id="8">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>mcore/basemenumanager.cpp</label>
+        <link refid="basemenumanager_8cpp"/>
+      </node>
+      <node id="2">
+        <label>mcore/basemenumanager.h</label>
+        <link refid="basemenumanager_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>mcore/imenumanager.h</label>
+        <link refid="imenumanager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_i_menu_manager" prot="public">IMenuManager</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mcore/imenumanager.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,575 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_i_menu_manager" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>IMenuManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <derivedcompoundref refid="class_base_menu_manager" prot="public" virt="non-virtual">BaseMenuManager</derivedcompoundref>
+    <includes refid="imenumanager_8h" local="no">imenumanager.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="class_i_menu_manager_1aa2e71c80a37b8018453c2ff2c203e35a" prot="public" static="no">
+        <type>std::map&lt; QUuid, std::shared_ptr&lt; <ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> &gt; &gt;</type>
+        <definition>using IMenuManager::ContainerMap =  std::map&lt;QUuid, std::shared_ptr&lt;IActionsContainer&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>ContainerMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/imenumanager.h" line="22" column="5" bodyfile="mcore/imenumanager.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_i_menu_manager_1a7ec241c1f168056bca50af08918474ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>IMenuManager::IMenuManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>IMenuManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/imenumanager.h" line="24" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_menu_manager_1aa9b774c33943aea545a350f21b547bff" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual IMenuManager::~IMenuManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>~IMenuManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/imenumanager.h" line="25" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_menu_manager_1a42ab02d831fd685c71897e5dc4b3625b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::weak_ptr&lt; <ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> &gt;</type>
+        <definition>virtual std::weak_ptr&lt;IActionsContainer&gt; IMenuManager::addMenu</definition>
+        <argsstring>(QMenu *menu, IActionsContainer *container)=0</argsstring>
+        <name>addMenu</name>
+        <reimplementedby refid="class_base_menu_manager_1ac5c4419acb171d8bc46ca3058c5372b1">addMenu</reimplementedby>
+        <param>
+          <type>QMenu *</type>
+          <declname>menu</declname>
+        </param>
+        <param>
+          <type><ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> *</type>
+          <declname>container</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds a QMenu object to container (QMenuBar, QMenu, QToolBar) <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">menu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to the QMenu object to be added. The container does not own the object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">container</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a container? where QMenu will be added </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr&lt;&gt;. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/imenumanager.h" line="33" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_menu_manager_1a813f571c860a7bf1416f4e901f8397f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool IMenuManager::deleteMenu</definition>
+        <argsstring>(IActionsContainer *menu, IActionsContainer *container)=0</argsstring>
+        <name>deleteMenu</name>
+        <reimplementedby refid="class_base_menu_manager_1a7cfeea6afca255237c46c1e672c592ac">deleteMenu</reimplementedby>
+        <param>
+          <type><ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> *</type>
+          <declname>menu</declname>
+        </param>
+        <param>
+          <type><ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> *</type>
+          <declname>container</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete a QMenu object from container (QMenuBar, QMenu, QToolBar) <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">menu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a container with specified menu </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">container</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a container? where QMenu will be added </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns true if successful and false if the object is not found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/imenumanager.h" line="41" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_menu_manager_1a615a92fe650e21a255485da99af599ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::weak_ptr&lt; <ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> &gt;</type>
+        <definition>virtual std::weak_ptr&lt;IActionsContainer&gt; IMenuManager::getMenu</definition>
+        <argsstring>(QUuid id)=0</argsstring>
+        <name>getMenu</name>
+        <reimplementedby refid="class_base_menu_manager_1a1e079e97e673102d1a63277bed5db125">getMenu</reimplementedby>
+        <param>
+          <type>QUuid</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a QMenu container with the specified ID. If there is no object with this ID, it returns empty std::weak_ptr&lt;&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id of menu container </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>pointer to container or empty std::weak_ptr </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/imenumanager.h" line="48" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_menu_manager_1a6258c26ba5b8cafb6527b51674fd47b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::weak_ptr&lt; <ref refid="class_command" kindref="compound">Command</ref> &gt;</type>
+        <definition>virtual std::weak_ptr&lt;Command&gt; IMenuManager::addAction</definition>
+        <argsstring>(QAction *action, IActionsContainer *container)=0</argsstring>
+        <name>addAction</name>
+        <reimplementedby refid="class_base_menu_manager_1af80c62656329c9a8f7ee336a3094955e">addAction</reimplementedby>
+        <param>
+          <type>QAction *</type>
+          <declname>action</declname>
+        </param>
+        <param>
+          <type><ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> *</type>
+          <declname>container</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds a QAction object to container (QMenuBar, QMenu, QToolBar) <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to the QAction object to be added. The container does not own the object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">container</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a container? where QAction will be added </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr&lt;&gt;. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/imenumanager.h" line="56" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_menu_manager_1a755b871b4a3ad7eb2b86ce80f55450f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool IMenuManager::deleteAction</definition>
+        <argsstring>(IActionsContainer *action, IActionsContainer *container)=0</argsstring>
+        <name>deleteAction</name>
+        <reimplementedby refid="class_base_menu_manager_1ae35ba83a0552df97c935781aa29cf8b1">deleteAction</reimplementedby>
+        <param>
+          <type><ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> *</type>
+          <declname>action</declname>
+        </param>
+        <param>
+          <type><ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> *</type>
+          <declname>container</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete a QAction object from container (QMenuBar, QMenu, QToolBar) <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a container with specified action </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">container</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a container? where QAction will be added </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns true if successful and false if the object is not found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/imenumanager.h" line="64" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_menu_manager_1a252d219bccffd417db75fee0fd6a123c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::weak_ptr&lt; <ref refid="class_command" kindref="compound">Command</ref> &gt;</type>
+        <definition>virtual std::weak_ptr&lt;Command&gt; IMenuManager::getAction</definition>
+        <argsstring>(QUuid id, IActionsContainer *container)=0</argsstring>
+        <name>getAction</name>
+        <reimplementedby refid="class_base_menu_manager_1a49ca3ca63b11168c2c4fbf9e1e3b0426">getAction</reimplementedby>
+        <param>
+          <type>QUuid</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> *</type>
+          <declname>container</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a QAction container with the specified ID. If there is no object with this ID, it returns empty std::weak_ptr&lt;&gt; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id of actions container </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>pointer to container or empty std::weak_ptr </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/imenumanager.h" line="71" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_menu_manager_1ad7a06ca66db5855479ebb71e089d7b8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::weak_ptr&lt; <ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> &gt;</type>
+        <definition>virtual std::weak_ptr&lt;IActionsContainer&gt; IMenuManager::registerMenuBar</definition>
+        <argsstring>(QMenuBar *menuBar)=0</argsstring>
+        <name>registerMenuBar</name>
+        <reimplementedby refid="class_base_menu_manager_1a54f63c3326a708fa8042a88776048d19">registerMenuBar</reimplementedby>
+        <param>
+          <type>QMenuBar *</type>
+          <declname>menuBar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Registers an object of type QMenuBar for later adding menus(QMenu) and action(QAction) to it <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">menuBar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to the QMenuBar object to be added. The container does not own the object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr&lt;&gt;. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/imenumanager.h" line="78" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_menu_manager_1a9e1933efdff91a01262577c2983b6fae" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::weak_ptr&lt; <ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> &gt;</type>
+        <definition>virtual std::weak_ptr&lt;IActionsContainer&gt; IMenuManager::registerMenu</definition>
+        <argsstring>(QMenu *menu)=0</argsstring>
+        <name>registerMenu</name>
+        <reimplementedby refid="class_base_menu_manager_1ad555147d64da30776f5ddea63acf5858">registerMenu</reimplementedby>
+        <param>
+          <type>QMenu *</type>
+          <declname>menu</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Registers an object of type QMenu for later adding menus(QMenu) and action(QAction) to it <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">menu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to the QMenu object to be added. The container does not own the object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr&lt;&gt;. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/imenumanager.h" line="85" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_menu_manager_1ac14b54656083eedb8e45478464756fbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::weak_ptr&lt; <ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> &gt;</type>
+        <definition>virtual std::weak_ptr&lt;IActionsContainer&gt; IMenuManager::registerToolBar</definition>
+        <argsstring>(QToolBar *toolbar)=0</argsstring>
+        <name>registerToolBar</name>
+        <reimplementedby refid="class_base_menu_manager_1a6c845baedd064bce797e61d0cc86e5c9">registerToolBar</reimplementedby>
+        <param>
+          <type>QToolBar *</type>
+          <declname>toolbar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Registers an object of type QToolBar for later adding menus(QMenu) and action(QAction) to it <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">toolbar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to the QToolBar object to be added. The container does not own the object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the container to the object to be added if it was added successfully. In case of error it returns empty std::weak_ptr&lt;&gt;. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/imenumanager.h" line="92" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_menu_manager_1a2697639106e8f171c989a1cea6ae0565" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool IMenuManager::unRegisterMenuBar</definition>
+        <argsstring>(IActionsContainer *menuBar)=0</argsstring>
+        <name>unRegisterMenuBar</name>
+        <reimplementedby refid="class_base_menu_manager_1a02ba859ad4a48e91435c4f4220b266c9">unRegisterMenuBar</reimplementedby>
+        <param>
+          <type><ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> *</type>
+          <declname>menuBar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unregisters an object of type QMenuBar. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">menuBar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to the QMenuBar container object to be deleted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>returns true if successful and false if the object is not found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/imenumanager.h" line="99" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_menu_manager_1ae2ba661ad231cee5157645d44bdca038" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool IMenuManager::unRegisterMenu</definition>
+        <argsstring>(IActionsContainer *menu)=0</argsstring>
+        <name>unRegisterMenu</name>
+        <reimplementedby refid="class_base_menu_manager_1ae0d8f8613cc4b3c1ef5ff2dd96f264dd">unRegisterMenu</reimplementedby>
+        <param>
+          <type><ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> *</type>
+          <declname>menu</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unregisters an object of type QMenu. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">menu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to the QMenu container object to be deleted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>returns true if successful and false if the object is not found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/imenumanager.h" line="106" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i_menu_manager_1a56bf533bfda9740922f650b6c9f0eb6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool IMenuManager::unRegisterToolBar</definition>
+        <argsstring>(IActionsContainer *toolbar)=0</argsstring>
+        <name>unRegisterToolBar</name>
+        <reimplementedby refid="class_base_menu_manager_1a65b12135ba4303f7f87d4e2d4576be88">unRegisterToolBar</reimplementedby>
+        <param>
+          <type><ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref> *</type>
+          <declname>toolbar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unregisters an object of type toolbar. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">toolbar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to the QToolBar container object to be deleted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>returns true if successful and false if the object is not found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/imenumanager.h" line="113" column="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_i_menu_manager_1a5d2ec575aaa6d77c3ed257009c023c6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void IMenuManager::menuBarDestroyed</definition>
+        <argsstring>(QObject *menuBar)=0</argsstring>
+        <name>menuBarDestroyed</name>
+        <param>
+          <type>QObject *</type>
+          <declname>menuBar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The slot removes a pointer to an object of type QMenuBar from the container if the object is destroyed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/imenumanager.h" line="119" column="18"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_i_menu_manager_1a4bb6df7bb6be0856e019f9f9726d5aa5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void IMenuManager::menuDestroyed</definition>
+        <argsstring>(QObject *menu)=0</argsstring>
+        <name>menuDestroyed</name>
+        <param>
+          <type>QObject *</type>
+          <declname>menu</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The slot removes a pointer to an object of type QMenu from the container if the object is destroyed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/imenumanager.h" line="124" column="18"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_i_menu_manager_1a9548052109034bed5633e03831b17dc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void IMenuManager::toolBarDestroyed</definition>
+        <argsstring>(QObject *toolBar)=0</argsstring>
+        <name>toolBarDestroyed</name>
+        <param>
+          <type>QObject *</type>
+          <declname>toolBar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The slot removes a pointer to an object of type QToolBar from the container if the object is destroyed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/imenumanager.h" line="129" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interface for menu manager. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Interface for registering objects containing menus and creating menus and commands in them </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+      <node id="3">
+        <label>BaseMenuManager</label>
+        <link refid="class_base_menu_manager"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>IMenuManager</label>
+        <link refid="class_i_menu_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+      <node id="1">
+        <label>IMenuManager</label>
+        <link refid="class_i_menu_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="mcore/imenumanager.h" line="17" column="1" bodyfile="mcore/imenumanager.h" bodystart="18" bodyend="130"/>
+    <listofallmembers>
+      <member refid="class_i_menu_manager_1a6258c26ba5b8cafb6527b51674fd47b6" prot="public" virt="pure-virtual"><scope>IMenuManager</scope><name>addAction</name></member>
+      <member refid="class_i_menu_manager_1a42ab02d831fd685c71897e5dc4b3625b" prot="public" virt="pure-virtual"><scope>IMenuManager</scope><name>addMenu</name></member>
+      <member refid="class_i_menu_manager_1aa2e71c80a37b8018453c2ff2c203e35a" prot="public" virt="non-virtual"><scope>IMenuManager</scope><name>ContainerMap</name></member>
+      <member refid="class_i_menu_manager_1a755b871b4a3ad7eb2b86ce80f55450f8" prot="public" virt="pure-virtual"><scope>IMenuManager</scope><name>deleteAction</name></member>
+      <member refid="class_i_menu_manager_1a813f571c860a7bf1416f4e901f8397f9" prot="public" virt="pure-virtual"><scope>IMenuManager</scope><name>deleteMenu</name></member>
+      <member refid="class_i_menu_manager_1a252d219bccffd417db75fee0fd6a123c" prot="public" virt="pure-virtual"><scope>IMenuManager</scope><name>getAction</name></member>
+      <member refid="class_i_menu_manager_1a615a92fe650e21a255485da99af599ed" prot="public" virt="pure-virtual"><scope>IMenuManager</scope><name>getMenu</name></member>
+      <member refid="class_i_menu_manager_1a7ec241c1f168056bca50af08918474ed" prot="public" virt="non-virtual"><scope>IMenuManager</scope><name>IMenuManager</name></member>
+      <member refid="class_i_menu_manager_1a5d2ec575aaa6d77c3ed257009c023c6f" prot="public" virt="pure-virtual"><scope>IMenuManager</scope><name>menuBarDestroyed</name></member>
+      <member refid="class_i_menu_manager_1a4bb6df7bb6be0856e019f9f9726d5aa5" prot="public" virt="pure-virtual"><scope>IMenuManager</scope><name>menuDestroyed</name></member>
+      <member refid="class_i_menu_manager_1a9e1933efdff91a01262577c2983b6fae" prot="public" virt="pure-virtual"><scope>IMenuManager</scope><name>registerMenu</name></member>
+      <member refid="class_i_menu_manager_1ad7a06ca66db5855479ebb71e089d7b8e" prot="public" virt="pure-virtual"><scope>IMenuManager</scope><name>registerMenuBar</name></member>
+      <member refid="class_i_menu_manager_1ac14b54656083eedb8e45478464756fbc" prot="public" virt="pure-virtual"><scope>IMenuManager</scope><name>registerToolBar</name></member>
+      <member refid="class_i_menu_manager_1a9548052109034bed5633e03831b17dc0" prot="public" virt="pure-virtual"><scope>IMenuManager</scope><name>toolBarDestroyed</name></member>
+      <member refid="class_i_menu_manager_1ae2ba661ad231cee5157645d44bdca038" prot="public" virt="pure-virtual"><scope>IMenuManager</scope><name>unRegisterMenu</name></member>
+      <member refid="class_i_menu_manager_1a2697639106e8f171c989a1cea6ae0565" prot="public" virt="pure-virtual"><scope>IMenuManager</scope><name>unRegisterMenuBar</name></member>
+      <member refid="class_i_menu_manager_1a56bf533bfda9740922f650b6c9f0eb6f" prot="public" virt="pure-virtual"><scope>IMenuManager</scope><name>unRegisterToolBar</name></member>
+      <member refid="class_i_menu_manager_1aa9b774c33943aea545a350f21b547bff" prot="public" virt="virtual"><scope>IMenuManager</scope><name>~IMenuManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

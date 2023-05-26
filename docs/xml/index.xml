@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.1" xml:lang="en-US">
+  <compound refid="class_base_menu_actions_container" kind="class"><name>BaseMenuActionsContainer</name>
+    <member refid="class_base_menu_actions_container_1ad01473162d8fc6097307ce4d487988bf" kind="variable"><name>m_actions</name></member>
+    <member refid="class_base_menu_actions_container_1aea1b946e252e791b876d31db2333930b" kind="variable"><name>m_menus</name></member>
+    <member refid="class_base_menu_actions_container_1a7ac2b1b0cd4f53bc19cb43b99fdbe09b" kind="function"><name>BaseMenuActionsContainer</name></member>
+    <member refid="class_base_menu_actions_container_1a9b8e3847dba4b38cabcec604d01afe96" kind="function"><name>~BaseMenuActionsContainer</name></member>
+    <member refid="class_base_menu_actions_container_1a8d639fb3dabc898935e2b523ea382d0d" kind="function"><name>appendAction</name></member>
+    <member refid="class_base_menu_actions_container_1a3034be82b9053264b40420dfb2a9e73c" kind="function"><name>appendMenu</name></member>
+    <member refid="class_base_menu_actions_container_1a5156a72583677b5dd4518bfd9d327619" kind="function"><name>removeAction</name></member>
+    <member refid="class_base_menu_actions_container_1a77b8b66f2104cbfc3e6d60af52896b44" kind="function"><name>removeMenu</name></member>
+    <member refid="class_base_menu_actions_container_1a9216bccd6c2421fedb6d440867fa95cf" kind="function"><name>getActions</name></member>
+    <member refid="class_base_menu_actions_container_1af05f862a3e96164b4fd3c229388e2825" kind="function"><name>getMenus</name></member>
+    <member refid="class_base_menu_actions_container_1a3100420ce651d89af01b51fb05904d89" kind="function"><name>getActionContainer</name></member>
+    <member refid="class_base_menu_actions_container_1af1aeff43b9f414bc9735c7f8f26ab5a5" kind="function"><name>getMenuContainer</name></member>
+    <member refid="class_base_menu_actions_container_1ac2393c6c6ad58d9a5718f8ba446ffe90" kind="function"><name>getActionContainerByPtr</name></member>
+    <member refid="class_base_menu_actions_container_1a7468cbd39158c932fe29970c5b99b231" kind="function"><name>getMenuContainerByPtr</name></member>
+  </compound>
+  <compound refid="class_base_menu_manager" kind="class"><name>BaseMenuManager</name>
+    <member refid="class_base_menu_manager_1a17fe07e8f7835aba44a2a7784d6f7fb3" kind="variable"><name>m_containersMap</name></member>
+    <member refid="class_base_menu_manager_1a82e5ba4bc794a1532c345637cbdfbb37" kind="function"><name>BaseMenuManager</name></member>
+    <member refid="class_base_menu_manager_1a3676c5783caa4c256795298e3521c78a" kind="function"><name>~BaseMenuManager</name></member>
+    <member refid="class_base_menu_manager_1ac5c4419acb171d8bc46ca3058c5372b1" kind="function"><name>addMenu</name></member>
+    <member refid="class_base_menu_manager_1a7cfeea6afca255237c46c1e672c592ac" kind="function"><name>deleteMenu</name></member>
+    <member refid="class_base_menu_manager_1a1e079e97e673102d1a63277bed5db125" kind="function"><name>getMenu</name></member>
+    <member refid="class_base_menu_manager_1af80c62656329c9a8f7ee336a3094955e" kind="function"><name>addAction</name></member>
+    <member refid="class_base_menu_manager_1ae35ba83a0552df97c935781aa29cf8b1" kind="function"><name>deleteAction</name></member>
+    <member refid="class_base_menu_manager_1a49ca3ca63b11168c2c4fbf9e1e3b0426" kind="function"><name>getAction</name></member>
+    <member refid="class_base_menu_manager_1a54f63c3326a708fa8042a88776048d19" kind="function"><name>registerMenuBar</name></member>
+    <member refid="class_base_menu_manager_1ad555147d64da30776f5ddea63acf5858" kind="function"><name>registerMenu</name></member>
+    <member refid="class_base_menu_manager_1a6c845baedd064bce797e61d0cc86e5c9" kind="function"><name>registerToolBar</name></member>
+    <member refid="class_base_menu_manager_1a02ba859ad4a48e91435c4f4220b266c9" kind="function"><name>unRegisterMenuBar</name></member>
+    <member refid="class_base_menu_manager_1ae0d8f8613cc4b3c1ef5ff2dd96f264dd" kind="function"><name>unRegisterMenu</name></member>
+    <member refid="class_base_menu_manager_1a65b12135ba4303f7f87d4e2d4576be88" kind="function"><name>unRegisterToolBar</name></member>
+    <member refid="class_base_menu_manager_1a7c72179b564182ee79471d8bb95a5720" kind="function"><name>getMenuById</name></member>
+    <member refid="class_base_menu_manager_1acf16f5932a8d8cb08e9d64332a861fe9" kind="function"><name>getActionById</name></member>
+    <member refid="class_base_menu_manager_1a935161dc4f20ca53fa1655ca685f9704" kind="slot"><name>menuBarDestroyed</name></member>
+    <member refid="class_base_menu_manager_1a7988ab559f40c2f8475c6452134358f2" kind="slot"><name>menuDestroyed</name></member>
+    <member refid="class_base_menu_manager_1abf9aa44cf0a5add0f0dba229dc52281b" kind="slot"><name>toolBarDestroyed</name></member>
+  </compound>
+  <compound refid="class_base_ui_element" kind="class"><name>BaseUiElement</name>
+    <member refid="class_base_ui_element_1ad0d0dbc66c413271b94f907c4ef566ca" kind="variable"><name>m_container</name></member>
+    <member refid="class_base_ui_element_1a211204dbfbb4d905b7f209bedd89a922" kind="function"><name>BaseUiElement</name></member>
+    <member refid="class_base_ui_element_1a588929e010d722753244745bdb4e5cff" kind="function"><name>~BaseUiElement</name></member>
+    <member refid="class_base_ui_element_1a9e2dd81abe913b8fe7a3147f2af00a84" kind="function"><name>addAction</name></member>
+    <member refid="class_base_ui_element_1a8ff0d379033af4640ceb839ed79da3a4" kind="function"><name>addMenu</name></member>
+    <member refid="class_base_ui_element_1ac0d4fd27283098a3e82710dc069f870b" kind="function"><name>removeAction</name></member>
+    <member refid="class_base_ui_element_1af84124798b04c70228cde9b8af35d193" kind="function"><name>removeMenu</name></member>
+    <member refid="class_base_ui_element_1ad90101452a4172f5deb5334491c1442b" kind="function"><name>setContainer</name></member>
+    <member refid="class_base_ui_element_1ab5f3dc2d5a9e8f65c1a41f15101d54e7" kind="function"><name>getMenu</name></member>
+    <member refid="class_base_ui_element_1a85a04203ea3077d9bc3dfee3968f6c19" kind="function"><name>getMenuBar</name></member>
+    <member refid="class_base_ui_element_1a932f71ee775c4ecba4c5087734ba862e" kind="function"><name>getToolBar</name></member>
+  </compound>
+  <compound refid="class_command" kind="class"><name>Command</name>
+    <member refid="class_command_1a343a0d5ccbb7dee8efd15750e54678c7" kind="variable"><name>m_id</name></member>
+    <member refid="class_command_1a6b1721456d02b6c86323ba0204a9433f" kind="variable"><name>m_action</name></member>
+    <member refid="class_command_1a305d6d0fc0c3917837caeb5148923df1" kind="variable"><name>m_text</name></member>
+    <member refid="class_command_1a2bf45ec312d893850dd5f106924da55f" kind="function"><name>Command</name></member>
+    <member refid="class_command_1ae1ef785ebec86f4dbce301793cd61b91" kind="function"><name>getId</name></member>
+    <member refid="class_command_1ae7ebcdd297cdf60319a61abc4852f094" kind="function"><name>operator==</name></member>
+    <member refid="class_command_1a859a13357500e8c9d5d0afd750b01d2c" kind="function"><name>getAction</name></member>
+    <member refid="class_command_1a0fab79c06134962fe4004aff9804c8b4" kind="function"><name>getText</name></member>
+    <member refid="class_command_1ac0f0b62e912d48a18e8e7529e9453f38" kind="function"><name>setText</name></member>
+  </compound>
+  <compound refid="class_i_actions_container" kind="class"><name>IActionsContainer</name>
+    <member refid="class_i_actions_container_1a35151d43583bbdc3c942830e2ade7c17" kind="function"><name>IActionsContainer</name></member>
+    <member refid="class_i_actions_container_1abf61e27f5b68fda254cec7e7a6c13880" kind="function"><name>~IActionsContainer</name></member>
+    <member refid="class_i_actions_container_1a09d634bfa8be46e73f618759b531560e" kind="function"><name>addAction</name></member>
+    <member refid="class_i_actions_container_1aba455379a3e447082d2a698c6b0f4780" kind="function"><name>addMenu</name></member>
+    <member refid="class_i_actions_container_1a67918e963f3ed3460cd8f20922648706" kind="function"><name>addSeparator</name></member>
+    <member refid="class_i_actions_container_1aeeb905aad1545b96ce9d4c8614f7c69f" kind="function"><name>getMenu</name></member>
+    <member refid="class_i_actions_container_1a928dc3a298b9daa46b3843e028e755fd" kind="function"><name>getMenuBar</name></member>
+    <member refid="class_i_actions_container_1a1767721da7995ccbfa4477c5810a8721" kind="function"><name>getToolBar</name></member>
+    <member refid="class_i_actions_container_1a5546b543a3cbd47a58e87754cc9dd0c4" kind="function"><name>getId</name></member>
+    <member refid="class_i_actions_container_1a216b93a3ef3602fba40c8c4998ad7228" kind="function"><name>getActionById</name></member>
+    <member refid="class_i_actions_container_1a0b89775f77751b154bf33585846f8c85" kind="function"><name>getMenuById</name></member>
+    <member refid="class_i_actions_container_1a443b86c18a7459e5996de0257548db5d" kind="function"><name>setId</name></member>
+    <member refid="class_i_actions_container_1a6deae21b899111b4667b29259e490f27" kind="function"><name>deleteMenu</name></member>
+    <member refid="class_i_actions_container_1acee1874f7c8cfe45ae4f41d3d7f8fb6d" kind="function"><name>deleteAction</name></member>
+    <member refid="class_i_actions_container_1adf8eb99cab7e3407f0e7b29156ec88fd" kind="slot"><name>destroyCommand</name></member>
+    <member refid="class_i_actions_container_1aa7f35203408f1cae6ff6f8c0c22c5dfc" kind="slot"><name>destroyMenu</name></member>
+  </compound>
+  <compound refid="class_i_base_menu_actions_container" kind="class"><name>IBaseMenuActionsContainer</name>
+    <member refid="class_i_base_menu_actions_container_1ac7a8f0447289444726678f00e9faae89" kind="typedef"><name>CommandsMap</name></member>
+    <member refid="class_i_base_menu_actions_container_1a7701a2c14462ca01dd78c5ee9c47089f" kind="typedef"><name>MenusMap</name></member>
+    <member refid="class_i_base_menu_actions_container_1aaa788262ef5811fd2f35083183a15ea3" kind="function"><name>~IBaseMenuActionsContainer</name></member>
+    <member refid="class_i_base_menu_actions_container_1a12773d469b19e095b7e502e2dfd520e1" kind="function"><name>appendAction</name></member>
+    <member refid="class_i_base_menu_actions_container_1a464aee04ae727b29140a51e2712ceb8d" kind="function"><name>appendMenu</name></member>
+    <member refid="class_i_base_menu_actions_container_1a4ca5d3f217ef77c139395755b6e8ccb8" kind="function"><name>removeAction</name></member>
+    <member refid="class_i_base_menu_actions_container_1af7c213b7b85f59ebf5eda87039ac0c88" kind="function"><name>removeMenu</name></member>
+    <member refid="class_i_base_menu_actions_container_1a194a41e91b557ed60d7a140b623c0bb4" kind="function"><name>getActions</name></member>
+    <member refid="class_i_base_menu_actions_container_1a9ca6c212e4df9b227c21fcc86640ba29" kind="function"><name>getMenus</name></member>
+    <member refid="class_i_base_menu_actions_container_1a42379b7dc700fe0b4a0631da39a14073" kind="function"><name>getActionContainer</name></member>
+    <member refid="class_i_base_menu_actions_container_1aa7bdecbdd95e4037a08eb388e521c590" kind="function"><name>getMenuContainer</name></member>
+    <member refid="class_i_base_menu_actions_container_1a5478e2a5e56b0a45b70e8b6a7bd86c8d" kind="function"><name>getActionContainerByPtr</name></member>
+    <member refid="class_i_base_menu_actions_container_1a7b0ad87b267abb79db6b3f11a5ece00f" kind="function"><name>getMenuContainerByPtr</name></member>
+  </compound>
+  <compound refid="class_i_menu_manager" kind="class"><name>IMenuManager</name>
+    <member refid="class_i_menu_manager_1aa2e71c80a37b8018453c2ff2c203e35a" kind="typedef"><name>ContainerMap</name></member>
+    <member refid="class_i_menu_manager_1a7ec241c1f168056bca50af08918474ed" kind="function"><name>IMenuManager</name></member>
+    <member refid="class_i_menu_manager_1aa9b774c33943aea545a350f21b547bff" kind="function"><name>~IMenuManager</name></member>
+    <member refid="class_i_menu_manager_1a42ab02d831fd685c71897e5dc4b3625b" kind="function"><name>addMenu</name></member>
+    <member refid="class_i_menu_manager_1a813f571c860a7bf1416f4e901f8397f9" kind="function"><name>deleteMenu</name></member>
+    <member refid="class_i_menu_manager_1a615a92fe650e21a255485da99af599ed" kind="function"><name>getMenu</name></member>
+    <member refid="class_i_menu_manager_1a6258c26ba5b8cafb6527b51674fd47b6" kind="function"><name>addAction</name></member>
+    <member refid="class_i_menu_manager_1a755b871b4a3ad7eb2b86ce80f55450f8" kind="function"><name>deleteAction</name></member>
+    <member refid="class_i_menu_manager_1a252d219bccffd417db75fee0fd6a123c" kind="function"><name>getAction</name></member>
+    <member refid="class_i_menu_manager_1ad7a06ca66db5855479ebb71e089d7b8e" kind="function"><name>registerMenuBar</name></member>
+    <member refid="class_i_menu_manager_1a9e1933efdff91a01262577c2983b6fae" kind="function"><name>registerMenu</name></member>
+    <member refid="class_i_menu_manager_1ac14b54656083eedb8e45478464756fbc" kind="function"><name>registerToolBar</name></member>
+    <member refid="class_i_menu_manager_1a2697639106e8f171c989a1cea6ae0565" kind="function"><name>unRegisterMenuBar</name></member>
+    <member refid="class_i_menu_manager_1ae2ba661ad231cee5157645d44bdca038" kind="function"><name>unRegisterMenu</name></member>
+    <member refid="class_i_menu_manager_1a56bf533bfda9740922f650b6c9f0eb6f" kind="function"><name>unRegisterToolBar</name></member>
+    <member refid="class_i_menu_manager_1a5d2ec575aaa6d77c3ed257009c023c6f" kind="slot"><name>menuBarDestroyed</name></member>
+    <member refid="class_i_menu_manager_1a4bb6df7bb6be0856e019f9f9726d5aa5" kind="slot"><name>menuDestroyed</name></member>
+    <member refid="class_i_menu_manager_1a9548052109034bed5633e03831b17dc0" kind="slot"><name>toolBarDestroyed</name></member>
+  </compound>
+  <compound refid="class_i_ui_element" kind="class"><name>IUiElement</name>
+    <member refid="class_i_ui_element_1a7aa07229bf14458158c64f7640ce4ed5" kind="function"><name>~IUiElement</name></member>
+    <member refid="class_i_ui_element_1a1edde8825b5a88fef90c2f5844409d94" kind="function"><name>addAction</name></member>
+    <member refid="class_i_ui_element_1afd4aaca72142e814b6d802f307926ffc" kind="function"><name>addMenu</name></member>
+    <member refid="class_i_ui_element_1aff7f4e3b9450789a628b2dce005085ae" kind="function"><name>removeAction</name></member>
+    <member refid="class_i_ui_element_1a697c4373c26076174c955e669059900a" kind="function"><name>removeMenu</name></member>
+    <member refid="class_i_ui_element_1a46d0046e5f8c634ffdaff1a57b1db7ba" kind="function"><name>getMenu</name></member>
+    <member refid="class_i_ui_element_1a8e79e1065cd4c9f81bb0620d38f1c59b" kind="function"><name>getMenuBar</name></member>
+    <member refid="class_i_ui_element_1aa8f3a2881ee967ac94e539f3507abdf4" kind="function"><name>getToolBar</name></member>
+    <member refid="class_i_ui_element_1afb8a8f197939242fbf8cdb71fac413ea" kind="function"><name>setContainer</name></member>
+  </compound>
+  <compound refid="class_ui_container" kind="class"><name>UiContainer</name>
+    <member refid="class_ui_container_1a5267c4f9507264a9ecdc6272942da46b" kind="variable"><name>m_id</name></member>
+    <member refid="class_ui_container_1a48cb82075b9fd3ccce390d84fc028b92" kind="variable"><name>m_container</name></member>
+    <member refid="class_ui_container_1afb1f0fd0106170cdc27cf3b0866756dc" kind="variable"><name>m_element</name></member>
+    <member refid="class_ui_container_1a015daee17c8d9c1a88b0c26d10b9fc36" kind="function"><name>UiContainer</name></member>
+    <member refid="class_ui_container_1a43b5fc9301d87c5743c7a10a4d513fa6" kind="function"><name>UiContainer</name></member>
+    <member refid="class_ui_container_1a45950f1934955c896299b995e92e119e" kind="function"><name>UiContainer</name></member>
+    <member refid="class_ui_container_1a339ec9739fd47cf6287974c9f2139eb3" kind="function"><name>UiContainer</name></member>
+    <member refid="class_ui_container_1ad211640f693603b1e0551c7b3b0aae1f" kind="function"><name>~UiContainer</name></member>
+    <member refid="class_ui_container_1a15761f01ce1f1b394b45d8afc82e8ac9" kind="function"><name>addAction</name></member>
+    <member refid="class_ui_container_1a1049afac1d0cc838a3b1a195eb6b8c6f" kind="function"><name>addMenu</name></member>
+    <member refid="class_ui_container_1af8fe2282933da0589498db511f84d307" kind="function"><name>addSeparator</name></member>
+    <member refid="class_ui_container_1a15d75d9f88b2babcb6d3a95ce5a89f4e" kind="function"><name>getMenu</name></member>
+    <member refid="class_ui_container_1a36ca214a289a14c17c05957ee7746ca3" kind="function"><name>getMenuBar</name></member>
+    <member refid="class_ui_container_1ace039e020cf9c41c310232440021a10f" kind="function"><name>getToolBar</name></member>
+    <member refid="class_ui_container_1ab0434114adb73ec0b894c8c865e6b04e" kind="function"><name>getActionById</name></member>
+    <member refid="class_ui_container_1a8d94f0ee7312bb6a9becfe8e242c730c" kind="function"><name>getMenuById</name></member>
+    <member refid="class_ui_container_1a94951288bea327be3b5bc1d99651954b" kind="function"><name>getId</name></member>
+    <member refid="class_ui_container_1ab045ee2fab25117f0694bc4be2a7d5fb" kind="function"><name>setId</name></member>
+    <member refid="class_ui_container_1a68a55df1275be45fc5b400f2dd5a7902" kind="function"><name>deleteMenu</name></member>
+    <member refid="class_ui_container_1a5dc69eb9ac0a0aec0699f00040540394" kind="function"><name>deleteAction</name></member>
+    <member refid="class_ui_container_1a141ad1eb245c7d3f5f80ae1d2d32ea57" kind="slot"><name>destroyCommand</name></member>
+    <member refid="class_ui_container_1a31caf601713ae9f04166a3d8c8f7caa7" kind="slot"><name>destroyMenu</name></member>
+  </compound>
+  <compound refid="class_ui_q_menu_bar_element" kind="class"><name>UiQMenuBarElement</name>
+    <member refid="class_ui_q_menu_bar_element_1afa5a7ad7033d3543ae1c59c662617ce9" kind="variable"><name>m_menuBar</name></member>
+    <member refid="class_ui_q_menu_bar_element_1ac489d9a6c809935ce2570bd3c9c6a4a1" kind="function"><name>UiQMenuBarElement</name></member>
+    <member refid="class_ui_q_menu_bar_element_1a85873e45872232818d40e32ece4a664f" kind="function"><name>~UiQMenuBarElement</name></member>
+    <member refid="class_ui_q_menu_bar_element_1a5e32eaf2a0e58fa037fa9caef249f433" kind="function"><name>addAction</name></member>
+    <member refid="class_ui_q_menu_bar_element_1a22e656cdf28aa17aae28501a63708238" kind="function"><name>addMenu</name></member>
+    <member refid="class_ui_q_menu_bar_element_1a0f5c82a5ba64e2aa2b24a6fc9871b8a5" kind="function"><name>removeAction</name></member>
+    <member refid="class_ui_q_menu_bar_element_1a02e9bdbb54375cf5e2b12004e46d0993" kind="function"><name>removeMenu</name></member>
+    <member refid="class_ui_q_menu_bar_element_1ad60c8fec53e3651e60f7cb1a32287c3a" kind="function"><name>getMenuBar</name></member>
+  </compound>
+  <compound refid="class_ui_q_menu_element" kind="class"><name>UiQMenuElement</name>
+    <member refid="class_ui_q_menu_element_1aa5827c3a8d3d94a1305ea1abacc54d9b" kind="variable"><name>m_menu</name></member>
+    <member refid="class_ui_q_menu_element_1a693feb2316cb081b8a53da39ee31d9ec" kind="function"><name>UiQMenuElement</name></member>
+    <member refid="class_ui_q_menu_element_1af4cfaa210497ddf26c5d63ab6999ea21" kind="function"><name>~UiQMenuElement</name></member>
+    <member refid="class_ui_q_menu_element_1a0dbae35688aa72f172450a33c45035db" kind="function"><name>addAction</name></member>
+    <member refid="class_ui_q_menu_element_1ab027760a161a421add95a5381c530f28" kind="function"><name>addMenu</name></member>
+    <member refid="class_ui_q_menu_element_1a7c61a2020c4a48c91907f8727a0c6f2e" kind="function"><name>removeAction</name></member>
+    <member refid="class_ui_q_menu_element_1af5be52f1c9275c261f9b057037375c3b" kind="function"><name>removeMenu</name></member>
+    <member refid="class_ui_q_menu_element_1aa2c26afdc1a30f198b43dd5982a7ef6b" kind="function"><name>getMenu</name></member>
+  </compound>
+  <compound refid="class_ui_q_tool_bar_element" kind="class"><name>UiQToolBarElement</name>
+    <member refid="class_ui_q_tool_bar_element_1a5f41380c0370297f42785112a068c895" kind="variable"><name>m_toolBar</name></member>
+    <member refid="class_ui_q_tool_bar_element_1aa727913d19b12b44a1e6b8c34d85cd0c" kind="function"><name>UiQToolBarElement</name></member>
+    <member refid="class_ui_q_tool_bar_element_1a948649a87fd31b73cbf6f30abc142345" kind="function"><name>~UiQToolBarElement</name></member>
+    <member refid="class_ui_q_tool_bar_element_1a12a13fee01a68825621ab79abbbafd60" kind="function"><name>addAction</name></member>
+    <member refid="class_ui_q_tool_bar_element_1a7bf18fe97714ddff1918720db3e91e64" kind="function"><name>addMenu</name></member>
+    <member refid="class_ui_q_tool_bar_element_1adb9c4ea0866610b512665f7fa4edefc0" kind="function"><name>removeAction</name></member>
+    <member refid="class_ui_q_tool_bar_element_1add5559883f4f9874da1aaf1f523aa5bf" kind="function"><name>removeMenu</name></member>
+    <member refid="class_ui_q_tool_bar_element_1a722daf84a5c27e34b8bcf46c2ba5e45d" kind="function"><name>getToolBar</name></member>
+  </compound>
+  <compound refid="containers_8dox" kind="file"><name>containers.dox</name>
+  </compound>
+  <compound refid="mainpage_8dox" kind="file"><name>mainpage.dox</name>
+  </compound>
+  <compound refid="basemenumanager_8cpp" kind="file"><name>basemenumanager.cpp</name>
+  </compound>
+  <compound refid="basemenumanager_8h" kind="file"><name>basemenumanager.h</name>
+  </compound>
+  <compound refid="command_8cpp" kind="file"><name>command.cpp</name>
+  </compound>
+  <compound refid="command_8h" kind="file"><name>command.h</name>
+  </compound>
+  <compound refid="imenumanager_8h" kind="file"><name>imenumanager.h</name>
+  </compound>
+  <compound refid="basemenuactionscontainer_8cpp" kind="file"><name>basemenuactionscontainer.cpp</name>
+  </compound>
+  <compound refid="basemenuactionscontainer_8h" kind="file"><name>basemenuactionscontainer.h</name>
+  </compound>
+  <compound refid="baseuielement_8cpp" kind="file"><name>baseuielement.cpp</name>
+  </compound>
+  <compound refid="baseuielement_8h" kind="file"><name>baseuielement.h</name>
+  </compound>
+  <compound refid="iactionscontainer_8h" kind="file"><name>iactionscontainer.h</name>
+  </compound>
+  <compound refid="ibasemenuactionscontainer_8h" kind="file"><name>ibasemenuactionscontainer.h</name>
+  </compound>
+  <compound refid="iuielement_8h" kind="file"><name>iuielement.h</name>
+  </compound>
+  <compound refid="uicontainer_8cpp" kind="file"><name>uicontainer.cpp</name>
+  </compound>
+  <compound refid="uicontainer_8h" kind="file"><name>uicontainer.h</name>
+  </compound>
+  <compound refid="uiqmenubarelement_8cpp" kind="file"><name>uiqmenubarelement.cpp</name>
+  </compound>
+  <compound refid="uiqmenubarelement_8h" kind="file"><name>uiqmenubarelement.h</name>
+  </compound>
+  <compound refid="uiqmenuelement_8cpp" kind="file"><name>uiqmenuelement.cpp</name>
+  </compound>
+  <compound refid="uiqmenuelement_8h" kind="file"><name>uiqmenuelement.h</name>
+  </compound>
+  <compound refid="uiqtoolbarelement_8cpp" kind="file"><name>uiqtoolbarelement.cpp</name>
+  </compound>
+  <compound refid="uiqtoolbarelement_8h" kind="file"><name>uiqtoolbarelement.h</name>
+  </compound>
+  <compound refid="containers" kind="page"><name>containers</name>
+  </compound>
+  <compound refid="dir_49e56c817e5e54854c35e136979f97ca" kind="dir"><name>docs</name>
+  </compound>
+  <compound refid="dir_76b8ecf307d2d6c15c50eaca24006a37" kind="dir"><name>mcore</name>
+  </compound>
+  <compound refid="dir_acaadc77c9478a219a77e944bc32ebd2" kind="dir"><name>mcore/uielements</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

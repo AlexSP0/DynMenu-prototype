@@ -1,0 +1,322 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_base_ui_element" kind="class" language="C++" prot="public">
+    <compoundname>BaseUiElement</compoundname>
+    <basecompoundref refid="class_i_ui_element" prot="public" virt="non-virtual">IUiElement</basecompoundref>
+    <derivedcompoundref refid="class_ui_q_menu_bar_element" prot="public" virt="non-virtual">UiQMenuBarElement</derivedcompoundref>
+    <derivedcompoundref refid="class_ui_q_menu_element" prot="public" virt="non-virtual">UiQMenuElement</derivedcompoundref>
+    <derivedcompoundref refid="class_ui_q_tool_bar_element" prot="public" virt="non-virtual">UiQToolBarElement</derivedcompoundref>
+    <includes refid="baseuielement_8h" local="no">baseuielement.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_base_ui_element_1ad0d0dbc66c413271b94f907c4ef566ca" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_i_base_menu_actions_container" kindref="compound">IBaseMenuActionsContainer</ref> *</type>
+        <definition>IBaseMenuActionsContainer* BaseUiElement::m_container</definition>
+        <argsstring></argsstring>
+        <name>m_container</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/baseuielement.h" line="69" column="31" bodyfile="mcore/uielements/baseuielement.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_base_ui_element_1a211204dbfbb4d905b7f209bedd89a922" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BaseUiElement::BaseUiElement</definition>
+        <argsstring>()</argsstring>
+        <name>BaseUiElement</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/baseuielement.h" line="17" column="5" bodyfile="mcore/uielements/baseuielement.cpp" bodystart="3" bodyend="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_ui_element_1a588929e010d722753244745bdb4e5cff" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual BaseUiElement::~BaseUiElement</definition>
+        <argsstring>()=default</argsstring>
+        <name>~BaseUiElement</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/baseuielement.h" line="18" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_ui_element_1a9e2dd81abe913b8fe7a3147f2af00a84" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void BaseUiElement::addAction</definition>
+        <argsstring>(QAction *action) override</argsstring>
+        <name>addAction</name>
+        <reimplements refid="class_i_ui_element_1a1edde8825b5a88fef90c2f5844409d94">addAction</reimplements>
+        <reimplementedby refid="class_ui_q_menu_bar_element_1a5e32eaf2a0e58fa037fa9caef249f433">addAction</reimplementedby>
+        <reimplementedby refid="class_ui_q_menu_element_1a0dbae35688aa72f172450a33c45035db">addAction</reimplementedby>
+        <reimplementedby refid="class_ui_q_tool_bar_element_1a12a13fee01a68825621ab79abbbafd60">addAction</reimplementedby>
+        <param>
+          <type>QAction *</type>
+          <declname>action</declname>
+        </param>
+        <briefdescription>
+<para>Adds action to ui element. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to QAction object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/baseuielement.h" line="24" column="18" bodyfile="mcore/uielements/baseuielement.cpp" bodystart="5" bodyend="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_ui_element_1a8ff0d379033af4640ceb839ed79da3a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void BaseUiElement::addMenu</definition>
+        <argsstring>(QMenu *menu) override</argsstring>
+        <name>addMenu</name>
+        <reimplements refid="class_i_ui_element_1afd4aaca72142e814b6d802f307926ffc">addMenu</reimplements>
+        <reimplementedby refid="class_ui_q_menu_bar_element_1a22e656cdf28aa17aae28501a63708238">addMenu</reimplementedby>
+        <reimplementedby refid="class_ui_q_menu_element_1ab027760a161a421add95a5381c530f28">addMenu</reimplementedby>
+        <reimplementedby refid="class_ui_q_tool_bar_element_1a7bf18fe97714ddff1918720db3e91e64">addMenu</reimplementedby>
+        <param>
+          <type>QMenu *</type>
+          <declname>menu</declname>
+        </param>
+        <briefdescription>
+<para>Adds menu to ui element. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>menu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to QMenu object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/baseuielement.h" line="30" column="18" bodyfile="mcore/uielements/baseuielement.cpp" bodystart="7" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_ui_element_1ac0d4fd27283098a3e82710dc069f870b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void BaseUiElement::removeAction</definition>
+        <argsstring>(QAction *action) override</argsstring>
+        <name>removeAction</name>
+        <reimplements refid="class_i_ui_element_1aff7f4e3b9450789a628b2dce005085ae">removeAction</reimplements>
+        <reimplementedby refid="class_ui_q_menu_bar_element_1a0f5c82a5ba64e2aa2b24a6fc9871b8a5">removeAction</reimplementedby>
+        <reimplementedby refid="class_ui_q_menu_element_1a7c61a2020c4a48c91907f8727a0c6f2e">removeAction</reimplementedby>
+        <reimplementedby refid="class_ui_q_tool_bar_element_1adb9c4ea0866610b512665f7fa4edefc0">removeAction</reimplementedby>
+        <param>
+          <type>QAction *</type>
+          <declname>action</declname>
+        </param>
+        <briefdescription>
+<para>Removes action from ui element. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to QAction object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/baseuielement.h" line="36" column="18" bodyfile="mcore/uielements/baseuielement.cpp" bodystart="9" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_ui_element_1af84124798b04c70228cde9b8af35d193" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void BaseUiElement::removeMenu</definition>
+        <argsstring>(QMenu *menu) override</argsstring>
+        <name>removeMenu</name>
+        <reimplements refid="class_i_ui_element_1a697c4373c26076174c955e669059900a">removeMenu</reimplements>
+        <reimplementedby refid="class_ui_q_menu_bar_element_1a02e9bdbb54375cf5e2b12004e46d0993">removeMenu</reimplementedby>
+        <reimplementedby refid="class_ui_q_menu_element_1af5be52f1c9275c261f9b057037375c3b">removeMenu</reimplementedby>
+        <reimplementedby refid="class_ui_q_tool_bar_element_1add5559883f4f9874da1aaf1f523aa5bf">removeMenu</reimplementedby>
+        <param>
+          <type>QMenu *</type>
+          <declname>menu</declname>
+        </param>
+        <briefdescription>
+<para>Removes menu from ui element. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>menu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to QMenu object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/baseuielement.h" line="42" column="18" bodyfile="mcore/uielements/baseuielement.cpp" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_ui_element_1ad90101452a4172f5deb5334491c1442b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void BaseUiElement::setContainer</definition>
+        <argsstring>(IBaseMenuActionsContainer *container) override</argsstring>
+        <name>setContainer</name>
+        <reimplements refid="class_i_ui_element_1afb8a8f197939242fbf8cdb71fac413ea">setContainer</reimplements>
+        <param>
+          <type><ref refid="class_i_base_menu_actions_container" kindref="compound">IBaseMenuActionsContainer</ref> *</type>
+          <declname>container</declname>
+        </param>
+        <briefdescription>
+<para>Returns a pointer to the QMenu object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>If the container contains an object of a different type, it returns nullptr. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/baseuielement.h" line="48" column="18" bodyfile="mcore/uielements/baseuielement.cpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_ui_element_1ab5f3dc2d5a9e8f65c1a41f15101d54e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QMenu *</type>
+        <definition>QMenu * BaseUiElement::getMenu</definition>
+        <argsstring>() override</argsstring>
+        <name>getMenu</name>
+        <reimplements refid="class_i_ui_element_1a46d0046e5f8c634ffdaff1a57b1db7ba">getMenu</reimplements>
+        <reimplementedby refid="class_ui_q_menu_element_1aa2c26afdc1a30f198b43dd5982a7ef6b">getMenu</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns pointer to QMenu object In this implementation return nullptr </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/baseuielement.h" line="54" column="19" bodyfile="mcore/uielements/baseuielement.cpp" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_ui_element_1a85a04203ea3077d9bc3dfee3968f6c19" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QMenuBar *</type>
+        <definition>QMenuBar * BaseUiElement::getMenuBar</definition>
+        <argsstring>() override</argsstring>
+        <name>getMenuBar</name>
+        <reimplements refid="class_i_ui_element_1a8e79e1065cd4c9f81bb0620d38f1c59b">getMenuBar</reimplements>
+        <reimplementedby refid="class_ui_q_menu_bar_element_1ad60c8fec53e3651e60f7cb1a32287c3a">getMenuBar</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns pointer to QMenuBar object In this implementation return nullptr </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/baseuielement.h" line="60" column="22" bodyfile="mcore/uielements/baseuielement.cpp" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_ui_element_1a932f71ee775c4ecba4c5087734ba862e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QToolBar *</type>
+        <definition>QToolBar * BaseUiElement::getToolBar</definition>
+        <argsstring>() override</argsstring>
+        <name>getToolBar</name>
+        <reimplements refid="class_i_ui_element_1aa8f3a2881ee967ac94e539f3507abdf4">getToolBar</reimplements>
+        <reimplementedby refid="class_ui_q_tool_bar_element_1a722daf84a5c27e34b8bcf46c2ba5e45d">getToolBar</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns pointer to QToolBar object In this implementation return nullptr </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mcore/uielements/baseuielement.h" line="66" column="22" bodyfile="mcore/uielements/baseuielement.cpp" bodystart="28" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>a base class for all uielements (for <ref refid="class_i_actions_container" kindref="compound">IActionsContainer</ref>). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A base class for all classes to implement the IActionContainer interface. The <ref refid="class_base_ui_element_1ab5f3dc2d5a9e8f65c1a41f15101d54e7" kindref="member">getMenu()</ref> and getMenuBar methods return nullptr. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>UiQMenuBarElement</label>
+        <link refid="class_ui_q_menu_bar_element"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>BaseUiElement</label>
+        <link refid="class_base_ui_element"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>UiQToolBarElement</label>
+        <link refid="class_ui_q_tool_bar_element"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IUiElement</label>
+        <link refid="class_i_ui_element"/>
+      </node>
+      <node id="4">
+        <label>UiQMenuElement</label>
+        <link refid="class_ui_q_menu_element"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>BaseUiElement</label>
+        <link refid="class_base_ui_element"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_container</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IBaseMenuActionsContainer</label>
+        <link refid="class_i_base_menu_actions_container"/>
+      </node>
+      <node id="2">
+        <label>IUiElement</label>
+        <link refid="class_i_ui_element"/>
+      </node>
+    </collaborationgraph>
+    <location file="mcore/uielements/baseuielement.h" line="14" column="1" bodyfile="mcore/uielements/baseuielement.h" bodystart="15" bodyend="70"/>
+    <listofallmembers>
+      <member refid="class_base_ui_element_1a9e2dd81abe913b8fe7a3147f2af00a84" prot="public" virt="virtual"><scope>BaseUiElement</scope><name>addAction</name></member>
+      <member refid="class_base_ui_element_1a8ff0d379033af4640ceb839ed79da3a4" prot="public" virt="virtual"><scope>BaseUiElement</scope><name>addMenu</name></member>
+      <member refid="class_base_ui_element_1a211204dbfbb4d905b7f209bedd89a922" prot="public" virt="non-virtual"><scope>BaseUiElement</scope><name>BaseUiElement</name></member>
+      <member refid="class_base_ui_element_1ab5f3dc2d5a9e8f65c1a41f15101d54e7" prot="public" virt="virtual"><scope>BaseUiElement</scope><name>getMenu</name></member>
+      <member refid="class_base_ui_element_1a85a04203ea3077d9bc3dfee3968f6c19" prot="public" virt="virtual"><scope>BaseUiElement</scope><name>getMenuBar</name></member>
+      <member refid="class_base_ui_element_1a932f71ee775c4ecba4c5087734ba862e" prot="public" virt="virtual"><scope>BaseUiElement</scope><name>getToolBar</name></member>
+      <member refid="class_base_ui_element_1ad0d0dbc66c413271b94f907c4ef566ca" prot="protected" virt="non-virtual"><scope>BaseUiElement</scope><name>m_container</name></member>
+      <member refid="class_base_ui_element_1ac0d4fd27283098a3e82710dc069f870b" prot="public" virt="virtual"><scope>BaseUiElement</scope><name>removeAction</name></member>
+      <member refid="class_base_ui_element_1af84124798b04c70228cde9b8af35d193" prot="public" virt="virtual"><scope>BaseUiElement</scope><name>removeMenu</name></member>
+      <member refid="class_base_ui_element_1ad90101452a4172f5deb5334491c1442b" prot="public" virt="virtual"><scope>BaseUiElement</scope><name>setContainer</name></member>
+      <member refid="class_base_ui_element_1a588929e010d722753244745bdb4e5cff" prot="public" virt="virtual"><scope>BaseUiElement</scope><name>~BaseUiElement</name></member>
+      <member refid="class_i_ui_element_1a7aa07229bf14458158c64f7640ce4ed5" prot="public" virt="virtual"><scope>BaseUiElement</scope><name>~IUiElement</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
